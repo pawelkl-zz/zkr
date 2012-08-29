@@ -97,7 +97,7 @@ describe "Static pages" do
     click_link "Opłaty"
     page.should have_selector 'title', text: full_title('Opłaty')
     click_link "Strona Główna"
-    click_link "Sign up now!"
+    click_link "Zarejestruj się!"
     page.should have_selector 'title', text: full_title('Sign up')
     click_link "Żłobek Kubusiowy Raj"
     page.should have_selector 'h1', text: homepage_h1

@@ -27,7 +27,7 @@ describe "User pages" do
         User.paginate(page: 1).each do |user|
           page.should have_selector('li>a', text: user.name)
         end
-      end      
+      end
     end
 
     describe "delete links" do
@@ -51,7 +51,7 @@ describe "User pages" do
   end
 
   describe "signup page" do
-    before { visit signup_path }
+    before { visit rejestracja_path }
 
     it { should have_selector('h1',    text: 'Sign up') }
     it { should have_selector('title', text: full_title('Sign up')) }
@@ -65,7 +65,7 @@ describe "User pages" do
     before { visit user_path(user) }
 
     it { should have_selector('h1',    text: user.name) }
-    it { should have_selector('title', text: user.name) }  
+    it { should have_selector('title', text: user.name) }
 
     describe "microposts" do
       it { should have_content(m1.content) }
@@ -125,8 +125,8 @@ describe "User pages" do
   end
 
   describe "signup" do
-    
-    before { visit signup_path }
+
+    before { visit rejestracja_path }
 
     let(:submit) { "Create my account" }
 
@@ -150,9 +150,9 @@ describe "User pages" do
         fill_in "Name",         with: "Example User"
         fill_in "Email",        with: "user@example.com"
         fill_in "Password",     with: "foobar"
-        fill_in "Confirmation", with: "foobar"        
+        fill_in "Confirmation", with: "foobar"
       end
-      
+
       it "should create a user" do
         expect { click_button submit }.to change(User, :count).by(1)
       end

@@ -12,30 +12,33 @@
       = render 'shared/feed'
 
 - else
-  .center.hero-unit
-    %h1 Wkrótce otwarcie!
-    %h2 Pierwsza trójka zapisanych dzieci bez wpisowego!
+  %h1 Wkrótce otwarcie!
+  %h2 Pierwsza trójka zapisanych dzieci bez wpisowego!
 
+  .center
+    = link_to "Zarejestruj się!", rejestracja_path, class: "btn btn-large btn-primary"
 
-    %p Drodzy Rodzice! Witamy Was serdecznie w naszym edukacyjnym żłobku „Kubusiowy Raj”, mieszczącym się w malowniczej okolicy, w Bobrowcu, 5 km od Piaseczna. U nas każda mała istotka (od 5 miesiąca do 3 roku życia), równie dociekliwa jak Puchatek, otrzyma czas na „powolne, uważne tropienie tego, co zadziwia, zastanawia, uczy, kształtuje, uwrażliwia, doskonali, stymuluje”.
+  %p Drodzy Rodzice! Witamy Was serdecznie w naszym edukacyjnym żłobku „Kubusiowy Raj”, mieszczącym się w malowniczej okolicy, w Bobrowcu, 5 km od Piaseczna. U nas każda mała istotka (od 5 miesiąca do 3 roku życia), równie dociekliwa jak Puchatek, otrzyma czas na „powolne, uważne tropienie tego, co zadziwia, zastanawia, uczy, kształtuje, uwrażliwia, doskonali, stymuluje”.
 
-    %blockquote
-      %p - A co tropisz? – zapytał Prosiaczek.
-      %p - Coś, coś, coś – odparł tajemniczo Puchatek.
-      %p - A co, co, co? – spytał Prosiaczek podchodząc bliżej.&nbsp;(...)
-      %p - Będę musiał trochę poczekać, aż to coś wytropię, i wtedy się dowiem.
-      -# %p
-        This is the home page for the
-        <a href="http://railstutorial.org/">Ruby on Rails Tutorial</a>
-        sample application.
+  %blockquote
+    %p - A co tropisz? – zapytał Prosiaczek.
+    %p - Coś, coś, coś – odparł tajemniczo Puchatek.
+    %p - A co, co, co? – spytał Prosiaczek podchodząc bliżej.&nbsp;(...)
+    %p - Będę musiał trochę poczekać, aż to coś wytropię, i wtedy się dowiem.
+    %small
+      / Kubuś Puchatek
+      %cite{title: "lol"}Kubuś Puchatek i przyjaciele
 
-    %p Zapewniamy maluchom nie tylko całodzienną opieką, ale też zajęcia stymulujące  ich rozwój werbalny, psychoruchowy i emocjonalno-społeczny. Szanujemy  ich wewnętrzny potencjał, potrzeby rozwojowe, indywidualne predyspozycje i ciekawość poznawczą. Pozwalamy na eksplorację otaczającego świata w bezpiecznych warunkach, w atmosferze pełnej akceptacji, cierpliwości  i  życzliwości.
-    %p Reasumując! My – wykwalifikowane wychowawczynie z pasji i powołania, z dziećmi nudzić się nie umiemy. Bawimy się, śmiejemy, uczymy się od siebie nawzajem i w atmosferze wzajemnego szacunku, uważności i empatii poznajemy siebie i  otaczający świat.
-    %p Będzie nam bardzo miło, jeżeli po zapoznaniu się z działalnością naszego Żłobka, zechcecie Państwo przekazać swoje pociechy pod fachową opiekę naszego personelu.
-    %p Ufamy, że prowadzona przez nas działalność w pełni sprosta Państwa oczekiwaniom.
-    %p Mamy nadzieje, że wirtualne spotkanie z nami odpowie na pytania i odwiedzicie Państwo nasz żłobek osobiście. Szczerze Państwa i Państwa Pociechy zapraszamy!
-    %p W razie pytań, prosimy o kontakt telefoniczny lub poprzez formularz kontaktowy.
+    -# %p
+      This is the home page for the
+      <a href="http://railstutorial.org/">Ruby on Rails Tutorial</a>
+      sample application.
 
-    = link_to "Sign up now!", signup_path, class: "btn btn-large btn-primary"
+  %p Zapewniamy maluchom nie tylko całodzienną opieką, ale też zajęcia stymulujące  ich rozwój werbalny, psychoruchowy i emocjonalno-społeczny. Szanujemy  ich wewnętrzny potencjał, potrzeby rozwojowe, indywidualne predyspozycje i ciekawość poznawczą. Pozwalamy na eksplorację otaczającego świata w bezpiecznych warunkach, w atmosferze pełnej akceptacji, cierpliwości  i  życzliwości.
+  %p Reasumując! My – wykwalifikowane wychowawczynie z pasji i powołania, z dziećmi nudzić się nie umiemy. Bawimy się, śmiejemy, uczymy się od siebie nawzajem i w atmosferze wzajemnego szacunku, uważności i empatii poznajemy siebie i  otaczający świat.
+  %p Będzie nam bardzo miło, jeżeli po zapoznaniu się z działalnością naszego Żłobka, zechcecie Państwo przekazać swoje pociechy pod fachową opiekę naszego personelu.
+  %p Ufamy, że prowadzona przez nas działalność w pełni sprosta Państwa oczekiwaniom.
+  %p Mamy nadzieje, że wirtualne spotkanie z nami odpowie na pytania i odwiedzicie Państwo nasz żłobek osobiście. Szczerze Państwa i Państwa Pociechy zapraszamy!
+  %p W razie pytań, prosimy o kontakt telefoniczny lub poprzez formularz kontaktowy.
 
-  -# = link_to image_tag("rails.png", alt: "Rails"), 'http://rubyonrails.org/'
+-# = link_to image_tag("rails.png", alt: "Rails"), 'http://rubyonrails.org/'

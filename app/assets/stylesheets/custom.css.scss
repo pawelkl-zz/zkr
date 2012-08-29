@@ -17,7 +17,8 @@ html {
 }
 
 body {
-  padding-top: 60px;
+  padding-top: 40px;
+  background: url("bg.png");
 }
 
 section {
@@ -38,7 +39,7 @@ textarea {
 /* typography */
 
 h1, h2, h3, h4, h5, h6 {
-  line-height: 1;
+  line-height: 1.3;
 }
 
 h1 {
@@ -65,6 +66,7 @@ p {
   font-size: 1.1em;
   line-height: 1.7em;
   text-align: justify;
+  text-justify: newspaper;
 
 }
 :first-line {
@@ -89,7 +91,7 @@ p {
   &:hover {
     color: white;
     text-decoration: none;
-  }
+    }
 }
 
 /* footer */
@@ -259,11 +261,6 @@ $quoteColorQ: #000;
 $quoteAlign: 25.3pt;
 $quoteColorBorder: #7090df;
 
-blockquote p {
-  font-family: 'Times New Roman', serif;
-  font-size: 15px !important;
-  text-align: left;
-}
 blockquote {
   width: 350px;
   float:right;
@@ -274,41 +271,70 @@ blockquote {
   padding: .5em 10px;
   quotes:"\201C""\201D""\2018""\2019";
   text-align: left;
-
-  :first-child:before {
-    color:$quoteColorQ;
-    content:open-quote;
-    font-size:4em;
-    line-height:.1em;
-    margin-right:0.28em;
-    vertical-align:-.4em;
-    margin-left: -$quoteAlign*1.3 ;
+  border-radius: 10px;
+  p {
+    font-family: 'Times New Roman', serif;
+    font-size: 15px !important;
+    text-align: left;
+    &:first-child:before {
+      color:$quoteColorQ;
+      content:open-quote;
+      font-size:4em;
+      line-height:.1em;
+      margin-right:0.28em;
+      vertical-align:-.4em;
+      margin-left: -$quoteAlign*1.3 ;
+    }
+    // &:last-child:after {
+    //   color:$quoteColorQ;
+    //   content:close-quote;
+    //   font-size:4em;
+    //   line-height:.1em;
+    //   margin-left:0.1em;
+    //   vertical-align:-.4em;
+    //   margin-left: -$quoteAlign*1.3 ;
+    // }
   }
-  :last-child:after {
-    color:$quoteColorQ;
-    content:close-quote;
-    font-size:4em;
-    line-height:.1em;
-    margin-left:0.1em;
-    vertical-align:-.4em;
-  }
-  :not(:first-child) {
+  // > :not(:first-child) {
     // display:inline;
     // margin-left: $quoteAlign ;
+  // }
+  //
+  small{
+    text-align: right;
+    padding: 0 20px;
+    color: #444 !important;
+    cite {
+      color: #333;
   }
+}
 }
 /* tables */
 
 table {
   margin: 0 0 1em 0;
 
-  tr > td:first-child {
-    min-width: 120px;
+  th td {
+
+  }
+  td:first-child {
+    width: 150px;
+  }
+  th, td {
+    min-width: 150px;
+    padding-left: 15px;
+    text-align:right;
+  }
+  td:not(:first-child),
+    a[href] {
+    font-size: $baseLineHeight * 1.5;
   }
 
-  td {
-    min-width: 70px;
-    padding-left: 15px;
+  * {
+    font-size: 18px;
+    font-weight: 200;
+    line-height: $baseLineHeight * 1.5;
+    color: $heroUnitLeadColor;
   }
 }
 
@@ -317,10 +343,6 @@ table {
 .padleft {
   padding-left: 20px;
   margin: 0;
-}
-
-p > div:first-child {
-  margin-top: -30px;
 }
 
 .gray {
@@ -335,4 +357,13 @@ p > div:first-child {
 .navbar-inner {
   background: url("top.jpg");
   height: 80px;
+}
+
+.center {
+  margin: 0 0 30px 0;
+  text-align: center;
+}
+
+.big {
+  margin-bottom: 2em;
 }
