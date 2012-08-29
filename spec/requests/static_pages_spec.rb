@@ -42,13 +42,6 @@ describe "Static pages" do
     end
   end
 
-  describe "Help page" do
-    before { visit help_path }
-
-    it { should have_selector('h1', text: 'Help') }
-    it { should have_selector('title', text: full_title('Help')) }
-  end
-
   describe "About page" do
     before { visit about_path }
     let(:title) { "O nas" }
@@ -56,18 +49,24 @@ describe "Static pages" do
     it { should have_selector('title', text: full_title(title)) }
   end
 
-  # describe "Photo gallery" do
-  #   before { visit gallery_path }
+  describe "Parent Site" do
+    before { visit strefarodzica_path }
+  end
 
-  #   it { should have_selector('h1', text: '') }
-  #   it { should have_selector('title', text: full_title('')) }
-  # end
+  describe "Dayplan" do
+  end
 
   describe "Pricelist page" do
     before { visit oplaty_path }
     let(:title) { "Opłaty" }
     # it { should have_selector('h1', text: title) }
     # it { should have_selector('title', text: full_title(title)) }
+  end
+
+  describe "Photo gallery" do
+  #   before { visit gallery_path }
+  #   it { should have_selector('h1', text: '') }
+  #   it { should have_selector('title', text: full_title('')) }
   end
 
   describe "Contact page" do
@@ -82,6 +81,13 @@ describe "Static pages" do
     it { should have_selector 'p', text: '13 19500 00120 06027 90756 0002' }
     it { should have_selector 'iframe' }
     # it { should have_selector 'p', text: '' }
+  end
+
+  describe "Help page" do
+    before { visit help_path }
+
+    it { should have_selector('h1', text: 'Help') }
+    it { should have_selector('title', text: full_title('Help')) }
   end
 
   it "should have the right links on the layout" do
