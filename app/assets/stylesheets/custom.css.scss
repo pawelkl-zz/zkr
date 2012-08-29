@@ -58,13 +58,20 @@ h2 {
 }
 
 h3 {
-  margin: .5em 0 .2em ;
+  margin: 1.5em 0 .2em 0 !important;
 }
 
 p {
   font-size: 1.1em;
   line-height: 1.7em;
+  text-align: justify;
+
 }
+:first-line {
+    text-transform: uppercase;
+    padding-left: 3.5em !important;
+    margin-left: 40px !important;
+  }
 
 
 /* header */
@@ -247,61 +254,62 @@ aside {
 
 /* quotes */
 
-// blockquote {
-// display: inline;
-// padding: 0 60px;
-// width: 65%;
-// }
-
-// blockquote > div + div:before, blockquote > div +  div:after {
-// color: #69c;
-// display: block;
-// font-size: 700%;
-// width: 50px;
-// }
-
-// blockquote div:before {
-// content: '\201C';
-// height: 0;
-// margin-left: -0.55em;
-// padding-bottom: 30px
-// }
-
-// blockquote div:after {
-// content: '\201D';
-// height: 50px;
-// // margin-top: 8px;
-// // margin-left: 560px;
-// }
-
-blockquote {
-  padding: 0 15%;
-  text-align: left;
-}
+$quoteColorFill: #90b0f0;
+$quoteColorQ: #000;
+$quoteAlign: 25.3pt;
+$quoteColorBorder: #7090df;
 
 blockquote p {
-  display: block;
+  font-family: 'Times New Roman', serif;
+  font-size: 15px !important;
   text-align: left;
-  padding: 0;
-  margin: 0;
-  letter-spacing: 1.2px;
-  font-size: 10px;
 }
+blockquote {
+  width: 350px;
+  float:right;
+  border-left: $quoteColorBorder solid 40px !important;
+  background: $quoteColorFill;
+  // border-left:10px solid #ccc;
+  margin: 0.5em 0px 1.5em 10px;
+  padding: .5em 10px;
+  quotes:"\201C""\201D""\2018""\2019";
+  text-align: left;
 
-// blockquote p:before {
-//   content: "- ";
-//   }
+  :first-child:before {
+    color:$quoteColorQ;
+    content:open-quote;
+    font-size:4em;
+    line-height:.1em;
+    margin-right:0.28em;
+    vertical-align:-.4em;
+    margin-left: -$quoteAlign*1.3 ;
+  }
+  :last-child:after {
+    color:$quoteColorQ;
+    content:close-quote;
+    font-size:4em;
+    line-height:.1em;
+    margin-left:0.1em;
+    vertical-align:-.4em;
+  }
+  :not(:first-child) {
+    // display:inline;
+    // margin-left: $quoteAlign ;
+  }
+}
+/* tables */
 
 table {
   margin: 0 0 1em 0;
-}
-tr > td:first-child {
-  min-width: 120px;
-}
 
-td {
-  min-width: 70px;
-  padding-left: 15px;
+  tr > td:first-child {
+    min-width: 120px;
+  }
+
+  td {
+    min-width: 70px;
+    padding-left: 15px;
+  }
 }
 
 // mine
@@ -318,4 +326,13 @@ p > div:first-child {
 .gray {
   color: $grayLight;
   display:inline;
+}
+
+.logo {
+  text-align: center;
+}
+
+.navbar-inner {
+  background: url("top.jpg");
+  height: 80px;
 }

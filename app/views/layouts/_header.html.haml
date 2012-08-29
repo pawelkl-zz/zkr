@@ -1,7 +1,9 @@
 %header.navbar.navbar-fixed-top
   .navbar-inner
+    -# .logo
+      = link_to image_tag("top.jpg", alt: "Rails"), 'http://rubyonrails.org/'
     .container
-      = link_to "sample app", root_path, id: "logo"
+      = link_to "Żłobek Kubusiowy Raj", root_path, id: "logo"
       %nav
         %ul.nav.pull-right
           %li= link_to "Strona Główna",    root_path
