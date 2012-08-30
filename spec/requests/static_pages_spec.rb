@@ -51,6 +51,7 @@ describe "Static pages" do
 
   describe "Parent Site" do
     before { visit strefarodzica_path }
+
   end
 
   describe "Dayplan" do
@@ -78,7 +79,8 @@ describe "Static pages" do
     it { should have_selector 'p', text: '881 589 599' }
     it { should have_selector 'p', text: '505 106 699' }
     it { should have_link "biuro@zlobekkubusiowyraj.pl",href: 'mailto:biuro@zlobekkubusiowyraj.pl' }
-    it { should have_selector 'p', text: '13 19500 00120 06027 90756 0002' }
+    it { should have_selector 'p', text: '13 1950 0001 2006 0279 0756 0002' }
+      #'13 19500 00120 06027 90756 0002' }
     it { should have_selector 'iframe' }
     # it { should have_selector 'p', text: '' }
   end

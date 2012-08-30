@@ -1,51 +1,95 @@
 = provide(:title, 'Kontakt')
 %h1 Kontakt
 
+.lol
+  <iframe width="400" height="400" src="https://maps.google.com/maps?f=q&amp;source=s_q&amp;hl=pl&amp;geocode=+&amp;q=mazowiecka+24,+bobrowiec&amp;ie=UTF8&amp;hq=&amp;hnear=Mazowiecka+24,+05-502+Bobrowiec,+piaseczy%C5%84ski,+Mazowieckie,+Polska&amp;t=m&amp;ll=52.059404,20.966806&amp;spn=0.012665,0.027466&amp;z=15&amp;output=embed" frameborder="0" marginwidth="0" marginheight="0" scrolling="no"></iframe>
 
-.row
-  .span6
-    <iframe width="400" height="400" src="https://maps.google.com/maps?f=q&amp;source=s_q&amp;hl=pl&amp;geocode=+&amp;q=mazowiecka+24,+bobrowiec&amp;ie=UTF8&amp;hq=&amp;hnear=Mazowiecka+24,+05-502+Bobrowiec,+piaseczy%C5%84ski,+Mazowieckie,+Polska&amp;t=m&amp;ll=52.059404,20.966806&amp;spn=0.012665,0.027466&amp;z=15&amp;output=embed" frameborder="0" marginwidth="0" marginheight="0" scrolling="no"></iframe>
-  .span6
+  .lol{display: "block"}
     %address
       %p
         %strong Kubusiowy Raj Konrad Zawiślak <br>
         ul. Mazowiecka 24 <br>
         05-502 Bobrowiec
 
-  .span3
     %p
       %strong Dyrektor
-  %p.span2 tel. 881 589 599
+    %p tel. 881 589 599
 
-  -#.row
-  %p.span1
-    %strong Właściciel
-  %p.span2 tel. 505 106 699
+    %p
+      %strong Właściciel
+    %p tel. 505 106 699
+
+    %p
+      %strong e-mail:
+    %p
+      %strong <a href="mailto:biuro@zlobekkubusiowyraj.pl">biuro@zlobekkubusiowyraj.pl</a>
+
+    -# Formularz kontaktowy
+
+    %p
+      %strong NIP:
+    %p
+      123-102-01-15
+
+    %p
+      %strong REGON:
+    %p
+      146001443
+
+    %p
+      %strong Nr konta:
+    %p
+      13 1950 0001 2006 0279 0756 0002
+    %p.span
+      Bank: IDEA BANK S.A.
 
 
-  -#.row
-  %p.span1
-    %strong e-mail:
-  %p.span2
-    %strong <a href="mailto:biuro@zlobekkubusiowyraj.pl">biuro@zlobekkubusiowyraj.pl</a>
+-#
+  .pull-right
+    <iframe width="400" height="400" src="https://maps.google.com/maps?f=q&amp;source=s_q&amp;hl=pl&amp;geocode=+&amp;q=mazowiecka+24,+bobrowiec&amp;ie=UTF8&amp;hq=&amp;hnear=Mazowiecka+24,+05-502+Bobrowiec,+piaseczy%C5%84ski,+Mazowieckie,+Polska&amp;t=m&amp;ll=52.059404,20.966806&amp;spn=0.012665,0.027466&amp;z=15&amp;output=embed" frameborder="0" marginwidth="0" marginheight="0" scrolling="no"></iframe>
 
-  -# Formularz kontaktowy
+  .row.span5
+    .row
+      %address.span5
+        %p
+          %strong Kubusiowy Raj Konrad Zawiślak <br>
+          ul. Mazowiecka 24 <br>
+          05-502 Bobrowiec
 
-  -#.row
-  %p.span2
-    %strong NIP:
-  %p.span2
-    123-102-01-15
-  -#.row
-  %p.span2
-    %strong REGON:
-  %p.span2
-    146001443
 
-  -#.row
-  %p.span
-    %strong Nr konta:
-    %br
-    13 19500 00120 06027 90756 0002
-  %p.span
-    Bank: IDEA BANK S.A.
+      %p
+        %strong Dyrektor
+      %p tel. 881 589 599
+
+      -#.row
+      %p
+        %strong Właściciel
+      %p tel. 505 106 699
+
+
+      -#.row
+      %p
+        %strong e-mail:
+      %p
+        %strong <a href="mailto:biuro@zlobekkubusiowyraj.pl">biuro@zlobekkubusiowyraj.pl</a>
+
+      -# Formularz kontaktowy
+
+      -#.row
+      %p
+        %strong NIP:
+      %p
+        123-102-01-15
+      -#.row
+      %p
+        %strong REGON:
+      %p
+        146001443
+
+    .row
+      %p
+        %strong Nr konta:
+      %p.justify
+        13 1950 0001 2006 0279 0756 0002
+    %p.span
+      Bank: IDEA BANK S.A.

@@ -67,7 +67,6 @@ p {
   line-height: 1.7em;
   text-align: justify;
   text-justify: newspaper;
-
 }
 :first-line {
     // text-transform: uppercase;
@@ -263,7 +262,7 @@ $quoteColorBorder: #7090df;
 
 blockquote {
   width: 350px;
-  float:right;
+  // float:right;
   border-left: $quoteColorBorder solid 40px !important;
   background: $quoteColorFill;
   // border-left:10px solid #ccc;
@@ -366,4 +365,13 @@ table {
 
 .big {
   margin-bottom: 2em;
+}
+
+// .justify {
+//   text-align: right;
+//   // text-justify: inter-cluster ;
+// }
+
+.toright {
+  float:right;
 }
