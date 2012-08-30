@@ -18,4 +18,7 @@ class StaticPagesController < ApplicationController
 
   def pricelist
   end
+
+  def gallery
+  end
 end

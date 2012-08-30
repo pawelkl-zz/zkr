@@ -60,14 +60,15 @@ describe "Static pages" do
   describe "Pricelist page" do
     before { visit oplaty_path }
     let(:title) { "Opłaty" }
-    # it { should have_selector('h1', text: title) }
-    # it { should have_selector('title', text: full_title(title)) }
+    it { should have_selector('h1', text: title) }
+    it { should have_selector('title', text: full_title(title)) }
   end
 
   describe "Photo gallery" do
-  #   before { visit gallery_path }
-  #   it { should have_selector('h1', text: '') }
-  #   it { should have_selector('title', text: full_title('')) }
+    before { visit galeria_path }
+    let(:title) { "Galeria Zdjęć" }
+    it { should have_selector('h1', text: '') }
+    it { should have_selector('title', text: full_title('')) }
   end
 
   describe "Contact page" do
@@ -104,6 +105,10 @@ describe "Static pages" do
     page.should have_selector 'title', text: full_title('Kontakt')
     click_link "Opłaty"
     page.should have_selector 'title', text: full_title('Opłaty')
+    click_link "Galeria Zdjęć"
+    page.should have_selector 'title', text: full_title('Galeria Zdjęć')
+    # click_link "Opłaty"
+    # page.should have_selector 'title', text: full_title('Opłaty')
     click_link "Strona Główna"
     click_link "Zarejestruj się!"
     page.should have_selector 'title', text: full_title('Sign up')
