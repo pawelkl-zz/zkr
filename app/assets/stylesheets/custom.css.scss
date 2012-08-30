@@ -315,29 +315,54 @@ blockquote {
 /* tables */
 
 table {
-  margin: 0 0 1em 0;
+  // margin: 0 0 1em 0;
 
-  th td {
+  &.price{
+    td:first-child {
+      width: 150px;
+    }
+    th, td {
+      min-width: 150px;
+      padding-left: 15px;
+      text-align:right;
+    }
+    td:not(:first-child),
+      a[href] {
+      font-size: $baseLineHeight * 1.5;
+    }
 
+    * {
+      font-size: 18px;
+      font-weight: 200;
+      line-height: $baseLineHeight * 1.5;
+      color: $heroUnitLeadColor;
+    }
   }
-  td:first-child {
-    width: 150px;
-  }
-  th, td {
-    min-width: 150px;
-    padding-left: 15px;
-    text-align:right;
-  }
-  td:not(:first-child),
-    a[href] {
-    font-size: $baseLineHeight * 1.5;
-  }
-
-  * {
-    font-size: 18px;
-    font-weight: 200;
-    line-height: $baseLineHeight * 1.5;
-    color: $heroUnitLeadColor;
+  &.normal {
+    tr {
+      margin: 50px;
+    }
+    th {
+      text-align: left;
+    }
+    th, td {
+      min-width: 80px;
+    }
+    td {
+      text-align: left;
+      font-size: $baseLineHeight * 1;
+      font-style: italic;
+    }
+    p {
+      font-style:normal;
+      display: block;
+      text-align: left;
+      margin-left: 1.5em;
+      color: gray;
+      &:before {
+        content: "- ";
+      }
+    }
   }
 }
 
