@@ -12,24 +12,51 @@ SampleApp::Application.routes.draw do
 
   root to: 'static_pages#home'
 
-  match '/rejestracja',   to: 'users#new'
-  match '/zaloguj',   to: 'sessions#new', as: "signin"
-  match '/wyloguj',  to: 'sessions#destroy', via: :delete, as: "signout"
+  match '/o-nas',
+    to: 'static_pages#about',
+    as: "about"
+  match '/o-nas/naszautorskiprogram',
+    to: 'static_pages#authorprogram',
+    as: "autorski"
+  match '/o-nas/pedagogika',
+    to: 'static_pages#pedagogika',
+    as: "pedagogika"
+  match '/o-nas/kadra',
+    to: 'static_pages#kadra',
+    as: "kadra"
+  match '/o-nas/adaptacja',
+    to: 'static_pages#adaptacja',
+    as: "adaptacja"
 
-  match '/pomoc',    to: 'static_pages#help', as: "help"
-  match '/kontakt', to: 'static_pages#contact', as: "contact"
+  match '/strefarodzica',
+    to: 'static_pages#parentsite'
 
-  match '/oplaty', to: 'static_pages#pricelist'
+  match '/plandnia',
+    to: 'static_pages#dayplan'
 
-  match '/galeria', to: 'static_pages#gallery'
-  match '/strefarodzica', to: 'static_pages#parentsite'
-  match '/plandnia', to: 'static_pages#dayplan'
-  match '/naszautorskiprogram', to: 'static_pages#authorprogram'
+  match '/oplaty',
+    to: 'static_pages#pricelist'
 
-  match '/o-nas',   to: 'static_pages#about', as: "about"
-  match '/o-nas/pedagogika', to: 'static_pages#pedagogika', as: "pedagogika"
-  match '/o-nas/kadra', to: 'static_pages#kadra', as: "kadra"
-  match '/o-nas/adaptacja', to: 'static_pages#adaptacja', as: "adaptacja"
+  match '/galeria',
+    to: 'static_pages#gallery'
+
+  match '/kontakt',
+    to: 'static_pages#contact',
+    as: "contact"
+
+  match '/rejestracja',
+    to: 'users#new'
+  match '/zaloguj',
+    to: 'sessions#new',
+    as: "signin"
+  match '/wyloguj',
+    to: 'sessions#destroy',
+    via: :delete,
+    as: "signout"
+
+  match '/pomoc',
+    to: 'static_pages#help',
+    as: "help"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

@@ -3,16 +3,30 @@
     -# .logo
       = link_to image_tag("top.jpg", alt: "Rails"), 'http://rubyonrails.org/'
     .container
-      = link_to "Żłobek Kubusiowy Raj", root_path, id: "logo"
+      = link_to "Żłobek Kubusiowy Raj",
+        root_path,
+        id: "logo",
+        title: "Strona Główna"
       %nav
-        %ul.nav.pull-right
-          %li= link_to "Strona Główna", root_path
-          %li= link_to "O nas",         about_path
-          %li= link_to "Strefa Rodzica",strefarodzica_path
-          %li= link_to "Plan Dnia",     plandnia_path
-          %li= link_to "Opłaty",        oplaty_path
-          %li= link_to "Galeria Zdjęć", galeria_path
-          %li= link_to "Kontakt",       contact_path
+        %ul.nav
+          -#.nav.pull-right
+          -# %li= link_to "Strona Główna", root_path
+          %li= link_to "O nas",
+            about_path
+          %li= link_to "Strefa Rodzica",
+            strefarodzica_path,
+            title: "Wszelkie potrzebne informacje dla rodziców"
+          %li= link_to "Plan Dnia",
+            plandnia_path,
+            title: "Szczegółowy plan dnia dla naszych pociech"
+          %li= link_to "Opłaty",
+            oplaty_path,
+            title: "Wszelkie opłaty naliczane przez nasz żłobek"
+          %li= link_to "Galeria Zdjęć",
+            galeria_path,
+            title: "Zdjęcia z naszego żłobka"
+          %li= link_to "Kontakt",
+            contact_path
 
           - if signed_in?
             %li= link_to "Users",       users_path

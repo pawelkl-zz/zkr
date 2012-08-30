@@ -52,11 +52,16 @@ describe "Static pages" do
     let(:title) { "O nas" }
     it_should_behave_like "all static pages"
 
-    describe "Author program" do
-      before { visit naszautorskiprogram_path }
-      let(:title) { "Nasz Autorski Program Edukacyjny" }
-      it_should_behave_like "all static pages"
-    end
+    # it should have_link "Nasz Autorski Program Edukacyjny", href: autorski_path
+    # it should have_link "Pedagogika M. Montessori", href: pedagogika_path
+    # it should have_link "Kadra", href: kadra_path
+    # it should have_link "Adaptacja", href: adaptacja_path
+
+    # describe "Author program" do
+    #   before { visit autorskiprogram_path }
+    #   let(:title) { "Nasz Autorski Program Edukacyjny" }
+    #   it_should_behave_like "all static pages"
+    # end
 
     describe "Pedagogika" do
       before { visit pedagogika_path }
@@ -117,7 +122,7 @@ describe "Static pages" do
 
   describe "Help page" do
     before { visit help_path }
-    let(:title) { "Help" }
+    let(:title) { "Pomoc" }
     it_should_behave_like "all static pages"
   end
 
@@ -130,8 +135,8 @@ describe "Static pages" do
       click_link "Nasz Autorski Program Edukacyjny"
       page.should have_selector 'title', text: full_title('Nasz Autorski Program Edukacyjny')
 
-    click_link "Help"
-    page.should have_selector 'title', text: full_title('Help')
+    click_link "Pomoc"
+    page.should have_selector 'title', text: full_title('Pomoc')
     click_link "Kontakt"
     page.should have_selector 'title', text: full_title('Kontakt')
     click_link "Opłaty"
@@ -140,7 +145,8 @@ describe "Static pages" do
     page.should have_selector 'title', text: full_title('Galeria Zdjęć')
     # click_link "Opłaty"
     # page.should have_selector 'title', text: full_title('Opłaty')
-    click_link "Strona Główna"
+    # click_link "Strona Główna"
+    click_link "Żłobek Kubusiowy Raj"
     click_link "Zarejestruj się!"
     page.should have_selector 'title', text: full_title('Sign up')
     click_link "Żłobek Kubusiowy Raj"
