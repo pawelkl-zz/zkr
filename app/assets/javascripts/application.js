@@ -14,7 +14,7 @@
 //= require jquery_ujs
 //= require bootstrap
 //= require_tree .
-//= require jquery.fitvids.js
+// // = require jquery.fitvids.js
 
 // $(document).ready(function(){
 //   $(".pull-right").fitVids();
