@@ -1,44 +1,60 @@
 = provide(:title, 'Opłaty')
 %h1 Opłaty
 
-%h2 -- nagłówek --
-
-.row
-  .center
-    %table
-      %tr
-        %td Opłata wpisowa
-        %td 350zł
-
-    %table
-      -# %th
-      %th
-      %th{colspan: 1} Opłata miesięczna
-      %th.span2 Nadgodzina
-      %tr
-        %td pełny abonament
-        %td 950zł
-        %td <a href="#ad1">20zł<sup>1</sup></a>
-      %tr
-        %td 1/2 abonamentu
-        %td 650zł
-        %td <a href="#ad2">15zł<sup>2</sup></a>
-      %tr
-        %td 1/4 abonamentu
-        %td 450zł
-        %td <a href="#ad2">15zł<sup>2</sup></a>
-
-    %hr
-
-    %p#ad1
-      %sup 1
-      Opłata za każdą rozpoczętą godzinę opieki nad dzieckiem przed otwarciem oraz po zamknięciu – 20zł
-
-    %p#ad2
-      %sup 2
-      W przypadku abonamentu ½ i ¼ każda nadgodzina kosztuje 15zł.
+%h2 Abonament
 
 
+.toright.border
+  %p.small Opłaty należy dokonywać do 4-ego dnia każdego miesiąca na niżej podany adres i nr konta:
+
+  %adress
+    %p.small
+      %strong Kubusiowy Raj Konrad Zawiślak <br>
+      ul. Mazowiecka 24 <br>
+      05-502 Bobrowiec <br>
+      Nr konta: <br>
+      13 19500 00120 06027 90756 0002 <br>
+      Bank: IDEA BANK S.A.
+%table
+  %tr
+    %td Opłata wpisowa
+    %td 350zł
+
+%table
+  -# %th
+  %th
+  %th{colspan: 1} Opłata miesięczna
+  %th.span2 Nadgodzina
+  %tr
+    %td pełny abonament
+    %td 950zł
+    %td <a href="#ad1">20zł<sup>1</sup></a>
+  %tr
+    %td 1/2 abonamentu
+    %td 650zł
+    %td <a href="#ad2">15zł<sup>2</sup></a>
+  %tr
+    %td 1/4 abonamentu
+    %td 450zł
+    %td <a href="#ad2">15zł<sup>2</sup></a>
+
+%h3 Ubezpieczenie
+%p
+  Całoroczne – 0zł
+  %span.gray (w ramach wpisowego)
+  ! - Polisa ubezpieczeniowa PZU
+
+%hr
+
+%p#ad1
+  %sup 1
+  Opłata za każdą rozpoczętą godzinę opieki nad dzieckiem przed otwarciem oraz po zamknięciu – 20zł
+
+%p#ad2
+  %sup 2
+  W przypadku abonamentu ½ i ¼ każda nadgodzina kosztuje 15zł.
+
+%h2 Jednodniowa opieka
 .big
   %p Jednorazowa usługa oddania dziecka pod opiekę (bez wpisowego, możliwa jeżeli są wolne miejsca):
 
@@ -53,18 +69,3 @@
   %br
   Żłobek w weekend czynny w godzinach 8:00 - 18:00
 
-%h3 Ubezpieczenie
-%p.big
-  Całoroczne – 0zł <span class="gray">(w ramach wpisowego)</span>
-
-%h3 Polisa ubezpieczeniowa PZU
-%p.big Opłaty należy dokonywać do 4-ego dnia każdego miesiąca na niżej podany adres i nr konta:
-
-%adress
-  %p
-    %strong Kubusiowy Raj Konrad Zawiślak <br>
-    ul. Mazowiecka 24 <br>
-    05-502 Bobrowiec <br>
-    Nr konta: <br>
-    13 19500 00120 06027 90756 0002 <br>
-    Bank: IDEA BANK S.A.

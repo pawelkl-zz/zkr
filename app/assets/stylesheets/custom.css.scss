@@ -47,15 +47,19 @@ h1 {
   letter-spacing: -2px;
   margin-bottom: 30px;
   text-align: center;
+  & + h2 {
+    margin-top: 0px;
+  }
 }
 
 h2 {
-  font-size: 1.7em;
+  font-size: 2.0em; //  1.7em
   letter-spacing: -1px;
   margin-bottom: 30px;
   text-align: center;
   font-weight: normal;
   color: $grayLight;
+  margin-top: 1em;
 }
 
 h3 {
@@ -374,4 +378,32 @@ table {
 
 .toright {
   float:right;
+}
+
+.border {
+  width: 250px;
+  border-left: $quoteColorBorder solid 40px !important;
+  background: $quoteColorFill;
+  margin: 0.5em 0px 0.5em 10px;
+  padding: 0.5em 10px;
+  text-align: left;
+  border-radius: 10px;
+  adress p {
+     font-size: 13px !important;
+     line-height: 1.3em;
+  }
+  & > p {
+    font-size: 15px !important;
+    // text-align: left;
+    line-height: 1.3em;
+    margin-top: -15px;
+  }
+  &:before {
+    content: "!";
+    font-size:3em;
+    line-height:0.01em;
+    margin-right:0.28em;
+    vertical-align:-0.4em;
+    margin-left: -$quoteAlign*1.05 ;
+  }
 }
