@@ -21,4 +21,10 @@ class StaticPagesController < ApplicationController
 
   def gallery
   end
+
+  def parentsite
+  end
+
+  def dayplan
+  end
 end

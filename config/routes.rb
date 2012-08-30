@@ -20,7 +20,10 @@ SampleApp::Application.routes.draw do
   match '/contact', to: 'static_pages#contact'
 
   match '/oplaty', to: 'static_pages#pricelist'
+
   match '/galeria', to: 'static_pages#gallery'
+  match '/strefarodzica', to: 'static_pages#parentsite'
+  match '/plandnia', to: 'static_pages#dayplan'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

@@ -51,10 +51,17 @@ describe "Static pages" do
 
   describe "Parent Site" do
     before { visit strefarodzica_path }
-
+    let(:title) { "Strefa Rodzica" }
+    it { should have_selector('h1', text: title) }
+    it { should have_selector('title', text: full_title(title)) }
   end
 
   describe "Dayplan" do
+    before { visit plandnia_path }
+    let(:title) { "Plan Dnia" }
+    it { should have_selector('h1', text: title) }
+    it { should have_selector('title', text: full_title(title)) }
+
   end
 
   describe "Pricelist page" do
@@ -95,8 +102,8 @@ describe "Static pages" do
 
   it "should have the right links on the layout" do
     visit root_path
-    click_link "Sign in"
-    page.should have_selector 'title', text: full_title('Sign in')
+    click_link "Logowanie"
+    page.should have_selector 'title', text: full_title('Logowanie')
     click_link "O nas"
     page.should have_selector 'title', text: full_title('O nas')
     click_link "Help"
