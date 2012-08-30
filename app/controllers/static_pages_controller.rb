@@ -13,6 +13,18 @@ class StaticPagesController < ApplicationController
   def about
   end
 
+  def authorprogram
+  end
+
+  def pedagogika
+  end
+
+  def kadra
+  end
+
+  def adaptacja
+  end
+
   def contact
   end
 

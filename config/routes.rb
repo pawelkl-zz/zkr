@@ -1,5 +1,6 @@
 # -*- encoding : utf-8 -*-
 SampleApp::Application.routes.draw do
+
   resources :users do
     member do
       get :following, :followers
@@ -12,18 +13,23 @@ SampleApp::Application.routes.draw do
   root to: 'static_pages#home'
 
   match '/rejestracja',   to: 'users#new'
-  match '/signin',   to: 'sessions#new'
-  match '/signout',  to: 'sessions#destroy', via: :delete
+  match '/zaloguj',   to: 'sessions#new', as: "signin"
+  match '/wyloguj',  to: 'sessions#destroy', via: :delete, as: "signout"
 
-  match '/help',    to: 'static_pages#help'
-  match '/about',   to: 'static_pages#about'
-  match '/contact', to: 'static_pages#contact'
+  match '/pomoc',    to: 'static_pages#help', as: "help"
+  match '/kontakt', to: 'static_pages#contact', as: "contact"
 
   match '/oplaty', to: 'static_pages#pricelist'
 
   match '/galeria', to: 'static_pages#gallery'
   match '/strefarodzica', to: 'static_pages#parentsite'
   match '/plandnia', to: 'static_pages#dayplan'
+  match '/naszautorskiprogram', to: 'static_pages#authorprogram'
+
+  match '/o-nas',   to: 'static_pages#about', as: "about"
+  match '/o-nas/pedagogika', to: 'static_pages#pedagogika', as: "pedagogika"
+  match '/o-nas/kadra', to: 'static_pages#kadra', as: "kadra"
+  match '/o-nas/adaptacja', to: 'static_pages#adaptacja', as: "adaptacja"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

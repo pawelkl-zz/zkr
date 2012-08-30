@@ -339,9 +339,7 @@ table {
     }
   }
   &.normal {
-    tr {
-      margin: 50px;
-    }
+    margin: 0 50px;
     th {
       text-align: left;
     }
@@ -349,9 +347,11 @@ table {
       min-width: 80px;
     }
     td {
+      padding: 5px 0;
       text-align: left;
       font-size: $baseLineHeight * 1;
       font-style: italic;
+      vertical-align: top;
     }
     p {
       font-style:normal;
@@ -359,6 +359,7 @@ table {
       text-align: left;
       margin-left: 1.5em;
       color: gray;
+      line-height: $baseLineHeight * 1.2;
       &:before {
         content: "- ";
       }
