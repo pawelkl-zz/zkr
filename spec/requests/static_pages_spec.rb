@@ -134,6 +134,12 @@ describe "Static pages" do
     page.should have_selector 'title', text: full_title('O nas')
       click_link "Nasz Autorski Program Edukacyjny"
       page.should have_selector 'title', text: full_title('Nasz Autorski Program Edukacyjny')
+      click_link "Pedagogika M. Montessorii"
+      page.should have_selector 'title', text: full_title('Pedagogika M. Montessori')
+      click_link "Kadra"
+      page.should have_selector 'title', text: full_title('Kadra')
+      click_link "Adaptacja"
+      page.should have_selector 'title', text: full_title('Adaptacja')
 
     click_link "Pomoc"
     page.should have_selector 'title', text: full_title('Pomoc')

@@ -73,13 +73,13 @@ p {
   line-height: 1.7em;
   text-align: justify;
   text-justify: newspaper;
-}
-:first-line {
+
+  :first-line {
     // text-transform: uppercase;
     padding-left: 3.5em !important;
     margin-left: 40px !important;
   }
-
+}
 
 /* header */
 
@@ -598,23 +598,31 @@ ul.list {
   height: 404px;
   // margin: 60px auto;
   position: relative;
+
+  &:before {
+    border: 1px solid white;
+    content: '';
+    width: 402px;
+    height: 402px;
+    position: absolute;
+  }
+
+  &:after {
+    content: '';
+    position: absolute;
+    width: 400px;
+    height: 400px;
+    border: 1px solid #bbbbbb;
+    left: 1px; top: 1px;
+  }
 }
 
-#box:before {
-  border: 1px solid white;
-  content: '';
-  width: 402px;
-  height: 402px;
-  position: absolute;
-}
-
-#box:after {
-  content: '';
-  position: absolute;
+#boxsimple {
+  float:right;
+  background: #f4f4f4;
+  border: 1px solid #bbbbbb;
   width: 400px;
   height: 400px;
-  border: 1px solid #bbbbbb;
-  left: 1px; top: 1px;
 }
 
 // address strong {
