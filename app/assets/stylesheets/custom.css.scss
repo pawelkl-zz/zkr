@@ -1,5 +1,5 @@
-@import "bootstrap";
-// @import "compass_twitter_bootstrap";
+// @import "bootstrap";
+@import "compass_twitter_bootstrap";
 // @import "compass_twitter_bootstrap_awesome"
 // @import "compass_twitter_bootstrap_responsive"
 
@@ -498,10 +498,11 @@ nav > ul > li {
   margin: 1px 0 0 5px;
   padding: 6px 8px;
 
+
 // background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(50,50,50,0.8)), to(rgba(80,80,80,0.2)), color-stop(.5,#333333));
 
-background-image: -moz-linear-gradient(bottom, rgba(2,3,3,.1) 4%, rgba(55,214,214,.1) 81%, rgba(83,255,255,.1) 99%, rgba(108,204,204,.1) 100%);
-background-image: -webkit-linear-gradient(bottom, rgba(2,3,3,.1) 4%, rgba(55,214,214,.1) 81%, rgba(83,255,255,.1) 99%, rgba(108,204,204,.1) 100%);
+// background-image: -moz-linear-gradient(bottom, rgba(2,3,3,.1) 4%, rgba(55,214,214,.1) 81%, rgba(83,255,255,.1) 99%, rgba(108,204,204,.1) 100%);
+// background-image: -webkit-linear-gradient(bottom, rgba(2,3,3,.1) 4%, rgba(55,214,214,.1) 81%, rgba(83,255,255,.1) 99%, rgba(108,204,204,.1) 100%);
 
 // linear-gradient(linear, left top, left bottom, from(rgba(50,50,50,0.8)), to(rgba(80,80,80,0.2)), color-stop(.5,#333333));
 

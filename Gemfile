@@ -2,8 +2,9 @@ source 'https://rubygems.org'
 
 gem 'rails', '3.2.3'
 gem 'jquery-rails', '~> 2.0.2' #, '2.0.0'
-gem 'bootstrap-sass', '~> 2.0.4.1' # 2.0.0
-# gem 'compass_twitter_bootstrap', '2.0.3'
+# gem 'bootstrap-sass', '~> 2.0.4.1' # 2.0.0
+gem 'compass_twitter_bootstrap', '2.0.3'
+gem 'compass-rails', "~> 1.0.3"
 # gem 'twitter-bootstrap-rails'
 gem 'bcrypt-ruby', '3.0.1'
 gem 'faker', '1.0.1'
@@ -42,6 +43,7 @@ group :test do
   gem 'guard-spork', '0.3.2'
   gem 'guard-rails', '~> 0.1.0'
   # gem 'guard-bundler', '~> 1.0.0'
+  gem 'guard-livereload'
   gem 'spork', '0.9.0'
   gem 'launchy', '2.1.0'
 end
