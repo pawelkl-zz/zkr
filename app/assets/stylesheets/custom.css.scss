@@ -407,8 +407,12 @@ table {
   text-align: center;
 }
 
+.container  {
+  background-color: #559dcc !important;
+}
+
 .navbar-inner {
-  background: url("top.jpg");
+  // background: url("top.jpg");
   height: 80px;
 }
 
@@ -498,6 +502,17 @@ table {
 //   width: 100%;
 // }
 
+
+.sub {
+  .navbar-inner {
+    height: 40px;
+  }
+
+  * {
+    font-size: 1em;
+  }
+}
+
 nav > ul > li {
   font-size: 1.5em;
   border-radius: 5px;
@@ -507,8 +522,8 @@ nav > ul > li {
 
 // background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(50,50,50,0.8)), to(rgba(80,80,80,0.2)), color-stop(.5,#333333));
 
-// background-image: -moz-linear-gradient(bottom, rgba(2,3,3,.1) 4%, rgba(55,214,214,.1) 81%, rgba(83,255,255,.1) 99%, rgba(108,204,204,.1) 100%);
-// background-image: -webkit-linear-gradient(bottom, rgba(2,3,3,.1) 4%, rgba(55,214,214,.1) 81%, rgba(83,255,255,.1) 99%, rgba(108,204,204,.1) 100%);
+background-image: -moz-linear-gradient(bottom, rgba(2,3,3,.1) 4%, rgba(55,214,214,.1) 81%, rgba(83,255,255,.1) 99%, rgba(108,204,204,.1) 100%);
+background-image: -webkit-linear-gradient(bottom, rgba(2,3,3,.1) 4%, rgba(55,214,214,.1) 81%, rgba(83,255,255,.1) 99%, rgba(108,204,204,.1) 100%);
 
 // linear-gradient(linear, left top, left bottom, from(rgba(50,50,50,0.8)), to(rgba(80,80,80,0.2)), color-stop(.5,#333333));
 
