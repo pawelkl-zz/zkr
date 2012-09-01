@@ -12,5 +12,5 @@
  *= require_tree .
  * require formtastic-bootstrap
  * require bootstrap-buttons
- *= bootstrap_and_overrides
+ * bootstrap_and_overrides
 */
