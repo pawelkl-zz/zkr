@@ -1,6 +1,6 @@
 // @import "bootstrap";
-@import "compass_twitter_bootstrap";
-// @import "compass_twitter_bootstrap_awesome"
+// @import "compass_twitter_bootstrap";
+@import "compass_twitter_bootstrap_awesome";
 // @import "compass_twitter_bootstrap_responsive"
 
 
@@ -622,62 +622,24 @@ address {
   }
 }
 
-.tab {
-    width: 300px;
-    display: inline;
+.halfopacity {
+  opacity: .5;
+  &:hover {
+    opacity: 1;
   }
+}
 
-// a {
-//  display: block;
-// }
-
-// a[title]:hover:after{
-//  display: block;
-//  content: attr(title);
-//  font-size:10px;
-//  text-decoration: underline;
-// }
-
-
-// li > a[title]:after {
+// a[title]:hover:after {
 //   content: attr(title);
 //   position: absolute;
 //   top: 100%;
-//   // left: -10%;
+//   left: 0px;
 // }
 
-a[title]:hover:after {
-  // animation-duration: 1s;
-  // animation-name: slidein;
-  // -webkit-animation-duration: 3s;
-  // -webkit-animation-name: slidein;
-  content: attr(title);
-  padding: 4px 8px;
-  color: #333;
-  position: absolute;
-  left: 0px;
-  top: 100%;
-  white-space: nowrap;
-  z-index: 20px;
-  -moz-border-radius: 5px;
-  -webkit-border-radius: 5px;
-  border-radius: 5px;
-  -moz-box-shadow: 0px 0px 4px #222;
-  -webkit-box-shadow: 0px 0px 4px #222;
-  box-shadow: 0px 0px 4px #222;
-  background-image: -moz-linear-gradient(top, #eeeeee, #cccccc);
-  background-image: -webkit-gradient(linear,left top,left bottom,color-stop(0, #eeeeee),color-stop(1, #cccccc));
-  background-image: -webkit-linear-gradient(top, #eeeeee, #cccccc);
-  background-image: -moz-linear-gradient(top, #eeeeee, #cccccc);
-  background-image: -ms-linear-gradient(top, #eeeeee, #cccccc);
-  background-image: -o-linear-gradient(top, #eeeeee, #cccccc);
+p {
+   text-indent: 30px;
+   margin-bottom: 20px;
 }
-
-// a[href]:hover:after {
-//   content: attr(href);
-//   margin-bottom: .5em;
-//   font-size: .5em;
-//   position: absolute;
-//   top: -.5em;
-
-// }
+table p, address p {
+  text-indent: 0;
+}
