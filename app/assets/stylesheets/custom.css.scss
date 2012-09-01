@@ -1,6 +1,17 @@
+// $blueprint-grid-columns : 24;
+// $blueprint-grid-width   : 30px;
+// $blueprint-grid-margin  : 10px;
+// $font-color             : #333;
+
+// @import "compass/reset";
+// @import "compass/utilities";
+// @import "blueprint";
+
 // @import "bootstrap";
 // @import "compass_twitter_bootstrap";
 @import "compass_twitter_bootstrap_awesome";
+@import "compass/css3";
+// @import "compass/css3/gradient";
 // @import "compass_twitter_bootstrap_responsive"
 
 
@@ -289,7 +300,7 @@ blockquote {
   text-align: left;
   border-radius: 10px;
   p {
-    font-family: 'Times New Roman', serif;
+    // font-family: 'Times New Roman', serif;
     font-size: 15px !important;
     text-align: left;
     &:first-child:before {
@@ -449,37 +460,37 @@ table {
 
 // animation
 
-.hero-unit {
-  animation-duration: 2.5s;
-  animation-name: slidein;
-  animation-timing-function: ease-out;
-  -moz-animation-duration: 2.5s;
-  -moz-animation-name: slidein;
-  -moz-animation-timing-function: ease-out;
-  -webkit-animation-duration: 2.5s;
-  -webkit-animation-name: slidein;
-  -webkit-animation-timing-function: ease-out;
-}
+// .hero-unit {
+//   animation-duration: 2.5s;
+//   animation-name: slidein;
+//   animation-timing-function: ease-out;
+//   -moz-animation-duration: 2.5s;
+//   -moz-animation-name: slidein;
+//   -moz-animation-timing-function: ease-out;
+//   -webkit-animation-duration: 2.5s;
+//   -webkit-animation-name: slidein;
+//   -webkit-animation-timing-function: ease-out;
+// }
 
-@-webkit-keyframes slidein {
-  from {
-    margin-top: 110%;
-  }
+// @-webkit-keyframes slidein {
+//   from {
+//     margin-top: 110%;
+//   }
 
-  to {
-    margin-top: 0%;
-  }
-}
+//   to {
+//     margin-top: 0%;
+//   }
+// }
 
-@keyframes slidein {
-  from {
-    margin-top: 110%;
-  }
+// @keyframes slidein {
+//   from {
+//     margin-top: 110%;
+//   }
 
-  to {
-    margin-top: 0%;
-  }
-}
+//   to {
+//     margin-top: 0%;
+//   }
+// }
 
 // menu animation
 // ul.nav {
@@ -487,17 +498,12 @@ table {
 //   width: 100%;
 // }
 
-@mixin menu_gradient {
-}
-
-
 nav > ul > li {
   font-size: 1.5em;
   border-radius: 5px;
   // border: 4px rgba(255,255,0,0.5) solid;
   margin: 1px 0 0 5px;
   padding: 6px 8px;
-
 
 // background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(50,50,50,0.8)), to(rgba(80,80,80,0.2)), color-stop(.5,#333333));
 
@@ -640,6 +646,6 @@ p {
    text-indent: 30px;
    margin-bottom: 20px;
 }
-table p, address p {
+table p, address p, blockquote p, .row p {
   text-indent: 0;
 }
