@@ -13,6 +13,7 @@ gem 'bootstrap-will_paginate', '0.0.5'
 gem 'haml', '~> 3.1.7'
 gem 'meta-tags', '~> 1.2.6'
 # gem 'formtastic-bootstrap', '1.1.1' #, '~> 1.2.0'
+gem "heroku", "~> 2.31.1"
 
 group :development, :test do
   gem 'sqlite3', '1.3.5'
