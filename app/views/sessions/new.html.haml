@@ -1,0 +1,21 @@
+- provide(:title, 'Logowanie')
+.hero-unit
+
+  %h1 Logowanie
+
+  .row
+    .span7.offset2
+      = form_for(:session, url: sessions_path) do |f|
+
+        = f.label :email
+        = f.text_field :email
+
+        = f.label :password
+        = f.password_field :password
+
+        = f.submit "Zaloguj", class: "btn btn-large btn-primary"
+
+      %p
+        Nie masz konta?
+        = link_to "Zgłoś nam!", contact_path
+        -# = link_to "Sign up now!", rejestracja_path
