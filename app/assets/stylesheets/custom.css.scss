@@ -10,7 +10,7 @@
 // @import "bootstrap";
 // @import "compass_twitter_bootstrap";
 @import "compass_twitter_bootstrap_awesome";
-@import "compass/css3";
+@import "compass";
 // @import "compass/css3/gradient";
 // @import "compass_twitter_bootstrap_responsive"
 
@@ -36,11 +36,30 @@ $grayMediumLight: #eaeaea;
 
 html {
   overflow-y: scroll;
+  min-height: 100%;
 }
 
 body {
-  padding-top: 40px !important;
-  background: url("bg.png");
+  padding-top: 100px !important; // 40
+  // background: url("bg.png");
+
+  @include background-image(linear-gradient(top, #7a94ff 20%, #CED099 99%));
+
+  // .hero-unit >  :first-child {
+  //   padding-top: 0px; // 50px
+  // }
+}
+
+/* main menu */
+.navbar-fixed-top  {
+  // background-color: rgba(122, 148, 255,.9) !important;
+  @include background-image(linear-gradient(top, rgba(122, 148, 255,.9) 20%, rgba(122, 148, 255,.8) 50%, rgba(122, 148, 255,0)));
+}
+
+// podmenu
+.navbar-inner {
+  // background: url("top.jpg");
+  height: 50px;
 }
 
 section {
@@ -55,6 +74,7 @@ textarea {
   text-align: center;
   h1 {
     margin-bottom: 10px;
+    margin-top: 0;
   }
 }
 
@@ -407,15 +427,6 @@ table {
   text-align: center;
 }
 
-.container  {
-  background-color: #559dcc !important;
-}
-
-.navbar-inner {
-  // background: url("top.jpg");
-  height: 80px;
-}
-
 .center {
   margin: 0 0 30px 0;
   text-align: center;
@@ -464,37 +475,44 @@ table {
 
 // animation
 
-// .hero-unit {
-//   animation-duration: 2.5s;
-//   animation-name: slidein;
-//   animation-timing-function: ease-out;
-//   -moz-animation-duration: 2.5s;
-//   -moz-animation-name: slidein;
-//   -moz-animation-timing-function: ease-out;
-//   -webkit-animation-duration: 2.5s;
-//   -webkit-animation-name: slidein;
-//   -webkit-animation-timing-function: ease-out;
-// }
+$default-transition-property : all;
+$default-transition-duration : 1s;
+$default-transition-function : false;
+$default-transition-delay    : false;
 
-// @-webkit-keyframes slidein {
-//   from {
-//     margin-top: 110%;
-//   }
+.hero-unit {
+  @include transition-duration(2.5s);
+  @include transition-timing-function(ease-out);
+  // animation-duration: 2.5s;
+  animation-name: slidein;
+  // animation-timing-function: ease-out;
+  // -moz-animation-duration: 2.5s;
+  -moz-animation-name: slidein;
+  // -moz-animation-timing-function: ease-out;
+  // -webkit-animation-duration: 2.5s;
+  -webkit-animation-name: slidein;
+  // -webkit-animation-timing-function: ease-out;
+}
 
-//   to {
-//     margin-top: 0%;
-//   }
-// }
+@-webkit-keyframes slidein {
+  from {
+    margin-top: 110%;
+  }
 
-// @keyframes slidein {
-//   from {
-//     margin-top: 110%;
-//   }
+  to {
+    margin-top: 0%;
+  }
+}
 
-//   to {
-//     margin-top: 0%;
-//   }
-// }
+@keyframes slidein {
+  from {
+    margin-top: 110%;
+  }
+
+  to {
+    margin-top: 0%;
+  }
+}
 
 // menu animation
 // ul.nav {
@@ -502,93 +520,33 @@ table {
 //   width: 100%;
 // }
 
+// .navbar-inner {
+//   height: 50px;
+// }
 
 .sub {
-  .navbar-inner {
-    height: 40px;
-  }
-
   * {
     font-size: 1em;
   }
 }
 
-nav > ul > li {
-  font-size: 1.5em;
-  border-radius: 5px;
-  // border: 4px rgba(255,255,0,0.5) solid;
-  margin: 1px 0 0 5px;
-  padding: 6px 8px;
+.nav {
+  margin: 10px 20px 0px 20px !important;
+  li {
 
-// background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(50,50,50,0.8)), to(rgba(80,80,80,0.2)), color-stop(.5,#333333));
+    font-size: 1.4em;
+    border-radius: 5px;
+    margin: 0 3px 6px 3px;
+    padding: 6px 8px;
 
-background-image: -moz-linear-gradient(bottom, rgba(2,3,3,.1) 4%, rgba(55,214,214,.1) 81%, rgba(83,255,255,.1) 99%, rgba(108,204,204,.1) 100%);
-background-image: -webkit-linear-gradient(bottom, rgba(2,3,3,.1) 4%, rgba(55,214,214,.1) 81%, rgba(83,255,255,.1) 99%, rgba(108,204,204,.1) 100%);
-
-// linear-gradient(linear, left top, left bottom, from(rgba(50,50,50,0.8)), to(rgba(80,80,80,0.2)), color-stop(.5,#333333));
-
-  // background: rgba(40, 150, 255, 0.3);
-  // background-image: linear-gradient(bottom, rgba(2,3,3,.1) 4%, rgba(55,214,214,.1) 81%, rgba(83,255,255,.1) 99%, rgba(108,204,204,.1) 100%);
-  // background-image: -o-linear-gradient(bottom, rgb(2,3,3) 4%, rgb(55,214,214) 81%, rgb(83,255,255) 99%, rgb(108,204,204) 100%);
-  // background-image: -moz-linear-gradient(bottom, rgba(2,3,3,.5) 4%, rgba(55,214,214,.5) 81%, rgba(83,255,255,.5) 99%, rgba(108,204,204,.5) 100%);
-  // background-image: -webkit-linear-gradient(bottom, rgb(2,3,3) 4%, rgb(55,214,214) 81%, rgb(83,255,255) 99%, rgb(108,204,204) 100%);
-  // background-image: -ms-linear-gradient(bottom, rgb(2,3,3) 4%, rgb(55,214,214) 81%, rgb(83,255,255) 99%, rgb(108,204,204) 100%);
-
-  // background-image: -webkit-gradient(
-  //   linear,
-  //   left bottom,
-  //   left top,
-  //   color-stop(0.04, rgb(2,3,3)),
-  //   color-stop(0.81, rgb(55,214,214)),
-  //   color-stop(0.99, rgb(83,255,255)),
-  //   color-stop(1, rgb(108,204,204))
-  // );
-  //
-  // & > a:first-child {
-  //   text-shadow: 0px 0px 1px rgba(50,50,50,.4) !important;
-  //   font-weight: 800;
-  //   color: #aaa !important;
-  // }
-  // & > a:first-child:hover {
-  //   color: white !important;
-  //   text-shadow: 0px 0px 3px rgba(0,0,0,1) !important;
-
-  // }
-
+    * {
+      text-shadow: 0px 0px 2px rgba(0,0,0,.5) !important;
+      font-weight: 800;
+    //   color: #666 !important;
+    }
+  }
 }
 
-// ul.nav li
-// {
-//   -webkit-transition: opacity 1s ease-in-out;
-//   -moz-transition: opacity 1s ease-in-out;
-//   -o-transition: opacity 1s ease-in-out;
-//   transition: opacity 1s ease-in-out;
-// }
-
-
-// ul.nav li
-// {
-//     -webkit-animation-name: pulse;
-//     -webkit-animation-duration: 1s;
-//     animation-name: pulse;
-//     animation-duration: 1s;
-//     // -webkit-animation-iteration-count: infinite;
-//     // -webkit-animation-timing-function: ease-in-out;
-
-// @-webkit-keyframes pulse {
-//    0%   { -webkit-transform:rotate(0deg);}
-//    25%  { -webkit-transform:rotate(90deg);}
-//    50%  { -webkit-transform:rotate(180deg);}
-//    75%  { -webkit-transform:rotate(270deg);}
-//    100%  { -webkit-transform:rotate(360deg);}
-//   }
-// @keyframes pulse {
-//    0%   { transform:rotate(0deg);}
-//    25%  { transform:rotate(90deg);}
-//    50%  { transform:rotate(180deg);}
-//    75%  { transform:rotate(270deg);}
-//    100%  { transform:rotate(360deg);}
-//   }
 
 ul.list {
   before: "\2013";
@@ -663,4 +621,65 @@ p {
 }
 table p, address p, blockquote p, .row p {
   text-indent: 0;
+}
+
+
+/* vertical menu */
+
+ul.vertical li {
+    list-style: none;
+    position: relative;
+
+    @include background-image(radial-gradient(
+        center 80px,
+        rgba(31,169,244, 0.8) 0%,
+        rgba(0,28,78, .4) 100%
+        )
+    );
+
+    -webkit-transition-property: background;
+    -webkit-transition-duration: 700ms;
+    -moz-transition-property: background;
+    -moz-transition-duration: 700ms;
+
+    // background: -webkit-gradient(radial, 50% 100%, 0, 50% 100%, 140, from(rgba(31,169,244,1)), to(rgba(0,28,78, 1)) );
+    // background: -moz-radial-gradient(center 80px 45deg, circle cover, rgba(31,169,244,1) 0%, rgba(0,28,78, 1) 100%);
+}
+
+ul.vertical li span {
+    position: absolute;
+    left: 20px;
+    top: 50px;
+    color: #151515;
+    text-shadow: 0 1px 1px rgba(255,255,255,0.6);
+}
+
+ul.vertical li a{
+    // background: #606060;
+    // background: rgba(31,169,244, 0.9);
+    // @include background-image(linear-gradient(
+    //     top,
+    //     rgb(147, 158, 194),
+    //     rgb(147, 158, 194)
+        // ));
+    color: #151515;
+    -webkit-transition-property: background-opacity;
+    -webkit-transition-duration: 700ms;
+    -moz-transition-property: background-opacity;
+    -moz-transition-duration: 700ms;
+}
+
+ul.vertical li:hover {
+    // background: black;
+    @include background(radial-gradient
+      (
+        center 80px,
+        rgba(31,169,244, 0.8) 0%,
+        rgba(0,28,78, .9) 100%
+      )
+    );
+    -webkit-transition-property: background;
+    -webkit-transition-duration: 700ms;
+    -moz-transition-property: background;
+    -moz-transition-duration: 700ms;
 }
