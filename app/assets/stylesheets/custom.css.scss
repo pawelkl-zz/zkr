@@ -595,161 +595,136 @@ table p, address p, blockquote p, .row p, .small {
   //     )
   // );
   @include background(linear-gradient(
-      fade-out(desaturate($color1,30%),.3) 0%,
-      fade-out(desaturate($color2,30%),.3) 100%
-      )
+    left bottom,
+    fade-out(desaturate($color1,30%),.3) 0%,
+    // fade-out(desaturate($color2,30%),.3) 100%
+    darken(fade-out(desaturate($color1,30%),.3),40%) 100%
+    )
   );
+  &:hover {
+    @include add_gradient_sat($color1);
+  }
 }
 
 @mixin add_gradient_sat($color1: rgba(31,169,244, 0.8), $color2: rgba(0,28,78, .4)) {
   @include background(linear-gradient(
-      $color1 0%,
-      $color2 100%
-      )
+    left bottom,
+    $color1 0%,
+    darken($color1, 40%)
+    )
   );
   // @include transition(500ms background-image);
 }
 
 nav {
-  margin: 0 auto;
-  .sub {
-      $colorbg: #000;
-      @include add_gradient(
-        fade-out($colorbg,.4),
-        fade-out($colorbg,.7)
-      );
-      li:not(:first-child) {
-        margin-left: 5px;
+  // margin: 0 auto;
+  .main {
+    margin: 10px 0px !important;
+    li {
+      border: 1px black !important;
+      // margin: 0 2px ;
+      &:not(:first-child) {
+        margin-left: 1px;
       }
-
       a {
+        box-shadow:
+          1px 1px 3px 0px rgba(0,0,0,.5),
+          0 0 0 1px rgba(0,0,0,.5);
         color: #ddd !important;
-        font-size: 1.5em;
+        font-size: 1.88em;
         border-radius: 6px;
-        border: black 10px  !important;
         // padding: 20px 21px 10px !important;
-        padding: 14px 15px !important;
+        padding: 0 21px !important;
+        padding-top: 20px !important;
+        padding-bottom: 10px !important;
         text-shadow:
           0px 0px 2px rgba(0,0,0,.7),
           0px 0px 1px rgba(0,0,0,.5) !important;
         font-weight: 800;
+        @include transition(
+          2s padding ease-in,
+          500ms margin ease-out,
+          200ms background,
+          100ms box-shadow ease-in,
+          200ms color
+          );
         // @include add_gradient();
 
         &:hover {
+          box-shadow:
+            1px 1px 3px 1px rgba(0,0,0,1);
           color: #fff !important;
-          background-opacity: .5;
+          // background-opacity: .5;
+          margin-top: -40px;
+          @include transition(
+            120ms padding ease-in,
+            120ms margin ease-in,
+            200ms background-color,
+            100ms box-shadow ease-in,
+            200ms color ease-in
+            );
+          padding-top: 80px !important;
+        }
+        &#menu-about {
+          $color1:rgb(31,169,244);
+          @include add_gradient($color1);
+        }
+        &#menu-parent {
+          $color1:rgb(237, 104, 237);
+          @include add_gradient($color1);
+        }
+        &#menu-plan {
+          $color1:rgb(255, 0, 0);
+          @include add_gradient($color1);
+        }
+        &#menu-price {
+          $color1:rgb(237, 164, 104);
+          @include add_gradient($color1);
+        }
+        &#menu-photos {
+          $color1:rgb(237, 244, 104);
+          @include add_gradient($color1);
+        }
+        &#menu-contact {
+          $color1:rgb(104, 237, 104);
+          @include add_gradient($color1);
         }
       }
-  }
-}
-nav  .main {
-  margin: 10px 0px !important;
-  li {
-    border: 1px black !important;
-    // margin: 0 2px ;
-    &:not(:first-child) {
-      margin-left: 1px;
+
     }
+  }
+  .sub {
+    // margin: -20px -30px;
+    margin: -10px 0 30px;
+    $colorbg: #7A94FF;
+    @include add_gradient_sat(
+      fade-out($colorbg,.5),
+      fade-out($colorbg,1)
+    );
+    // li:not(:first-child) {
+    //   margin-left: 5px;
+    // }
+
     a {
-      box-shadow:
-        1px 1px 3px 0px rgba(0,0,0,.5),
-        0 0 0 1px rgba(0,0,0,.5);
       color: #ddd !important;
-      font-size: 1.88em;
+      font-size: 1.4em;
       border-radius: 6px;
+      border: black 10px  !important;
       // padding: 20px 21px 10px !important;
-      padding: 0 21px !important;
-      padding-top: 20px !important;
-      padding-bottom: 10px !important;
+      padding: 14px 15px !important;
       text-shadow:
         0px 0px 2px rgba(0,0,0,.7),
         0px 0px 1px rgba(0,0,0,.5) !important;
       font-weight: 800;
-      @include transition(
-        2s padding ease-in,
-        500ms margin ease-out,
-        200ms background,
-        100ms box-shadow ease-in,
-        200ms color
-        );
       // @include add_gradient();
 
       &:hover {
-        box-shadow:
-          1px 1px 3px 1px rgba(0,0,0,1);
         color: #fff !important;
-        // background-opacity: .5;
-        margin-top: -40px;
-        @include transition(
-          30ms padding ease-in,
-          30ms margin ease-in,
-          200ms background-color,
-          100ms box-shadow ease-in,
-          200ms color ease-in
-          );
-        padding-top: 80px !important;
-      }
-      &#menu-about {
-        $color1:rgb(31,169,244);
-        $color2:rgb(0,28,78);
-        @include add_gradient(
-          $color1,$color2);
-        &:hover {
-          @include add_gradient_sat(
-            $color1, $color2);
-        }
-      }
-      &#menu-parent {
-        $color1:rgb(237, 104, 237);
-        $color2:rgb(78,0,28);
-        @include add_gradient(
-          $color1,$color2);
-        &:hover {
-          @include add_gradient_sat(
-            $color1, $color2);
-        }
-      }
-      &#menu-plan {
-        $color1:rgb(255, 0, 0);
-        $color2:rgb(78,24,24);
-        @include add_gradient(
-          $color1,$color2);
-        &:hover {
-          @include add_gradient_sat(
-            $color1, $color2);
-        }
-      }
-      &#menu-price {
-        $color1:rgb(237, 164, 104);
-        $color2:rgb(78,50,4);
-        @include add_gradient(
-          $color1,$color2);
-        &:hover {
-          @include add_gradient_sat(
-            $color1, $color2);
-        }
-      }
-      &#menu-photos {
-        $color1:rgb(237, 244, 104);
-        $color2:rgb(78,48,0);
-        @include add_gradient(
-          $color1,$color2);
-        &:hover {
-          @include add_gradient_sat(
-            $color1, $color2);
-        }
-      }
-      &#menu-contact {
-        $color1:rgb(104, 237, 104);
-        $color2:rgb(0,78,0);
-        @include add_gradient(
-          $color1,$color2);
-        &:hover {
-          @include add_gradient_sat(
-            $color1, $color2);
-        }
+        background-opacity: .5;
       }
     }
-
   }
+}
+.up {
+  margin: -14px 0 50px 0;
 }
