@@ -7,6 +7,7 @@
     = csrf_meta_tags
     = render 'layouts/shim'
   %body
+    = render 'layouts/facebook_like'
     = render 'layouts/header'
     .container
       - flash.each do |key, value|

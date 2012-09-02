@@ -4,7 +4,7 @@ gem 'rails', '3.2.3'
 gem 'jquery-rails', '~> 2.0.2' #, '2.0.0'
 # gem 'bootstrap-sass', '~> 2.0.4.1' # 2.0.0
 gem 'compass_twitter_bootstrap', '2.0.3'
-gem 'compass-rails', "~> 1.0.3"
+gem 'compass-rails', '~> 1.0.3'
 # gem 'twitter-bootstrap-rails'
 gem 'bcrypt-ruby', '3.0.1'
 gem 'faker', '1.0.1'
@@ -14,8 +14,8 @@ gem 'bootstrap-will_paginate', '0.0.5'
 gem 'haml', '~> 3.1.7'
 gem 'meta-tags', '~> 1.2.6'
 # gem 'formtastic-bootstrap', '1.1.1' #, '~> 1.2.0'
-gem "heroku", "~> 2.31.1"
-gem "animation"
+gem 'heroku', '~> 2.31.1'
+gem 'animation', '~> 0.1.alpha.3'
 
 group :development, :test do
   gem 'sqlite3', '1.3.5'

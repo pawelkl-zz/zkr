@@ -215,7 +215,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  animation
+  animation (~> 0.1.alpha.3)
   bcrypt-ruby (= 3.0.1)
   bootstrap-will_paginate (= 0.0.5)
   capybara (= 1.1.2)

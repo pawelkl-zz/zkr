@@ -40,7 +40,7 @@ html {
 }
 
 body {
-  padding-top: 100px !important; // 40
+  padding-top: 110px !important; // 40
   // background: url("bg.png");
 
   @include background-image(linear-gradient(top, #7a94ff 20%, #CED099 99%));
@@ -475,23 +475,18 @@ table {
 
 // animation
 
-$default-transition-property : all;
-$default-transition-duration : 1s;
-$default-transition-function : false;
-$default-transition-delay    : false;
+// $default-transition-property : all;
+// $default-transition-duration : 1s;
+// $default-transition-function : false;
+// $default-transition-delay    : false;
 
 .hero-unit {
   @include transition-duration(2.5s);
   @include transition-timing-function(ease-out);
-  // animation-duration: 2.5s;
-  animation-name: slidein;
-  // animation-timing-function: ease-out;
-  // -moz-animation-duration: 2.5s;
-  -moz-animation-name: slidein;
-  // -moz-animation-timing-function: ease-out;
-  // -webkit-animation-duration: 2.5s;
-  -webkit-animation-name: slidein;
-  // -webkit-animation-timing-function: ease-out;
+  // @include animation-name(slidein);
+  // animation-name: slidein;
+  // -moz-animation-name: slidein;
+  // -webkit-animation-name: slidein;
 }
 
 @-webkit-keyframes slidein {
@@ -529,24 +524,6 @@ $default-transition-delay    : false;
     font-size: 1em;
   }
 }
-
-.nav {
-  margin: 10px 0px !important;
-  li {
-
-    font-size: 1.4em;
-    border-radius: 5px;
-    margin: 0 2px ;
-    padding: 12px 25px;
-
-    * {
-      text-shadow: 0px 0px 2px rgba(0,0,0,.5) !important;
-      font-weight: 800;
-    //   color: #666 !important;
-    }
-  }
-}
-
 
 ul.list {
   before: "\2013";
@@ -626,60 +603,126 @@ table p, address p, blockquote p, .row p {
 
 /* vertical menu */
 
-ul.vertical li {
-    list-style: none;
-    position: relative;
+@mixin add_gradient($color1: rgba(31,169,244, 0.8), $color2: rgba(0,28,78, .4)) {
+  @include background(radial-gradient(
+      center 80px,
+      $color1 0%,
+      $color2 100%
+      )
+  );
+}
 
-    @include background-image(radial-gradient(
-        center 80px,
-        rgba(31,169,244, 0.8) 0%,
-        rgba(0,28,78, .4) 100%
-        )
-    );
+nav .vertical {
+  margin: 10px 0px !important;
+  li {
+    @include transition-duration(3700ms);
+    @include transition-property(background);
 
-    -webkit-transition-property: background;
-    -webkit-transition-duration: 700ms;
-    -moz-transition-property: background;
-    -moz-transition-duration: 700ms;
+    // margin: 0 2px ;
+    &:not(:first-child) {
+      margin-left: 3px;
+    }
+    a {
+      color: #888 !important;
+      font-size: 1.88em;
+      border-radius: 6px;
+      // padding: 20px 21px 10px !important;
+      padding: 0 21px !important;
+      padding-top: 20px !important;
+      padding-bottom: 10px !important;
+      text-shadow:
+        0px 0px 2px rgba(0,0,0,.7),
+        0px 0px 1px rgba(0,0,0,.5) !important;
+      font-weight: 800;
+      @include transition-duration(700ms);
+      @include transition-property(color);
+      @include transition-property(padding);
+      @include add_gradient();
+      &:hover {
+        color: #fff !important;
+        padding-top: 80px !important;
+        background-opacity: .5;
+        @include transition-duration(700ms);
+        @include transition-property(padding);
+      }
+      // &#menu-about {
+      //   @include add_gradient(
+      //     rgb(237, 104, 237),
+      //     rgb(0,28,78)
+      //   );
+      // }
+      &#menu-parent {
+        @include add_gradient(
+          rgb(237, 104, 237),
+          rgb(0,28,78)
+        );
+      }
+      &#menu-plan {
+        @include add_gradient(
+          rgb(237, 104, 237),
+          rgb(0,28,78)
+        );
+      }
+      &#menu-price {
+        @include add_gradient(
+          rgb(237, 104, 237),
+          rgb(0,28,78)
+        );
+      }
+      &#menu-photos {
+        @include add_gradient(
+          rgb(237, 104, 237),
+          rgb(0,28,78)
+        );
+      }
+      &#menu-contact {
+        @include add_gradient(
+          rgb(237, 104, 237),
+          rgb(0,28,78)
+        );
+      }
+    }
 
     // background: -webkit-gradient(radial, 50% 100%, 0, 50% 100%, 140, from(rgba(31,169,244,1)), to(rgba(0,28,78, 1)) );
     // background: -moz-radial-gradient(center 80px 45deg, circle cover, rgba(31,169,244,1) 0%, rgba(0,28,78, 1) 100%);
+  }
 }
 
-ul.vertical li span {
-    position: absolute;
-    left: 20px;
-    top: 50px;
-    color: #151515;
-    text-shadow: 0 1px 1px rgba(255,255,255,0.6);
-}
+// .nav {
+//   li {
+//     display: block;
+//     float: left;
+//     margin: 0 5px;
+//     background: url(../images/bg.jpg) no-repeat center top;
+//     -moz-border-radius: 10px;
+//     -webkit-border-radius: 10px;
+//     border-radius: 10px;
+//     -moz-box-shadow: 1px 1px 1px #666;
+//     -webkit-box-shadow: 1px 1px 1px #666;
+//     box-shadow: 1px 1px 1px #666;
+//   }
+//   a {
+//     display: block;
+//     padding: 25px 35px;
+//     font-family:Arial, sans-serif;
+//     font-size: 1.2em;
+//     font-weight: bold;
+//     color: #fff;
+//     text-decoration: none;
+//     text-shadow: 1px 1px 1px #666;
+//     text-align:center;
+//     background: url(../images/bg.jpg) no-repeat center -200px;
+//     background: rgba(80, 125, 200, 0.55);
+//     -moz-border-radius: 10px;
+//     -webkit-border-radius: 10px;
+//     border-radius: 10px;
+//     -webkit-transition: background 0.5s linear;
+//     -moz-transition: background 0.5s linear;
+//     transition: background 0.5s linear;
+//   }
+//   &:hover {
+//     background: url(../images/bg.jpg) no-repeat center top;
+//     background: rgba(100, 125, 175, 0);
+//   }
+// }
 
-ul.vertical li a{
-    // background: #606060;
-    // background: rgba(31,169,244, 0.9);
-    // @include background-image(linear-gradient(
-    //     top,
-    //     rgb(147, 158, 194),
-    //     rgb(147, 158, 194)
-        // ));
-    color: #151515;
-    -webkit-transition-property: background-opacity;
-    -webkit-transition-duration: 700ms;
-    -moz-transition-property: background-opacity;
-    -moz-transition-duration: 700ms;
-}
-
-ul.vertical li:hover {
-    // background: black;
-    @include background(radial-gradient
-      (
-        center 80px,
-        rgba(31,169,244, 0.8) 0%,
-        rgba(0,28,78, .9) 100%
-      )
-    );
-    -webkit-transition-property: background;
-    -webkit-transition-duration: 700ms;
-    -moz-transition-property: background;
-    -moz-transition-duration: 700ms;
-}
