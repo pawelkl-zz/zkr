@@ -587,6 +587,35 @@ table p, address p, blockquote p, .row p, .small {
 
 /* vertical menu */
 
+@mixin add_gradient_bg($url, $color){
+  $position: 50% 0 no-repeat;
+  background:
+    url($url) $position,
+    fade-out(desaturate($color,30%),.3);
+  @include background(
+    image-url($url) $position,
+    linear-gradient(
+      left bottom,
+      fade-out(desaturate($color,30%),.3) 0%,
+      darken(fade-out(desaturate($color,30%),.3),40%) 100%
+    )
+  );
+  &:hover {
+    $position: 50% -10% no-repeat;
+    background:
+      url($url) $position,
+      $color;
+    @include background(
+      image-url($url) $position,
+      linear-gradient(
+        left bottom,
+        $color 0%,
+        darken($color, 40%)
+      )
+    )
+  }
+}
+
 @mixin add_gradient($color1: rgba(31,169,244, 0.8), $color2: rgba(0,28,78, .4)) {
   // @include background(radial-gradient(
   //     center -80px,
@@ -606,11 +635,11 @@ table p, address p, blockquote p, .row p, .small {
   }
 }
 
-@mixin add_gradient_sat($color1: rgba(31,169,244, 0.8), $color2: rgba(0,28,78, .4)) {
+@mixin add_gradient_sat($color1) {
   @include background(linear-gradient(
-    left bottom,
+    bottom,
     $color1 0%,
-    darken($color1, 40%)
+    fade-out(darken($color1, 40%),.4)
     )
   );
   // @include transition(500ms background-image);
@@ -644,7 +673,7 @@ nav {
         @include transition(
           2s padding ease-in,
           500ms margin ease-out,
-          200ms background,
+          550ms background-position,
           100ms box-shadow ease-in,
           200ms color
           );
@@ -659,7 +688,7 @@ nav {
           @include transition(
             120ms padding ease-in,
             120ms margin ease-in,
-            200ms background-color,
+            1050ms background-position,
             100ms box-shadow ease-in,
             200ms color ease-in
             );
@@ -667,43 +696,40 @@ nav {
         }
         &#menu-about {
           $color1:rgb(31,169,244);
-          @include add_gradient($color1);
+          @include add_gradient_bg("menu_klapouchy.png",$color1);
         }
         &#menu-parent {
           $color1:rgb(237, 104, 237);
-          @include add_gradient($color1);
+          @include add_gradient_bg("menu_hefalump.png",$color1);
         }
         &#menu-plan {
-          $color1:rgb(255, 0, 0);
-          @include add_gradient($color1);
+          $color1:rgb(237, 131, 140);
+          @include add_gradient_bg("menu_kangurzyca.png",$color1);
+
         }
         &#menu-price {
-          $color1:rgb(237, 164, 104);
-          @include add_gradient($color1);
+          $color1:rgb(237, 164, 74);
+          @include add_gradient_bg("menu_tygrysek.png",$color1);
         }
         &#menu-photos {
           $color1:rgb(237, 244, 104);
-          @include add_gradient($color1);
+          @include add_gradient_bg("menu_krolik.png",$color1);
         }
         &#menu-contact {
           $color1:rgb(104, 237, 104);
-          @include add_gradient($color1);
+          @include add_gradient_bg("menu_kubus.png",$color1);
+
         }
       }
 
     }
   }
+}
+.up {
+  margin: -20px 0 50px 0;
   .sub {
-    // margin: -20px -30px;
-    margin: -10px 0 30px;
     $colorbg: #7A94FF;
-    @include add_gradient_sat(
-      fade-out($colorbg,.5),
-      fade-out($colorbg,1)
-    );
-    // li:not(:first-child) {
-    //   margin-left: 5px;
-    // }
+    @include add_gradient_sat($colorbg);
 
     a {
       color: #ddd !important;
@@ -724,7 +750,4 @@ nav {
       }
     }
   }
-}
-.up {
-  margin: -14px 0 50px 0;
 }
