@@ -5,4 +5,17 @@
   %nav
     %ul
       %li= link_to "Pomoc",    help_path
+      - if signed_in?
+        %li= link_to "Users",       users_path
+        %li.dropdown#fat-menu
+          <a class="dropdown-toggle" href="#" data-toggle= "dropdown">Account <b.caret</b></a>
+          %ul.dropdown-menu
+            %li= link_to "Profile", current_user
+            %li= link_to "Settings",edit_user_path(current_user)
+            %li.divider
+            %li
+              = link_to "Sign out", signout_path, method: "delete"
+      - else
+        -# %li= link_to "Logowanie",     signin_path
+        %li.nobg= link_to 'Logowanie <i class ="icon-signin icon-large halfopacity"></i>'.html_safe,     signin_path
       -# %li <a href="http://news.railstutorial.org/">News</a>

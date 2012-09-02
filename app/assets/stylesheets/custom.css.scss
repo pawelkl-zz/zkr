@@ -531,13 +531,13 @@ $default-transition-delay    : false;
 }
 
 .nav {
-  margin: 10px 20px 0px 20px !important;
+  margin: 10px 0px !important;
   li {
 
     font-size: 1.4em;
     border-radius: 5px;
-    margin: 0 3px 6px 3px;
-    padding: 6px 8px;
+    margin: 0 2px ;
+    padding: 12px 25px;
 
     * {
       text-shadow: 0px 0px 2px rgba(0,0,0,.5) !important;

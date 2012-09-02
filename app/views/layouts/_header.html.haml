@@ -29,7 +29,7 @@
           %li= link_to "Kontakt",
             contact_path
 
-          - if signed_in?
+          -# if signed_in?
             %li= link_to "Users",       users_path
             %li.dropdown#fat-menu
               <a class="dropdown-toggle" href="#" data-toggle= "dropdown">Account <b.caret</b></a>
@@ -39,8 +39,9 @@
                 %li.divider
                 %li
                   = link_to "Sign out", signout_path, method: "delete"
-          - else
-            %li= link_to "Logowanie",     signin_path
+          -# else
+            -# %li= link_to "Logowanie",     signin_path
+            -# %li.nobg= link_to '<i class ="icon-signin icon-large halfopacity"></i>'.html_safe,     signin_path
 -#%nav
   %ul.nav
     %li= link_to "G", galeria_path, title: "Zdjęcia z naszego żłobka"
