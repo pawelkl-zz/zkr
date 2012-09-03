@@ -4,9 +4,9 @@
 
   %h1 Plan Dnia
 
-  -# %h2 To co twoje pociechy..... (..)
+  %h2 To co twoje pociechy (&hellip;)
 
-  %table.normal
+  %table.plan
     %th Początek
     %th Koniec
     %th Opis aktywności
@@ -15,56 +15,90 @@
       %td 7.45
       %td
         „Przygodę w Kubusiowym Raju czas zacząć”!
-        %p przyjmowanie dzieci, indywidualne kontakty z rodzicami, zabawa dzieci w kącikach zainteresowań.
+        %ul
+          %li przyjmowanie dzieci, indywidualne kontakty z rodzicami,
+          %li.self zabawa dzieci w kącikach zainteresowań,
+          %li.monte Montessoriańska Praca Własna,
+          %li.monte Lekcja Ciszy
     %tr
       %td 7.45
       %td 8.00
-      %td „Na poranną toaletę przyszedł czas.”
+      %td
+        „Na poranną toaletę przyszedł czas.”
+        %ul
+          %li.toilet toaleta
     %tr
       %td 8:00
       %td 8.30
-      %td „Nasze Kubusiowe śniadanko.
+      %td
+        „Nasze Kubusiowe śniadanko.”
+        %ul
+          %li.eat śniadanie
     %tr
       %td 8.30
       %td 8.45
-      %td „Kto potrzebuje, do łazienki maszeruje.” (toaleta poranna)
+      %td
+        „Kto potrzebuje, do łazienki maszeruje.”
+        %ul
+          %li.toilet toaleta poranna
     %tr
       %td 9.00
       %td 9.15
-      %td „Piosenką się witamy i do wspólnej zabawy zapraszamy.” (przywitanie)
+      %td
+        „Piosenką się witamy i do wspólnej zabawy zapraszamy.”
+        %ul
+          %li.group przywitanie
     %tr
       %td 9.15
       %td 9.30
       %td
         „Nasza gimnastyka dla dzielnego smyka.”
-        %p zajęcia ruchowo-muzyczne
+        %ul
+          %li.group zajęcia ruchowo-muzyczne
     %tr
       %td 9.30
       %td 10.00
       %td
         „Teraz troszkę się pouczymy, a przy okazji świetnie pobawimy.”
-        %p zajęcia edukacyjne
+        %ul
+          %li.group zajęcia edukacyjne w kręgu.
     %tr
       %td 10.00
       %td 10.15
-      %td „Drugie śniadanie to nasze  do podwórkowych harców przygotowanie.”
+      %td
+        „Drugie śniadanie to nasze  do podwórkowych harców przygotowanie.”
+        %ul
+          %li.eat drugie śniadanie
     %tr
       %td 10.15
       %td 12.00
-      %td „Hej ho, hej ho - na nasz plac zabaw by się szło”
+      %td
+        „Hej ho, hej ho - na nasz plac zabaw by się szło”
+        %ul
+          %li.group zabawa na świeżym powietrzu
     %tr
       %td 12.00
       %td 12.30
-      %td „Do naszego żłobka wracamy - szatnię i toaletę odwiedzamy.”
+      %td
+        „Do naszego żłobka wracamy - szatnię i toaletę odwiedzamy.”
+        %ul
+          %li.toilet toaleta
     %tr
       %td 12.30
       %td 13.00
-      %td „Na obiadową ucztę przyszedł czas.”
+      %td
+        „Na obiadową ucztę przyszedł czas.”
+        %ul
+          %li.eat obiad
     %tr
       %td 13.00
-      %td 14.30
-      %td „Odpoczywamy i przy muzyce słodko zasypiamy.”
-    %tr
+      %td 15.00
+      -#%td 14.30
+      %td
+        „Odpoczywamy i przy muzyce słodko zasypiamy.”
+        %ul
+          %li.sleep popołudniowa drzemka
+    -#%tr
       %td 14.30
       %td 15.00
       %td „Pobudki nadeszła pora.”
@@ -73,8 +107,13 @@
       %td 15.30
       %td
         „Po śnie jeść się nam chce.”
-        %p podwieczorek
+        %ul
+          %li.eat podwieczorek
     %tr
       %td 15.30
       %td 18.00
-      %td „Na popołudniową zabawę mamy teraz czas- porysujemy, potańczymy, pośpiewamy, posprawdzamy, jakie zabawki w Sali mamy i na naszych kochanych rodziców cierpliwie poczekamy.”
+      %td
+        „Na popołudniową zabawę mamy teraz czas- porysujemy, potańczymy, pośpiewamy, posprawdzamy, jakie zabawki w Sali mamy i na naszych kochanych rodziców cierpliwie poczekamy.”
+        %ul
+          %li.monte Montessoriańska Praca Własna,
+          %li.monte Lekcja Ciszy,
