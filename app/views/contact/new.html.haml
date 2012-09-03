@@ -1,0 +1,35 @@
+= provide(:title, 'Skontaktuj się z nami!')
+.hero-unit#page-contact
+  %h1 Skontaktuj się z nami!
+
+  .border.pull-right
+    %p.small Po wysłaniu trafi do Twojej skrzynki kopia przesłanego zapytania
+  .border
+    %p.small Pamiętaj że zawsze możesz do nas zadzwonić, z chęcią odpowiemy na wszystkie pytania!
+
+  .row
+    .span6.offset2
+      = form_for @message, :url => contact_path do |form|
+        %fieldset.fields
+          .field
+            = form.label :name,
+              "Imię i Nazwisko"
+            = form.text_field :name
+          .field
+            = form.label :email,
+              "Adres e-mail"
+            = form.text_field :email
+          .field
+            = form.label :subject,
+              "Temat"
+            = form.text_field :subject
+          .field
+            = form.label :body,
+              "Treść zapytania"
+            = form.text_area :body
+        %fieldset.actions
+          -# = link_to 'Wyślij <i class="icon-envelope icon-large"></i>'.html_safe, root_path
+          -# = form.submit 'Wyślij <i class=\'icon-envelope icon-large\'></i>'.html_safe,            class: "btn btn-large btn-primary"
+          .center
+            = form.button '<i class=\'icon-envelope\'></i> &nbsp; Wyślij'.html_safe,
+              class: "btn btn-large btn-primary"

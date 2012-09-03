@@ -1,4 +1,4 @@
-.hero-unit
+.hero-unit#page-home
   - if signed_in?
     .row
       %aside.span4
@@ -21,7 +21,8 @@
 
     .center
       = link_to "Sprawdź jak dojechać", contact_path, class: "btn btn-large btn-primary"
-      = link_to "Zarejestruj się!", rejestracja_path, class: "btn btn-large btn-primary"
+      -#= link_to "Zarejestruj się!", rejestracja_path, class: "btn btn-large btn-primary"
+      = link_to "Skontaktuj się!", contact_us_path, class: "btn btn-large btn-primary"
 
     %p Drodzy Rodzice! Witamy Was serdecznie w naszym edukacyjnym żłobku „Kubusiowy Raj”, mieszczącym się w malowniczej okolicy, w Bobrowcu, 5 km od Piaseczna. U nas każda mała istotka (od 5 miesiąca do 3 roku życia), równie dociekliwa jak Puchatek, otrzyma czas na „powolne, uważne tropienie tego, co zadziwia, zastanawia, uczy, kształtuje, uwrażliwia, doskonali, stymuluje”. Inspiracji do codziennego towarzyszenia Państwa Pociechom dostarcza nam Pedagogika M. Montessorii, która podkreśla,że ważna prośbą dzieci skierowaną do dorosłych jest zdanie ,,Pomóż mi to zrobić samemu. Gorąco w to wierzymy i zamierzamy zaspokajać te dziecięce pragnienia”.
 

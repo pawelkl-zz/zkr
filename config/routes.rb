@@ -58,6 +58,16 @@ SampleApp::Application.routes.draw do
     to: 'static_pages#help',
     as: "help"
 
+  match '/skontaktuj-sie-z-nami',
+    to: 'contact#new',
+    as: 'contact_us',
+    via: 'get'
+
+  match '/skontaktuj-sie-z-nami',
+    to: 'contact#create',
+    as: 'contact_us',
+    via: 'post'
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
