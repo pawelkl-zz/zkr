@@ -2,9 +2,9 @@
   %h1 Skontaktuj się z nami!
 
   .border.pull-right
-    %p.small po wysłaniu trafi do Ciebie kopia przesłanego zapytania
+    %p.small Po wysłaniu trafi do Twojej skrzynki kopia przesłanego zapytania
   .border
-    %p.small pamiętaj że zawsze możesz do nas zadzwonić, z chęcią odpowiemy!
+    %p.small Pamiętaj że zawsze możesz do nas zadzwonić, z chęcią odpowiemy na wszystkie pytania!
 
   .row
     .span6.offset2
@@ -23,6 +23,6 @@
             = form.label :body
             = form.text_area :body
         %fieldset.actions
-          = link_to 'Wyślij <i class=icon-envelope></i>'.html_safe, root_path
-          = form.submit 'Wyślij <i class=icon-envelope></i>'.html_safe,
+          = link_to 'Wyślij <i class="icon-envelope icon-large"></i>'.html_safe, root_path
+          = form.submit 'Wyślij <i class=\'icon-envelope icon-large\'></i>'.html_safe,
             class: "btn btn-large btn-primary"
