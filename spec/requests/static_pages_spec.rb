@@ -5,7 +5,8 @@ describe "Static pages" do
 
   subject { page }
 
-  let(:homepage_h1) { "Wkrótce otwarcie!" }
+  # let(:homepage_h1) { "Wkrótce otwarcie!" }
+  let(:homepage_h1) { "Zapraszamy na nasz dzień otwarty!" }
 
   shared_examples_for "all static pages" do
     it { should have_selector('h1', text: title) }
@@ -154,7 +155,7 @@ describe "Static pages" do
     # click_link "Strona Główna"
     click_link "Żłobek Kubusiowy Raj"
     click_link "Zarejestruj się!"
-    page.should have_selector 'title', text: full_title('Sign up')
+    page.should have_selector 'title', text: full_title('Rejestracja')
     click_link "Żłobek Kubusiowy Raj"
     page.should have_selector 'h1', text: homepage_h1
   end

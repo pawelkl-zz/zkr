@@ -9,6 +9,11 @@ describe "User pages" do
 
     let(:user) { FactoryGirl.create(:user) }
 
+    shared_examples_for "all user pages" do
+      it { should have_selector('h1', text: title) }
+      it { should have_selector('title', text: full_title(title)) }
+    end
+
     before(:all) { 30.times { FactoryGirl.create(:user) } }
     after(:all)  { User.delete_all }
 
@@ -17,8 +22,8 @@ describe "User pages" do
       visit users_path
     end
 
-    it { should have_selector('title', text: 'All users') }
-    it { should have_selector('h1',    text: 'All users') }
+    let(:title) { "All users" }
+    it_should_behave_like "all user pages"
 
     describe "pagination" do
       it { should have_selector('div.pagination') }
@@ -52,9 +57,8 @@ describe "User pages" do
 
   describe "signup page" do
     before { visit rejestracja_path }
-
-    it { should have_selector('h1',    text: 'Sign up') }
-    it { should have_selector('title', text: full_title('Sign up')) }
+    let(:title) { "Rejestracja" }
+    it_should_behave_like "all user pages"
   end
 
   describe "profile page" do
@@ -64,8 +68,9 @@ describe "User pages" do
 
     before { visit user_path(user) }
 
-    it { should have_selector('h1',    text: user.name) }
-    it { should have_selector('title', text: user.name) }
+    let(:title) { user.name}
+    it_should_behave_like "all user pages"
+
 
     describe "microposts" do
       it { should have_content(m1.content) }
@@ -128,7 +133,7 @@ describe "User pages" do
 
     before { visit rejestracja_path }
 
-    let(:submit) { "Create my account" }
+    let(:submit) { "Stwórz konto" }
 
     describe "with invalid information" do
       it "should not create a user" do
@@ -138,19 +143,24 @@ describe "User pages" do
       describe "after submission" do
         before { click_button submit }
 
-        it { should have_selector('title', text: 'Sign up') }
+        it { should have_selector('title', text: 'Rejestracja') }
         it { should have_content('error') }
-        it { should_not have_content('Password digest') }
+        # it { should_not have_content('Password digest') }
       end
     end
 
     describe "with valid information" do
 
       before do
-        fill_in "Name",         with: "Example User"
-        fill_in "Email",        with: "user@example.com"
-        fill_in "Password",     with: "foobar"
-        fill_in "Confirmation", with: "foobar"
+        # save_and_open_page
+        fill_in "Imię Nazwisko",         with: "Example User"
+        fill_in "Adres e-mail",        with: "user@example.com"
+        fill_in "Hasło",     with: "foobar"
+        fill_in "Potwierdzenie hasła", with: "foobar"
+        # fill_in "Name",         with: "Example User"
+        # fill_in "Email",        with: "user@example.com"
+        # fill_in "Password",     with: "foobar"
+        # fill_in "Confirmation", with: "foobar"
       end
 
       it "should create a user" do

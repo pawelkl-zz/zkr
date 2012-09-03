@@ -1,0 +1,23 @@
+- provide(:title, 'Rejestracja')
+.hero-unit
+
+  %h1 Rejestracja</h1>
+  %h2 Logowanie odbywa się za pomocą adresu email!</h2>
+
+  .row
+    .span7.offset2
+      = form_for(@user) do |f|
+        = render 'shared/error_messages', object: @user
+        = f.label :name, "Imię Nazwisko"
+        = f.text_field :name
+
+        = f.label :email, "Adres e-mail"
+        = f.text_field :email
+
+        = f.label :password, "Hasło"
+        = f.password_field :password
+
+        = f.label :password_confirmation, "Potwierdzenie hasła"
+        = f.password_field :password_confirmation
+
+        = f.submit "Stwórz konto", class: "btn btn-large btn-primary"

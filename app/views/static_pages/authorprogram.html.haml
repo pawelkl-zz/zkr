@@ -2,22 +2,24 @@
 
 = render 'aboutheader'
 
-%h1 Nasz Autorski Program Edukacyjny
+.hero-unit
 
-%h2 Na czym on dokładnie polega?
+  %h1 Nasz Autorski Program Edukacyjny
 
-%p
-  Podzieliliśmy tydzień na dni tematyczne:
-  %ul.list
-    %li PONIEDZIAŁEK - DZIEŃ ZWIERZĄT
-    %li WTOREK - DZIEŃ KOLORÓW
-    %li ŚRODA - DZIEŃ ROŚLIN
-    %li CZWARTEK - DZIEŃ ŚWIADOMOŚCI WŁASNEGO CIAŁA
-    %li PIĄTEK - DZIEŃ PRZEDMIOTÓW ZNANYCH I NIEZNANYCH
+  %h2 Na czym on dokładnie polega?
 
-%p Każdego dnia proponujemy Państwa pociechom zajęcia ruchowe, muzyczne, językowe i plastyczne, związane z danym pojęciem. Przygotowując nasz program, czerpaliśmy z psychologii rozwojowej i naszych zawodowych doświadczeń. Ufamy,że w taki sposób wzbogacimy wiedzę Państwa pociech o świecie, rozwiniemy ich zmysły, a także pobudzimy ich rozwój językowy, ruchowy i poznawczy.
+  %p
+    Podzieliliśmy tydzień na dni tematyczne:
+    %ul.list
+      %li PONIEDZIAŁEK - DZIEŃ ZWIERZĄT
+      %li WTOREK - DZIEŃ KOLORÓW
+      %li ŚRODA - DZIEŃ ROŚLIN
+      %li CZWARTEK - DZIEŃ ŚWIADOMOŚCI WŁASNEGO CIAŁA
+      %li PIĄTEK - DZIEŃ PRZEDMIOTÓW ZNANYCH I NIEZNANYCH
 
-%p
-  = succeed '.' do
-    Bliskie nam jest przesłanie Pedagogiki M. Montessorii, z której czerpiemy inspirację do codziennych działań wychowawczo-edukacyjnych. Więcej o Pedagogice M. Montessorii odnajdą Państwo w zakładce
-    = link_to "Pedagogika M. Montessorii", pedagogika_path
+  %p Każdego dnia proponujemy Państwa pociechom zajęcia ruchowe, muzyczne, językowe i plastyczne, związane z danym pojęciem. Przygotowując nasz program, czerpaliśmy z psychologii rozwojowej i naszych zawodowych doświadczeń. Ufamy,że w taki sposób wzbogacimy wiedzę Państwa pociech o świecie, rozwiniemy ich zmysły, a także pobudzimy ich rozwój językowy, ruchowy i poznawczy.
+
+  %p
+    = succeed '.' do
+      Bliskie nam jest przesłanie Pedagogiki M. Montessorii, z której czerpiemy inspirację do codziennych działań wychowawczo-edukacyjnych. Więcej o Pedagogice M. Montessorii odnajdą Państwo w zakładce
+      = link_to "Pedagogika M. Montessorii", pedagogika_path
