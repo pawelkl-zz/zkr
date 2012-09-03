@@ -13,7 +13,9 @@
       %ul.nav.main
         -#.nav.pull-right
         -# %li= link_to "Strona Główna", root_path
-        %li= link_to "O nas",
+        %li
+          - '.active' if current_page?(about_path)
+          = link_to "O nas",
           about_path,
           id: "menu-about"
         %li= link_to "Strefa Rodzica",
