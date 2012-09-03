@@ -3,10 +3,10 @@
     -# .logo
     = link_to image_tag("top.jpg", alt: "Rails"), 'http://rubyonrails.org/'
   .container
-    = raw(link_to 'Żłobek Kubusiowy Raj <i class="icon-home icon-large"></i>'.html_safe,
+    = link_to 'Żłobek Kubusiowy Raj <i class="icon-home icon-large"></i>'.html_safe,
       root_path,
       id: "logo",
-      title: "Strona Główna")
+      title: "Strona Główna"
     -# halfopacity
     <div class="fb-like" data-href="https://www.zlobekkubusiowyraj.pl/" data-send="true" data-width="450" data-show-faces="false" data-font="arial"></div>
     %nav

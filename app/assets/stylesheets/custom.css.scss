@@ -252,6 +252,9 @@ input, textarea, select, .uneditable-input {
   margin-bottom: 15px;
   @include box_sizing;
 }
+input[type="button"] {
+  width: 100%;
+}
 
 #error_explanation {
   color: #f00;
