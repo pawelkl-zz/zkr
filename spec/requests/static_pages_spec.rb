@@ -154,8 +154,10 @@ describe "Static pages" do
     # page.should have_selector 'title', text: full_title('Opłaty')
     # click_link "Strona Główna"
     click_link "Żłobek Kubusiowy Raj"
-    click_link "Zarejestruj się!"
-    page.should have_selector 'title', text: full_title('Rejestracja')
+    # click_link "Zarejestruj się!"
+    click_link "Skontaktuj się!"
+    # page.should have_selector 'title', text: full_title('Rejestracja')
+    page.should have_selector 'title', text: full_title('Skontaktuj się z nami!')
     click_link "Żłobek Kubusiowy Raj"
     page.should have_selector 'h1', text: homepage_h1
   end
