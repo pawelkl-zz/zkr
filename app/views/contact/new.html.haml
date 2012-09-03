@@ -23,6 +23,7 @@
             = form.label :body
             = form.text_area :body
         %fieldset.actions
-          = link_to 'Wyślij <i class="icon-envelope icon-large"></i>'.html_safe, root_path
-          = form.submit 'Wyślij <i class=\'icon-envelope icon-large\'></i>'.html_safe,
+          -# = link_to 'Wyślij <i class="icon-envelope icon-large"></i>'.html_safe, root_path
+          -# = form.submit 'Wyślij <i class=\'icon-envelope icon-large\'></i>'.html_safe,            class: "btn btn-large btn-primary"
+          = form.button 'Wyślij <i class=\'icon-envelope icon-large\'></i>'.html_safe,
             class: "btn btn-large btn-primary"
