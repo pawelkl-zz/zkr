@@ -336,6 +336,7 @@ blockquote {
     text-align: left;
     &:first-child:before {
       color:$quoteColorQ;
+      content: '“';
       content:open-quote;
       font-size:4em;
       line-height:.1em;
@@ -680,17 +681,24 @@ address {
   // @include transition(500ms background-image);
 }
 
+$color_about:   rgb(31,169,244);
+$color_parent:  rgb(237, 104, 237);
+$color_dayplan: rgb(237, 131, 140);
+$color_price:   rgb(237, 164, 74);
+$color_gallery: rgb(237, 244, 104);
+$color_contact: rgb(104, 237, 104);
+
 nav {
   // margin: 0 auto;
   .main {
     margin: 10px 0px !important;
-    li {
+    & > li {
       border: 1px black !important;
       // margin: 0 2px ;
       &:not(:first-child) {
         margin-left: 1px;
       }
-      a {
+      & > a {
         box-shadow:
           1px 1px 3px 0px rgba(0,0,0,.5),
           0 0 0 1px rgba(0,0,0,.5);
@@ -730,29 +738,23 @@ nav {
           padding-top: 80px !important;
         }
         &#menu-about {
-          $color1:rgb(31,169,244);
-          @include add_gradient_bg("menu_klapouchy.png",$color1);
+          @include add_gradient_bg("menu_klapouchy.png",$color_about);
         }
         &#menu-parent {
-          $color1:rgb(237, 104, 237);
-          @include add_gradient_bg("menu_hefalump.png",$color1);
+          @include add_gradient_bg("menu_hefalump.png",$color_parent);
         }
         &#menu-plan {
-          $color1:rgb(237, 131, 140);
-          @include add_gradient_bg("menu_kangurzyca.png",$color1);
+          @include add_gradient_bg("menu_kangurzyca.png",$color_dayplan);
 
         }
         &#menu-price {
-          $color1:rgb(237, 164, 74);
-          @include add_gradient_bg("menu_tygrysek.png",$color1);
+          @include add_gradient_bg("menu_tygrysek.png",$color_price);
         }
         &#menu-photos {
-          $color1:rgb(237, 244, 104);
-          @include add_gradient_bg("menu_krolik.png",$color1);
+          @include add_gradient_bg("menu_krolik.png",$color_gallery);
         }
         &#menu-contact {
-          $color1:rgb(104, 237, 104);
-          @include add_gradient_bg("menu_kubus.png",$color1);
+          @include add_gradient_bg("menu_kubus.png",$color_contact);
 
         }
       }
@@ -760,29 +762,88 @@ nav {
     }
   }
 }
+$submenu_bg: #7A94FF;
 .up {
-  margin: -20px 0 50px 0;
-  .sub {
-    $colorbg: #7A94FF;
-    @include add_gradient_sat($colorbg);
+  margin: 0px 0 0px 0;
+  height: 0px;
+  @include add_gradient_sat($submenu_bg);
+  nav {
+    margin: 20px 0 0 0 ;
+  }
+  a {
+    color: #ddd !important;
+    font-size: 1.4em;
+    border-radius: 6px;
+    border: black 10px  !important;
+    // padding: 20px 21px 10px !important;
+    padding: 14px 15px !important;
+    text-shadow:
+      0px 0px 2px rgba(0,0,0,.7),
+      0px 0px 1px rgba(0,0,0,.5) !important;
+    font-weight: 800;
+    // @include add_gradient();
 
-    a {
-      color: #ddd !important;
-      font-size: 1.4em;
-      border-radius: 6px;
-      border: black 10px  !important;
-      // padding: 20px 21px 10px !important;
-      padding: 14px 15px !important;
-      text-shadow:
-        0px 0px 2px rgba(0,0,0,.7),
-        0px 0px 1px rgba(0,0,0,.5) !important;
-      font-weight: 800;
-      // @include add_gradient();
+    &:hover {
+      color: #fff !important;
+      background-opacity: .5;
+    }
+  }
+}
 
-      &:hover {
-        color: #fff !important;
-        background-opacity: .5;
-      }
+@mixin herobg($color){
+  background-color:
+    saturate(
+      fade-out(
+        lighten(
+          $color
+        ,25%)
+      ,0.3)
+    ,20%)
+    ;
+}
+$color_home: #ff0;
+#page-home {@include herobg($color_home);}
+#page-contact {
+}
+#page-about {@include herobg($color_about);}
+#page-parent {@include herobg($color_parent);}
+#page-dayplan {@include herobg($color_dayplan);}
+#page-price {@include herobg($color_price);}
+#page-gallery {@include herobg($color_gallery);}
+#page-contact {@include herobg($color_contact);}
+
+a[title] {
+  &:after {
+    opacity: 0;
+    @include transition(1500ms opacity);
+  }
+  &:hover {
+    position: relative;
+    opacity: 1;
+    &:after {
+      font-size: $baseLineHeight ;
+      z-index: 255;
+      opacity: 1;
+      content: attr(title);
+      padding: 6px 10px;
+      margin: 10px -3em -3em 0;
+      color: #333;
+      position: absolute;
+      left: 0;
+      top: 100%;
+      white-space: nowrap;
+      z-index: 20px;
+      text-shadow: 0 0 0 rgba(0,0,0,0);
+      @include transition(1500ms opacity);
+      @include box-shadow(0px 0px 4px #222);
+      @include border-radius(5px);
+      @include background(
+        linear-gradient(
+          top,
+          #eeeeee,
+          #cccccc
+        )
+      );
     }
   }
 }
