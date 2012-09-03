@@ -1,5 +1,10 @@
-# A sample Guardfile
 # More info at https://github.com/guard/guard#readme
+
+guard 'bundler' do
+  watch('Gemfile')
+  # Uncomment next line if Gemfile contain `gemspec' command
+  # watch(/^.+\.gemspec/)
+end
 
 guard 'rails' do
   watch('Gemfile.lock')
@@ -44,3 +49,4 @@ guard 'rspec', :version => 2 do
   # Capybara request specs
   watch(%r{^app/views/(.+)/.*\.(erb|haml)$})          { |m| "spec/requests/#{m[1]}_spec.rb" }
 end
+
