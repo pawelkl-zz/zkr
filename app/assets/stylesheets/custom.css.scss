@@ -763,6 +763,9 @@ nav {
           @include add_gradient_bg("menu_kubus.png",$color_contact);
 
         }
+        &.selected {
+          border-radius: 50%;
+        }
       }
 
     }

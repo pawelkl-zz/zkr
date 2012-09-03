@@ -3,7 +3,8 @@
     -# .logo
     = link_to image_tag("top.jpg", alt: "Rails"), 'http://rubyonrails.org/'
   .container
-    = link_to 'Żłobek Kubusiowy Raj <i class="icon-home icon-large"></i>'.html_safe,
+    = menu_link_to 'static_pages', 'home',
+      'Żłobek Kubusiowy Raj <i class="icon-home icon-large"></i>'.html_safe,
       root_path,
       id: "logo",
       title: "Strona Główna"
@@ -11,30 +12,33 @@
     <div class="fb-like" data-href="https://www.zlobekkubusiowyraj.pl/" data-send="true" data-width="450" data-show-faces="false" data-font="arial"></div>
     %nav
       %ul.nav.main
-        -#.nav.pull-right
         -# %li= link_to "Strona Główna", root_path
-        %li
-          - '.active' if current_page?(about_path)
-          = link_to "O nas",
+        %li= menu_link_to 'static_pages', 'about',
+          'O nas',
           about_path,
-          id: "menu-about"
-        %li= link_to "Strefa Rodzica",
+          id: 'menu-about'
+        %li= menu_link_to 'static_pages', 'parentsite',
+          "Strefa Rodzica",
           strefarodzica_path,
           title: "Wszelkie potrzebne informacje dla rodziców",
           id: "menu-parent"
-        %li= link_to "Plan Dnia",
+        %li= menu_link_to 'static_pages', 'dayplan',
+          "Plan Dnia",
           plandnia_path,
           title: "Szczegółowy plan dnia dla naszych pociech",
           id: "menu-plan"
-        %li= link_to "Opłaty",
+        %li= menu_link_to 'static_pages', 'pricelist',
+          "Opłaty",
           oplaty_path,
           title: "Wszelkie opłaty naliczane przez nasz żłobek",
           id: "menu-price"
-        %li= link_to "Galeria Zdjęć",
+        %li= menu_link_to 'static_pages', 'gallery',
+          "Galeria Zdjęć",
           galeria_path,
           title: "Zdjęcia z naszego żłobka",
           id: "menu-photos"
-        %li= link_to "Kontakt",
+        %li= menu_link_to 'static_pages', 'contact',
+          "Kontakt",
           contact_path,
           id: "menu-contact"
 

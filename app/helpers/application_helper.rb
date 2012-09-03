@@ -10,4 +10,16 @@ module ApplicationHelper
       "#{base_title} | #{page_title}"
     end
   end
+
+  def menu_link_to(controller, action, *args, &block)
+    if controller == controller_name && (action.nil? || action == action_name)
+      if args.third.nil?
+        args.push({:class => 'selected'})
+      else
+        args.third.merge!({:class => 'selected'})
+      end
+    end
+
+    link_to *args, &block
+  end
 end
