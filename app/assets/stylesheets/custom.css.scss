@@ -687,7 +687,7 @@ address {
   // @include transition(500ms background-image);
 }
 
-$color_about:   rgb(31,169,244);
+$color_about:   rgb( 31, 169, 244);
 $color_parent:  rgb(237, 104, 237);
 $color_dayplan: rgb(237, 131, 140);
 $color_price:   rgb(237, 164, 74);
@@ -743,28 +743,31 @@ nav {
             );
           padding-top: 80px !important;
         }
+        $mix: 30%;
+        @mixin menu($url,$color){
+          @include add_gradient_bg($url,$color);
+          &.selected {
+            @include add_gradient_bg($url,darken($color,$mix))
+          }
+        }
         &#menu-about {
-          @include add_gradient_bg("menu_klapouchy.png",$color_about);
+          @include menu("menu_klapouchy.png",$color_about);
         }
         &#menu-parent {
-          @include add_gradient_bg("menu_hefalump.png",$color_parent);
+          @include menu("menu_hefalump.png",$color_parent);
         }
         &#menu-plan {
-          @include add_gradient_bg("menu_kangurzyca.png",$color_dayplan);
-
+          @include menu("menu_kangurzyca.png",$color_dayplan);
         }
         &#menu-price {
-          @include add_gradient_bg("menu_tygrysek.png",$color_price);
+          @include menu("menu_tygrysek.png",$color_price);
         }
         &#menu-photos {
-          @include add_gradient_bg("menu_krolik.png",$color_gallery);
+          @include menu("menu_krolik.png",$color_gallery);
         }
         &#menu-contact {
-          @include add_gradient_bg("menu_kubus.png",$color_contact);
+          @include menu("menu_kubus.png",$color_contact);
 
-        }
-        &.selected {
-          border-radius: 50%;
         }
       }
 
