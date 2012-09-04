@@ -2,13 +2,13 @@
 %html
   %head
     %title= full_title(yield(:title))
-    <meta name="google-site-verification" content="o-ukdE64RoDOkSsBGsKb-gh06fATvD57iMPs8UVJmx0" />
+    = render 'layouts/google'
+    = render 'layouts/facebook_like'
     = stylesheet_link_tag    "application", media: "all"
     = javascript_include_tag "application"
     = csrf_meta_tags
     = render 'layouts/shim'
   %body
-    = render 'layouts/facebook_like'
     = render 'layouts/header'
     .container
       - flash.each do |key, value|
