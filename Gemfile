@@ -16,6 +16,7 @@ gem 'meta-tags', '~> 1.2.6'
 # gem 'formtastic-bootstrap', '1.1.1' #, '~> 1.2.0'
   gem 'compass-rails', '~> 1.0.3'
   gem 'compass_twitter_bootstrap', '2.0.3'
+gem 'tork', '~> 18.2.2'
 
 group :development do
   gem 'heroku', '~> 2.31.2'
