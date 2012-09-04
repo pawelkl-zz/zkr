@@ -743,6 +743,9 @@ $submenu_bg: #7A94FF;
       ,0.4)
     ,20%)
     ;
+  h1 {
+    color: lighten(desaturate($color,20%),20%);
+  }
 }
 $color_home: lighten(#ff0,10%);
 #page-home {@include herobg($color_home);}
