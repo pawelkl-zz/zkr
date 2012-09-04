@@ -43,7 +43,9 @@ body {
   padding-top: 110px !important; // 40
   // background: url("bg.png");
 
-  @include background-image(linear-gradient(top, #7a94ff 20%, #CED099 99%));
+
+  // @include background-image(linear-gradient(top, #7a94ff 20%, #CED099 99%));
+  @include background-image(linear-gradient(bottom, rgb(69,132,180) 28%, rgb(31,71,120) 64%));
 
   // .hero-unit >  :first-child {
   //   padding-top: 0px; // 50px
@@ -52,10 +54,16 @@ body {
 
 /* main menu */
 .navbar-fixed-top  {
+  // @include background-image(linear-gradient(top,
+  //   rgba(122, 148, 255,1) 50px,
+  //   rgba(122, 148, 255,.9) 90px,
+  //   rgba(122, 148, 255,0) 100%
+  //   )
+  // );
   @include background-image(linear-gradient(top,
-    rgba(122, 148, 255,1) 50px,
-    rgba(122, 148, 255,.9) 90px,
-    rgba(122, 148, 255,0) 100%
+    rgb(31,71,120) 50px,
+    rgba(31,71,120,.7) 90px,
+    rgba(31,71,120,.0) 100%
     )
   );
   height: 110px;
@@ -130,7 +138,7 @@ p {
    text-indent: 30px;
    margin-bottom: 20px;
 }
-table p, address p, blockquote p, .row p, .small {
+table p, address p, blockquote p, .row p, .small, p i {
   text-indent: 0;
   line-height: 1em;
   text-align: left;
@@ -158,10 +166,13 @@ table p, address p, blockquote p, .row p, .small {
 /* footer */
 
 footer {
+  * {
+    vertical-align: bottom;
+  }
   margin-top: 45px;
   padding-top: 5px;
   border-top: 1px solid $grayMediumLight;
-  color: $grayLight;
+  color: darken($grayLight,15%);
   a {
     color: $gray;
     &:hover {
@@ -170,6 +181,10 @@ footer {
   }
   small {
     float: left;
+  }
+  .center {
+    float: none;
+    margin: 0 20%;
   }
   ul {
     float: right;
@@ -189,64 +204,6 @@ footer {
   width: 100%;
   margin-top: 45px;
   @include box_sizing;
-}
-
-/* sidebar */
-
-aside {
-  section {
-    padding: 10px 0;
-    border-top: 1px solid $grayLighter;
-    &:first-child {
-      border: 0;
-      padding-top: 0;
-    }
-    span {
-      display: block;
-      margin-bottom: 3px;
-      line-height: 1;
-    }
-    h1 {
-      font-size: 1.6em;
-      text-align: left;
-      letter-spacing: -1px;
-      margin-bottom: 3px;
-    }
-  }
-}
-
-.gravatar {
-  float: left;
-  margin-right: 10px;
-}
-
-.stats {
-  overflow: auto;
-  a {
-    float: left;
-    padding: 0 10px;
-    border-left: 1px solid $grayLighter;
-    color: gray;
-    &:first-child {
-      padding-left: 0;
-      border: 0;
-    }
-    &:hover {
-      text-decoration: none;
-      color: $blue;
-    }
-  }
-  strong {
-    display: block;
-  }
-}
-
-.user_avatars {
-  overflow: auto;
-  margin-top: 10px;
-  .gravatar {
-    margin: 1px 1px;
-  }
 }
 
 /* forms */
@@ -275,50 +232,26 @@ input[type="button"] {
   @extend .error;
 }
 
-/* users index */
-
-.users {
-  list-style: none;
-  margin: 0;
-  li {
-    overflow: auto;
-    padding: 10px 0;
-    border-top: 1px solid $grayLighter;
-    &:last-child {
-      border-bottom: 1px solid $grayLighter;
-    }
-  }
-}
-
-/* microposts */
-
-.microposts {
-  list-style: none;
-  margin: 10px 0 0 0;
-
-  li {
-    padding: 10px 0;
-    border-top: 1px solid #e8e8e8;
-  }
-}
-.content {
-  display: block;
-}
-.timestamp {
-  color: $grayLight;
-}
-.gravatar {
-  float: left;
-  margin-right: 10px;
-}
-aside {
-  textarea {
-    height: 100px;
-    margin-bottom: 5px;
-  }
-}
-
 /* quotes */
+
+@mixin block($width,$sign: "open-quote",$signsize: "5em",$signalign: "1.32"){
+  width: $width;
+  border-left: $quoteColorBorder solid 40px !important;
+  background: $quoteColorFill;
+  margin: 0.5em 0px 0.5em 10px;
+  padding: 0.5em 10px;
+  text-align: left;
+  border-radius: 10px;
+  &:before {
+    font-family: 'Times New Roman', serif;
+    content: $sign;
+    font-size: $signsize;
+    line-height:0.01em;
+    margin-right:0.28em;
+    vertical-align:-0.6em;
+    // margin-left: $signalign * -25.3pt;
+  }
+}
 
 $quoteColorFill: #90b0f0;
 $quoteColorQ: #000;
@@ -326,53 +259,61 @@ $quoteAlign: 25.3pt;
 $quoteColorBorder: #7090df;
 
 blockquote {
-  width: 350px;
-  // float:right;
-  border-left: $quoteColorBorder solid 40px !important;
-  background: $quoteColorFill;
-  // border-left:10px solid #ccc;
-  margin: 0.5em 0px 1.5em 10px;
-  padding: .5em 10px;
+  @include block(335px,open-quote,"3em","1.32");
   quotes:"\201C""\201D""\2018""\2019";
-  text-align: left;
-  border-radius: 10px;
-  p {
-    // font-family: 'Times New Roman', serif;
-    font-size: 15px !important;
-    text-align: left;
-    &:first-child:before {
-      color:$quoteColorQ;
-      content: '“';
-      content:open-quote;
-      font-size:4em;
-      line-height:.1em;
-      margin-right:0.28em;
-      vertical-align:-.4em;
-      margin-left: -$quoteAlign*1.3 ;
-    }
-    // &:last-child:after {
-    //   color:$quoteColorQ;
-    //   content:close-quote;
-    //   font-size:4em;
-    //   line-height:.1em;
-    //   margin-left:0.1em;
-    //   vertical-align:-.4em;
-    //   margin-left: -$quoteAlign*1.3 ;
-    // }
+  &:before {
+    font-family: 'Times New Roman', serif;
+    // content: ;
+    font-size:5em;
+    line-height:0.01em;
+    margin-right:0.28em;
+    vertical-align:-0.6em;
+    margin-left: -25.3pt * 1.32 ;
   }
-  // > :not(:first-child) {
-    // display:inline;
-    // margin-left: $quoteAlign ;
-  // }
-  //
+  p {
+    font-family: 'Times New Roman', serif;
+    font-size: 1.3em;
+    margin-top: -30px;
+  }
   small{
     text-align: right;
     padding: 0 20px;
     color: #444 !important;
     cite {
       color: #333;
+    }
   }
 }
+
+.border {
+  @include block(250px,"!","10em","1.05");
+  adress p {
+     font-size: 13px !important;
+     line-height: 1.3em;
+  }
+  & > p {
+    font-size: 15px !important;
+    // text-align: left;
+    line-height: 1.3em;
+    margin-top: -15px;
+  }
+  &:before {
+    // content: "!";
+    font-size:3em;
+    // line-height:0.01em;
+    // margin-right:0.28em;
+    // vertical-align:-0.4em;
+    margin-left: -$quoteAlign*1.05 ;
+  }
+
+  &.phone:before {
+    font-family: "FontAwesome";
+    font-weight: normal;
+    content: "\f095";
+    // content: "lol";
+    // display: inline-block;
+    text-decoration: inherit;
+  }
 }
 /* tables */
 
@@ -436,13 +377,17 @@ table {
       li {
         margin: 7px 0;
         letter-spacing: .08em;
-        text-shadow:
-          0px 0px 1px fade-out(#fff,.0),
-          0px 0px 2px fade-out(#fff,.0)
+        // text-shadow:
+          // 0 0 2px fade-out(#000,.0)
+          // 0 0 1px fade-out(#fff,.0)
+
+          // 0px 0px 1px fade-out(#fff,.0),
+          // 0px 0px 2px fade-out(#fff,.0)
+
           // 1px 1px 1px fade-out(#000,.5),
           // 1px 1px 3px fade-out(#000,.5),
           // 1px 1px 4px fade-out(#000,.5)
-        ;
+        // ;
         // text-shadow:
         //   0px 0px 1px rgba(0,0,0,.9),
         //   0px 0px 1px rgba(0,0,0,.9),
@@ -450,16 +395,26 @@ table {
         //   0px 0px 3px rgba(255,255,255,.9)
         // !important;
         // &.eat     {color: #db2;}
-        &.eat     {color: #e33;}
-        &.self    {color: #2a2;}
-        &.toilet  {color: #88f;}
-        &.monte   {color: #a4a;}
-        &.sleep   {color: #0aa;}
-        &.group   {color: #db2;}
+        &.eat     {color: darken(#e33,10%);}
+        &.self    {color: darken(#2a2,10%);}
+        &.toilet  {color: darken(#88f,10%);}
+        &.monte   {color: darken(#a4a,10%);}
+        &.sleep   {color: darken(#0aa,10%);}
+        &.group   {color: darken(#c6a,10%);}
       }
     }
   }
+  &#contact {
+    td:first-child {
+      width: 130px;
+    }
+    margin-bottom: 22px;
+  }
 }
+
+// #contact_link {
+//   text-align: center;
+// }
 
 // mine
 
@@ -493,34 +448,6 @@ table {
 
 .toright {
   float:right;
-}
-
-.border {
-  width: 250px;
-  border-left: $quoteColorBorder solid 40px !important;
-  background: $quoteColorFill;
-  margin: 0.5em 0px 0.5em 10px;
-  padding: 0.5em 10px;
-  text-align: left;
-  border-radius: 10px;
-  adress p {
-     font-size: 13px !important;
-     line-height: 1.3em;
-  }
-  & > p {
-    font-size: 15px !important;
-    // text-align: left;
-    line-height: 1.3em;
-    margin-top: -15px;
-  }
-  &:before {
-    content: "!";
-    font-size:3em;
-    line-height:0.01em;
-    margin-right:0.28em;
-    vertical-align:-0.4em;
-    margin-left: -$quoteAlign*1.05 ;
-  }
 }
 
 // animation
@@ -604,7 +531,7 @@ ul.list {
 //   display:block;
 // }
 
-address {
+address, .border {
   .tab {
     width: 300px;
   }
@@ -658,24 +585,24 @@ address {
   }
 }
 
-@mixin add_gradient($color1: rgba(31,169,244, 0.8), $color2: rgba(0,28,78, .4)) {
-  // @include background(radial-gradient(
-  //     center -80px,
-  //     $color1 0%,
-  //     $color2 100%
-  //     )
-  // );
-  @include background(linear-gradient(
-    left bottom,
-    fade-out(desaturate($color1,30%),.3) 0%,
-    // fade-out(desaturate($color2,30%),.3) 100%
-    darken(fade-out(desaturate($color1,30%),.3),40%) 100%
-    )
-  );
-  &:hover {
-    @include add_gradient_sat($color1);
-  }
-}
+// @mixin add_gradient($color1: rgba(31,169,244, 0.8), $color2: rgba(0,28,78, .4)) {
+//   // @include background(radial-gradient(
+//   //     center -80px,
+//   //     $color1 0%,
+//   //     $color2 100%
+//   //     )
+//   // );
+//   @include background(linear-gradient(
+//     left bottom,
+//     fade-out(desaturate($color1,30%),.3) 0%,
+//     // fade-out(desaturate($color2,30%),.3) 100%
+//     darken(fade-out(desaturate($color1,30%),.3),40%) 100%
+//     )
+//   );
+//   &:hover {
+//     @include add_gradient_sat($color1);
+//   }
+// }
 
 @mixin add_gradient_sat($color1) {
   @include background(linear-gradient(
@@ -699,18 +626,48 @@ nav {
   .main {
     margin: 10px 0px !important;
     & > li {
-      border: 1px black !important;
+      // border: 1px black !important;
       // margin: 0 2px ;
-      &:not(:first-child) {
-        margin-left: 1px;
+      // &:first-child a{
+      //   // border-top-left-radius: 6px;
+      //   // border-bottom-left-radius: 6px;
+      //   border-top-left-radius: 35px 35px;
+      //   border-bottom-left-radius: 20px 20px;
+      // }
+      &:nth-child(odd) a{
+        // border-top-left-radius: 6px;
+        // border-bottom-left-radius: 6px;
+        // border-top-left-radius: 35px 35px;
+        // border-bottom-left-radius: 20px 20px;
+        border-radius: 20px 0px 0px 20px;
+
       }
+      &:nth-child(even) a{
+        // border-top-left-radius: 6px;
+        // border-bottom-left-radius: 6px;
+        // border-top-left-radius: 35px 35px;
+        // border-bottom-left-radius: 20px 20px;
+        border-radius: 0 20px 20px 0;
+
+      }
+      &:not(:first-child) {
+        margin-left: 0px;
+      }
+      // &:last-child a{
+      //   // border-top-right-radius: 6px;
+      //   // border-bottom-right-radius: 6px;
+      //   border-top-right-radius: 35px 35px;
+      //   border-bottom-right-radius: 20px 20px;
+      // }
       & > a {
+        // border-radius: 20px 10px / 20px 10px;
+
         box-shadow:
           1px 1px 3px 0px rgba(0,0,0,.5),
           0 0 0 1px rgba(0,0,0,.5);
         color: #ddd !important;
         font-size: 1.88em;
-        border-radius: 6px;
+        // border-radius: 6px;
         // padding: 20px 21px 10px !important;
         padding: 0 21px !important;
         padding-top: 20px !important;
@@ -747,7 +704,7 @@ nav {
         @mixin menu($url,$color){
           @include add_gradient_bg($url,$color);
           &.selected {
-            @include add_gradient_bg($url,darken($color,$mix))
+            @include add_gradient_bg($url,lighten($color,$mix))
           }
         }
         &#menu-about {
@@ -809,14 +766,12 @@ $submenu_bg: #7A94FF;
         lighten(
           $color
         ,25%)
-      ,0.3)
+      ,0.4)
     ,20%)
     ;
 }
-$color_home: #ff0;
+$color_home: lighten(#ff0,10%);
 #page-home {@include herobg($color_home);}
-#page-contact {
-}
 #page-about {@include herobg($color_about);}
 #page-parent {@include herobg($color_parent);}
 #page-dayplan {@include herobg($color_dayplan);}

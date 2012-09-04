@@ -1,8 +1,13 @@
 %footer.footer
-  %small
-    &copy; 2012
-    <a href="http://railstutorial.org/">Paweł Kłosiewicz</a>
   %nav
+    %small
+      &copy; 2012
+      <a href="http://www.klosiewicz.pl/">Paweł Kłosiewicz</a>
+    %small.center
+      Masz pytanie?
+      = link_to "Skontaktuj się z nami! <i class=\'icon-envelope\'></i>".html_safe,
+        contact_us_path,
+        id: "contact_link"
     %ul
       %li= link_to "Pomoc",    help_path
       - if signed_in?

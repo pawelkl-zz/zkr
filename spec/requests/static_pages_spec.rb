@@ -157,7 +157,7 @@ describe "Static pages" do
     # click_link "Strona Główna"
     click_link "Żłobek Kubusiowy Raj"
     # click_link "Zarejestruj się!"
-    click_link "Skontaktuj się!"
+    click_link "Skontaktuj się z nami!"
     # page.should have_selector 'title', text: 'Rejestracja'
     page.should have_selector 'title', text: 'Skontaktuj się z nami!'
     click_link "Żłobek Kubusiowy Raj"

@@ -4,13 +4,22 @@
 .hero-unit#page-contact
 
   %h1= title 'Kontakt'
+
+
   %h2 Telefony
+
   #boxsimple
     <iframe width="400" height="400" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?f=q&source=s_q&hl=pl&geocode=&q=Mazowiecka+24,+Bobrowiec,+Polska&aq=0&oq=mazowiecka+24,&sll=52.063256,20.974059&sspn=0.015461,0.038581&t=h&ie=UTF8&hq=&hnear=Mazowiecka+24,+05-502+Bobrowiec,+piaseczy%C5%84ski,+Mazowieckie,+Polska&ll=52.060077,20.967321&spn=0.005277,0.008562&z=16&output=embed&iwloc=near"></iframe>
     %p.pull-right <a href="https://maps.google.com/maps?f=q&source=embed&hl=pl&geocode=&q=Mazowiecka+24,+Bobrowiec,+Polska&aq=0&oq=mazowiecka+24,&sll=52.063256,20.974059&sspn=0.015461,0.038581&t=h&ie=UTF8&hq=&hnear=Mazowiecka+24,+05-502+Bobrowiec,+piaseczy%C5%84ski,+Mazowieckie,+Polska&ll=52.060077,20.967321&spn=0.005277,0.008562&z=16&iwloc=near" style="color:#0000FF;text-align:left">Wyświetl większą mapę</a>
     -# <iframe width="400" height="400" src="https://maps.google.com/maps?f=q&source=s_q&hl=pl&geocode=+&q=mazowiecka+24,+bobrowiec&ie=UTF8&hq=&hnear=Mazowiecka+24,+05-502+Bobrowiec,+piaseczy%C5%84ski,+Mazowieckie,+Polska&t=m&ll=52.059404,20.966806&spn=0.012665,0.027466&z=15&output=embed&iwloc=near" frameborder="0" marginwidth="0" marginheight="0" scrolling="no"></iframe>
 
-  .lol
+  #left
+    -#%p
+      %strong{display: "inline"} Masz pytanie?
+      = link_to "Skontaktuj się z nami! <i class=\'icon-envelope\'></i>".html_safe,
+      contact_us_path,
+      id: "contact_link"
+
     %address
       %p
         %strong Kubusiowy Raj Konrad Zawiślak <br>
@@ -28,6 +37,12 @@
       %p
         %strong.tab e-mail:
         %strong <a href="mailto:biuro@zlobekkubusiowyraj.pl">biuro@zlobekkubusiowyraj.pl</a>
+
+      %p
+        %strong
+        = link_to "Formularz kontaktowy <i class=\'icon-envelope\'></i>".html_safe,
+          contact_us_path,
+          id: "contact_link"
 
       -# Formularz kontaktowy
 

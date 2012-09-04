@@ -1,12 +1,20 @@
--#= provide(:title, 'Skontaktuj się z nami!')
+-# = provide(:title, 'Skontaktuj się z nami!')
 - title 'Skontaktuj się z nami!'
 .hero-unit#page-contact
   %h1= title
 
   .border.pull-right
-    %p.small Po wysłaniu trafi do Twojej skrzynki kopia przesłanego zapytania
+    %p.small Po wysłaniu trafi do Twojej skrzynki kopia przesłanego zapytania.
   .border
     %p.small Pamiętaj że zawsze możesz do nas zadzwonić, z chęcią odpowiemy na wszystkie pytania!
+  .border.pull-left.phone
+    %p.small
+      %strong.tab Dyrektor
+      tel. 881 589 599
+  .border.pull-right.phone
+    %p.small
+      %strong.tab Właściciel
+      tel. 505 106 699
 
   .row
     .span6.offset2
@@ -18,7 +26,7 @@
             = form.text_field :name
           .field
             = form.label :email,
-              "Adres e-mail"
+              "Twój adres e-mail"
             = form.text_field :email
           .field
             = form.label :subject,
