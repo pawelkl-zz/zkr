@@ -1,9 +1,7 @@
 # -*- encoding : utf-8 -*-
 class StaticPagesController < ApplicationController
+
   def home
-    @page_title       = ''
-    @page_description = ''
-    @page_keywords    = ''
     if signed_in?
       @micropost = current_user.microposts.build
       @feed_items = current_user.feed.paginate(page: params[:page])
