@@ -18,10 +18,13 @@ gem 'meta-tags', '~> 1.2.6', require: 'meta_tags'
   gem 'compass_twitter_bootstrap', '2.0.3'
 gem 'tork', '~> 18.2.2'
 gem 'sitemap', '~> 0.3.2'
+gem 'rails-i18n'
 
 group :development do
   gem 'heroku', '~> 2.31.2'
   gem 'haml2slim', '~> 0.4.6'
+  gem 'pry-rails', '~> 0.1.6'
+  gem 'pry-debundle', '~> 0.3'
 end
 
 group :development, :test do

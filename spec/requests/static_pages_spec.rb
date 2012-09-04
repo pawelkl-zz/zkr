@@ -5,19 +5,20 @@ describe "Static pages" do
 
   subject { page }
 
-  # let(:homepage_h1) { "Wkrótce otwarcie!" }
+  let(:main_title) { "Żlobek Kubusiowy Raj"}
   let(:homepage_h1) { "Zapraszamy na nasz dzień otwarty!" }
 
   shared_examples_for "all static pages" do
     it { should have_selector('h1', text: title) }
-    it { should have_selector('title', text: full_title(title)) }
+    it { should have_selector('title', text: main_title) }
+    it { should have_selector('title', text: title) }
   end
 
   describe "Home page" do
     before { visit root_path }
 
     it { should have_selector('h1', text: homepage_h1) }
-    it { should have_selector('title', text: full_title('')) }
+    it { should have_selector('title', text: main_title ) }
     it { should_not have_selector('title', text: '| Home') }
 
     describe "for signed-in users" do
@@ -129,35 +130,36 @@ describe "Static pages" do
 
   it "should have the right links on the layout" do
     visit root_path
+    # page.should have_selector 'title', text: ''
     click_link "Logowanie"
-    page.should have_selector 'title', text: full_title('Logowanie')
+    page.should have_selector 'title', text: 'Logowanie'
     click_link "O nas"
-    page.should have_selector 'title', text: full_title('O nas')
+    page.should have_selector 'title', text: 'O nas'
       click_link "Nasz Autorski Program Edukacyjny"
-      page.should have_selector 'title', text: full_title('Nasz Autorski Program Edukacyjny')
+      page.should have_selector 'title', text: 'Nasz Autorski Program Edukacyjny'
       click_link "Pedagogika M. Montessorii"
-      page.should have_selector 'title', text: full_title('Pedagogika M. Montessori')
+      page.should have_selector 'title', text: 'Pedagogika M. Montessori'
       click_link "Kadra"
-      page.should have_selector 'title', text: full_title('Kadra')
+      page.should have_selector 'title', text: 'Kadra'
       click_link "Adaptacja"
-      page.should have_selector 'title', text: full_title('Adaptacja')
+      page.should have_selector 'title', text: 'Adaptacja'
 
     click_link "Pomoc"
-    page.should have_selector 'title', text: full_title('Pomoc')
+    page.should have_selector 'title', text: 'Pomoc'
     click_link "Kontakt"
-    page.should have_selector 'title', text: full_title('Kontakt')
+    page.should have_selector 'title', text: 'Kontakt'
     click_link "Opłaty"
-    page.should have_selector 'title', text: full_title('Opłaty')
+    page.should have_selector 'title', text: 'Opłaty'
     click_link "Galeria Zdjęć"
-    page.should have_selector 'title', text: full_title('Galeria Zdjęć')
+    page.should have_selector 'title', text: 'Galeria Zdjęć'
     # click_link "Opłaty"
-    # page.should have_selector 'title', text: full_title('Opłaty')
+    # page.should have_selector 'title', text: 'Opłaty'
     # click_link "Strona Główna"
     click_link "Żłobek Kubusiowy Raj"
     # click_link "Zarejestruj się!"
     click_link "Skontaktuj się!"
-    # page.should have_selector 'title', text: full_title('Rejestracja')
-    page.should have_selector 'title', text: full_title('Skontaktuj się z nami!')
+    # page.should have_selector 'title', text: 'Rejestracja'
+    page.should have_selector 'title', text: 'Skontaktuj się z nami!'
     click_link "Żłobek Kubusiowy Raj"
     page.should have_selector 'h1', text: homepage_h1
   end

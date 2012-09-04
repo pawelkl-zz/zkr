@@ -1,13 +1,13 @@
 # -*- encoding : utf-8 -*-
 class StaticPagesController < ApplicationController
   def home
+    @page_title       = ''
+    @page_description = ''
+    @page_keywords    = ''
     if signed_in?
       @micropost = current_user.microposts.build
       @feed_items = current_user.feed.paginate(page: params[:page])
     end
-  end
-
-  def help
   end
 
   def about
@@ -25,7 +25,10 @@ class StaticPagesController < ApplicationController
   def adaptacja
   end
 
-  def contact
+  def parentsite
+  end
+
+  def dayplan
   end
 
   def pricelist
@@ -34,9 +37,10 @@ class StaticPagesController < ApplicationController
   def gallery
   end
 
-  def parentsite
+  def contact
   end
 
-  def dayplan
+  def help
   end
+
 end
