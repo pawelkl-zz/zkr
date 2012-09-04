@@ -556,35 +556,6 @@ address, .border {
 
 /* vertical menu */
 
-@mixin add_gradient_bg($url, $color){
-  $position: 50% 0 no-repeat;
-  background:
-    url($url) $position,
-    fade-out(desaturate($color,30%),.3);
-  @include background(
-    image-url($url) $position,
-    linear-gradient(
-      left bottom,
-      fade-out(desaturate($color,30%),.3) 0%,
-      darken(fade-out(desaturate($color,30%),.3),40%) 100%
-    )
-  );
-  &:hover {
-    $position: 50% -10% no-repeat;
-    background:
-      url($url) $position,
-      $color;
-    @include background(
-      image-url($url) $position,
-      linear-gradient(
-        left bottom,
-        $color 0%,
-        darken($color, 40%)
-      )
-    )
-  }
-}
-
 // @mixin add_gradient($color1: rgba(31,169,244, 0.8), $color2: rgba(0,28,78, .4)) {
 //   // @include background(radial-gradient(
 //   //     center -80px,
@@ -614,6 +585,44 @@ address, .border {
   // @include transition(500ms background-image);
 }
 
+
+@mixin add_gradient_bg($url, $color){
+  $position: 50% 0 no-repeat;
+  background:
+    url($url) $position,
+    fade-out(desaturate($color,30%),.3);
+  @include background(
+    image-url($url) $position,
+    linear-gradient(
+      left bottom,
+      fade-out(desaturate($color,30%),.3) 0%,
+      darken(fade-out(desaturate($color,30%),.3),40%) 100%
+    )
+  );
+  &:hover {
+    $position: 50% -10% no-repeat;
+    background:
+      url($url) $position,
+      $color;
+    @include background(
+      image-url($url) $position,
+      linear-gradient(
+        left bottom,
+        $color 0%,
+        darken($color, 40%)
+      )
+    )
+  }
+}
+
+$mix: 30%;
+@mixin menu($url,$color){
+  @include add_gradient_bg($url,$color);
+  &.selected {
+    @include add_gradient_bg($url,lighten($color,$mix))
+  }
+}
+
 $color_about:   rgb( 31, 169, 244);
 $color_parent:  rgb(237, 104, 237);
 $color_dayplan: rgb(237, 131, 140);
@@ -621,114 +630,79 @@ $color_price:   rgb(237, 164, 74);
 $color_gallery: rgb(237, 244, 104);
 $color_contact: rgb(104, 237, 104);
 
-nav {
-  // margin: 0 auto;
-  .main {
-    margin: 10px 0px !important;
-    & > li {
-      // border: 1px black !important;
-      // margin: 0 2px ;
-      // &:first-child a{
-      //   // border-top-left-radius: 6px;
-      //   // border-bottom-left-radius: 6px;
-      //   border-top-left-radius: 35px 35px;
-      //   border-bottom-left-radius: 20px 20px;
-      // }
-      &:nth-child(odd) a{
-        // border-top-left-radius: 6px;
-        // border-bottom-left-radius: 6px;
-        // border-top-left-radius: 35px 35px;
-        // border-bottom-left-radius: 20px 20px;
-        border-radius: 20px 0px 0px 20px;
-
-      }
-      &:nth-child(even) a{
-        // border-top-left-radius: 6px;
-        // border-bottom-left-radius: 6px;
-        // border-top-left-radius: 35px 35px;
-        // border-bottom-left-radius: 20px 20px;
-        border-radius: 0 20px 20px 0;
-
-      }
-      &:not(:first-child) {
-        margin-left: 0px;
-      }
-      // &:last-child a{
-      //   // border-top-right-radius: 6px;
-      //   // border-bottom-right-radius: 6px;
-      //   border-top-right-radius: 35px 35px;
-      //   border-bottom-right-radius: 20px 20px;
-      // }
-      & > a {
-        // border-radius: 20px 10px / 20px 10px;
-
-        box-shadow:
-          1px 1px 3px 0px rgba(0,0,0,.5),
-          0 0 0 1px rgba(0,0,0,.5);
-        color: #ddd !important;
-        font-size: 1.88em;
-        // border-radius: 6px;
-        // padding: 20px 21px 10px !important;
-        padding: 0 21px !important;
-        padding-top: 20px !important;
-        padding-bottom: 10px !important;
-        text-shadow:
-          0px 0px 2px rgba(0,0,0,.7),
-          0px 0px 1px rgba(0,0,0,.5) !important;
-        font-weight: 800;
-        @include transition(
-          2s padding ease-in,
-          500ms margin ease-out,
-          550ms background-position,
-          100ms box-shadow ease-in,
-          200ms color
-          );
-        // @include add_gradient();
-
-        &:hover {
-          box-shadow:
-            1px 1px 3px 1px rgba(0,0,0,1);
-          color: #fff !important;
-          // background-opacity: .5;
-          margin-top: -40px;
-          @include transition(
-            120ms padding ease-in,
-            120ms margin ease-in,
-            1050ms background-position,
-            100ms box-shadow ease-in,
-            200ms color ease-in
-            );
-          padding-top: 80px !important;
-        }
-        $mix: 30%;
-        @mixin menu($url,$color){
-          @include add_gradient_bg($url,$color);
-          &.selected {
-            @include add_gradient_bg($url,lighten($color,$mix))
-          }
-        }
-        &#menu-about {
-          @include menu("menu_klapouchy.png",$color_about);
-        }
-        &#menu-parent {
-          @include menu("menu_hefalump.png",$color_parent);
-        }
-        &#menu-plan {
-          @include menu("menu_kangurzyca.png",$color_dayplan);
-        }
-        &#menu-price {
-          @include menu("menu_tygrysek.png",$color_price);
-        }
-        &#menu-photos {
-          @include menu("menu_krolik.png",$color_gallery);
-        }
-        &#menu-contact {
-          @include menu("menu_kubus.png",$color_contact);
-
-        }
-      }
-
+nav .main { // nv => margin: 0 auto;
+  margin: 10px 0px !important;
+  & > li {
+    &:nth-child(odd) a{
+      border-radius: 20px 0px 0px 20px;
     }
+    &:nth-child(even) a{
+      border-radius: 0 20px 20px 0;
+    }
+    &:not(:first-child) {
+      margin-left: 0px;
+    }
+    // width: 16%;
+    // margin: 0 3%;
+    & > a {
+      box-shadow:
+        1px 1px 3px 0px rgba(0,0,0,.5),
+        0 0 0 1px rgba(0,0,0,.5);
+      color: #ddd !important;
+      font-size: 1.88em;
+      // padding: 20px 21px 10px !important;
+      padding: 0 21px !important;
+      padding-top: 20px !important;
+      padding-bottom: 10px !important;
+      text-shadow:
+        0px 0px 2px rgba(0,0,0,.7),
+        0px 0px 1px rgba(0,0,0,.5) !important;
+      font-weight: 800;
+      @include transition(
+        2s padding ease-in,
+        500ms margin ease-out,
+        550ms background-position,
+        100ms box-shadow ease-in,
+        200ms color
+        );
+      // @include add_gradient();
+
+      &:hover {
+        box-shadow:
+          1px 1px 3px 1px rgba(0,0,0,1);
+        color: #fff !important;
+        // background-opacity: .5;
+        margin-top: -40px;
+        @include transition(
+          120ms padding ease-in,
+          120ms margin ease-in,
+          1050ms background-position,
+          100ms box-shadow ease-in,
+          200ms color ease-in
+          );
+        padding-top: 80px !important;
+      }
+      &#menu-about {
+        @include menu("menu_klapouchy.png",$color_about);
+      }
+      &#menu-parent {
+        @include menu("menu_hefalump.png",$color_parent);
+      }
+      &#menu-plan {
+        @include menu("menu_kangurzyca.png",$color_dayplan);
+      }
+      &#menu-price {
+        @include menu("menu_tygrysek.png",$color_price);
+      }
+      &#menu-photos {
+        @include menu("menu_krolik.png",$color_gallery);
+      }
+      &#menu-contact {
+        @include menu("menu_kubus.png",$color_contact);
+
+      }
+    }
+
   }
 }
 $submenu_bg: #7A94FF;

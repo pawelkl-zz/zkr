@@ -3,21 +3,23 @@
 .hero-unit#page-contact
   %h1= title
 
-  .border.pull-right
-    %p.small Po wysłaniu trafi do Twojej skrzynki kopia przesłanego zapytania.
-  .border
-    %p.small Pamiętaj że zawsze możesz do nas zadzwonić, z chęcią odpowiemy na wszystkie pytania!
-  .border.pull-left.phone
-    %p.small
-      %strong.tab Dyrektor
-      tel. 881 589 599
-  .border.pull-right.phone
-    %p.small
-      %strong.tab Właściciel
-      tel. 505 106 699
+  #lol.pull-right
+    .border
+      %p.small Po wysłaniu trafi do Twojej skrzynki kopia przesłanego zapytania.
+    .border
+      %p.small
+        Pamiętaj że zawsze możesz do nas zadzwonić, z chęcią odpowiemy na wszystkie pytania!
+      %br
+      %p
+        %strong.tab Dyrektor
+        tel. 881 589 599
+      %p
+        %strong.tab Właściciel
+        tel. 505 106 699
+    -#.border.phone
 
   .row
-    .span6.offset2
+    .span5.offset1
       = form_for @message, :url => contact_path do |form|
         %fieldset.fields
           .field
