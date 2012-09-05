@@ -1,7 +1,7 @@
 - description 'Żłobek Kubusiowy Raj w Boborowcu. Działamy na terenie Bobrowca i z uśmiechem świadczymy usługi dla okolicznych miejscowości takich jak Piaseczno, Bobrowiec, Wilcza Góra, Kolonia Lesznowola, Łoziska, Zalesie Dolne, Gołków, Bąkówka, Robercin'
 - keywords 'Bobrowiec, Piaseczno, Wilcza góra, Władysławów,'
 
-= display_meta_tags site: "Żłobek Kubusiowy Raj", title: "lol"
+= display_meta_tags site: "Żłobek Kubusiowy Raj"
 
 .hero-unit#page-home
   - if signed_in?
@@ -25,7 +25,8 @@
     %h2 Następny już we wrześniu!
 
     .center
-      = link_to "Sprawdź jak dojechać", contact_path, class: "btn btn-large btn-primary"
+      = link_to "Sprawdź jak dojechać".html_safe, contact_path, class: "btn btn-large btn-primary"
+
       -#= link_to "Zarejestruj się!", rejestracja_path, class: "btn btn-large btn-primary"
       = link_to "Skontaktuj się z nami!", contact_us_path, class: "btn btn-large btn-primary"
 
