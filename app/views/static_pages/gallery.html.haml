@@ -5,6 +5,21 @@
 
   %h1= title 'Galeria Zdjęć'
 
+  - images = (1..7).each do |i|
+    -# "gallery/t#{i}.jpg"
+    %a(href="##{i}")
+      = image_tag "gallery/t#{i}.jpg",
+        class: "image"
+    -# images.each do |i|
+      = image_tag i
+
+  -# images.each_slice(3) do |images|
+    .row
+      - images.each do |image|
+      .span4
+        = image_tag image
+
+
   -#%section.gallery
     - (1..7).each do |i|
       %article.target(id=i)

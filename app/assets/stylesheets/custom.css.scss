@@ -852,6 +852,7 @@ $color_home: lighten(#ff0,10%);
 //   }
 // }
 
+// span in link_to block or in safed first argument
 a {
   &:hover span,
   &:focus span{
@@ -886,4 +887,14 @@ a {
       border-right: 6px solid transparent;
     }
   }
+}
+
+.image {
+  @include box-shadow(
+    0px 0px 4px #222,
+    1px 1px 2px #000
+    );
+  margin: 10px;
+  width: 250px;
+  height: auto;
 }
