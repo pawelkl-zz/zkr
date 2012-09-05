@@ -19,6 +19,7 @@ gem 'meta-tags', '~> 1.2.6', require: 'meta_tags'
 gem 'tork', '~> 18.2.2'
 gem 'sitemap', '~> 0.3.2'
 gem 'rails-i18n'
+gem 'rails-gallery'
 
 group :development do
   gem 'heroku', '~> 2.31.2'

@@ -202,7 +202,7 @@ footer {
   clear: both;
   float: left;
   width: 100%;
-  margin-top: 45px;
+  margin-top: 5px;
   @include box_sizing;
 }
 
@@ -238,7 +238,7 @@ input[type="button"] {
   width: $width;
   border-left: $quoteColorBorder solid 40px !important;
   background: $quoteColorFill;
-  margin: 0.5em 0px 0.5em 10px;
+  margin: 0.5em 0px 0.5em 20px;
   padding: 0.5em 10px;
   text-align: left;
   border-radius: 10px;
@@ -491,41 +491,52 @@ ul.list {
   before: "\2013";
 }
 
-#box {
-  float:right;
+// #box {
+//   float:right;
+//   background: #f4f4f4;
+//   border: 1px solid #bbbbbb;
+//   width: 404px;
+//   height: 404px;
+//   // margin: 60px auto;
+//   position: relative;
+
+//   &:before {
+//     border: 1px solid white;
+//     content: '';
+//     width: 402px;
+//     height: 402px;
+//     position: absolute;
+//   }
+
+//   &:after {
+//     content: '';
+//     position: absolute;
+//     width: 400px;
+//     height: 400px;
+//     border: 1px solid #bbbbbb;
+//     left: 1px; top: 1px;
+//   }
+// }
+
+
+
+@mixin box($width, $height: $width, $style: 1px solid #bbb, $float: right) {
+  float: $float;
   background: #f4f4f4;
-  border: 1px solid #bbbbbb;
-  width: 404px;
-  height: 404px;
-  // margin: 60px auto;
-  position: relative;
-
-  &:before {
-    border: 1px solid white;
-    content: '';
-    width: 402px;
-    height: 402px;
-    position: absolute;
-  }
-
-  &:after {
-    content: '';
-    position: absolute;
-    width: 400px;
-    height: 400px;
-    border: 1px solid #bbbbbb;
-    left: 1px; top: 1px;
-  }
+  border: $style;
+  width: $width;
+  height: $height;
 }
 
-#boxsimple {
-  float:right;
-  background: #f4f4f4;
-  border: 1px solid #bbbbbb;
-  width: 400px;
-  height: 400px;
+#box-map {
+  @include box(400px);
 }
 
+#box-crew {
+  $width: 160px;
+  @include box($width,$width * 1.28125,2px solid #bbbbbb,left);
+  margin: 0px 20px 0px 0px;
+}
 // address strong {
 //   width: 100px;
 //   display:block;
@@ -545,6 +556,22 @@ address, .border {
   &:hover {
     opacity: 1;
   }
+}
+
+span[title].inline:after,
+a.inline {
+  color: black;
+  content: attr(title);
+  border-radius: 4px;
+  background-color: lighten(fade-out(#ff0,.8),.4);
+  padding: 4px 2px 2px 2px;
+  font-size: .9em;
+  margin: 3px;
+  // position: absolute;
+}
+
+span[title].inline:after {
+  content: attr(title);
 }
 
 // a[title]:hover:after {
@@ -717,7 +744,7 @@ $submenu_bg: #7A94FF;
     color: #ddd !important;
     font-size: 1.4em;
     border-radius: 6px;
-    border: black 10px  !important;
+    // border: black 10px  !important;
     // padding: 20px 21px 10px !important;
     padding: 14px 15px !important;
     text-shadow:
@@ -756,38 +783,194 @@ $color_home: lighten(#ff0,10%);
 #page-gallery {@include herobg($color_gallery);}
 #page-contact {@include herobg($color_contact);}
 
-a[title] {
-  &:after {
-    opacity: 0;
-    @include transition(1500ms opacity);
-  }
-  &:hover {
-    position: relative;
-    opacity: 1;
-    &:after {
-      font-size: $baseLineHeight ;
-      z-index: 255;
-      opacity: 1;
-      content: attr(title);
-      padding: 6px 10px;
-      margin: 10px -3em -3em 0;
-      color: #333;
-      position: absolute;
-      left: 0;
-      top: 100%;
-      white-space: nowrap;
-      z-index: 20px;
-      text-shadow: 0 0 0 rgba(0,0,0,0);
-      @include transition(1500ms opacity);
-      @include box-shadow(0px 0px 4px #222);
-      @include border-radius(5px);
-      @include background(
-        linear-gradient(
-          top,
-          #eeeeee,
-          #cccccc
-        )
-      );
-    }
-  }
+// a[title] {
+//   &:after {
+//     opacity: 0;
+//     @include transition(1500ms opacity);
+//   }
+//   &:hover {
+//     position: relative;
+//     opacity: 1;
+//     &:after {
+//       font-size: $baseLineHeight ;
+//       z-index: 255;
+//       opacity: 1;
+//       content: attr(title);
+//       padding: 6px 10px;
+//       margin: 10px -3em -3em 0;
+//       color: #333;
+//       position: absolute;
+//       left: 0;
+//       top: 100%;
+//       white-space: nowrap;
+//       z-index: 20px;
+//       text-shadow: 0 0 0 rgba(0,0,0,0);
+//       @include transition(1500ms opacity);
+//       @include box-shadow(0px 0px 4px #222);
+//       @include border-radius(5px);
+//       @include background(
+//         linear-gradient(
+//           top,
+//           #eeeeee,
+//           #cccccc
+//         )
+//       );
+//     }
+//   }
+// }
+
+
+/* ================================================================
+This copyright notice must be untouched at all times.
+
+The original version of this stylesheet and the associated (x)html
+is available at http://www.cssplay.co.uk/menu/slide_show.html
+Copyright (c) 2005-2007 Stu Nicholls. All rights reserved.
+This stylesheet and the assocaited (x)html may be modified in any
+way to fit your requirements.
+=================================================================== */
+
+/* common styling */
+/* set up the overall width of the menu div and the margins */
+.menu2 {
+font-family: verdana, arial, sans-serif;
+width:673px;
+height:31px;
+background:#fff;
+padding:0;
+margin:0 auto;
+position:relative;
+z-index:1;
+border-bottom:20px solid #333;
+margin-bottom:650px;
 }
+/* position the instructions using a dl */
+.menu2 dl {
+font-family:verdana, arial, sans-serif;
+font-size:0.9em;
+position:absolute;
+width:270px;
+top:160px;
+left:50px;
+}
+.menu2 dl dt {font-size:1.2em; margin-bottom:2em; font-weight:bold;}
+.menu2 dl dd { padding:0; margin:0; line-height:1.7em; margin-bottom:2em;}
+.menu2 dl dd:first-letter {font-weight:bold;}
+
+/* remove the bullets and set the margin and padding to zero for the unordered list */
+.menu2 ul {
+padding:0;
+margin:0;
+list-style-type: none;
+border:0;
+}
+/* float the list so that the items are in a line */
+.menu2 ul li {
+display:block;
+float:left;
+width:51px;
+height:31px;
+}
+/* style the links to be 50px wide by 31px high with a right border 1px solid white. Set the background color and the font size. */
+.menu2 ul li a, .menu2 ul li a:visited {
+display:block;
+float:left;
+text-align:center;
+text-decoration:none;
+width:50px;
+height:31px;
+color:#ddd;
+border-right:1px solid #fff;
+background:#333;
+line-height:30px;
+font-size:11px;
+}
+
+/* clear the float at the end of each line of four slides */
+span.clr {display:block; clear:both; width:0; height:0; font-size:0; line-height:0;}
+
+/* make the dropdown ul invisible */
+.menu2 ul li ul {
+display: none;
+}
+
+/* remove the table styling */
+table {
+border-collapse:collapse;
+margin:0;
+padding:0;
+}
+
+
+/* specific to non IE browsers */
+/* set the background and foreground color of the main menu li link on hover */
+.menu2 ul li:hover a{
+color:#fff;
+background:#000;
+cursor:default;
+}
+
+/* make the sub menu ul visible and position it beneath the first list item */
+.menu2 ul li:hover ul {
+text-align:left;
+display:block;
+position:absolute;
+top:31px;
+left:0;
+}
+
+/* make the sub menu ul li the full width with padding and border. */
+.menu2 ul li:hover ul li {
+cursor:pointer;
+width:483px;
+height:483px;
+border:20px solid #000;
+border-width:20px 5px;
+background:#ddd url(slide/linen.jpg);
+color:#fff;
+padding:82px 90px;
+cursor:default;
+}
+
+/* style the background and foreground color of the submenu links */
+.menu2 ul li:hover ul li a {
+background:#333;
+width:118px;
+height:118px;
+border:1px solid #ddd;
+border-color:#888 #000 #000 #888;
+}
+
+
+/* keep the large image hidden */
+.menu2 ul li:hover ul li a em {
+display:none;
+}
+/* add a border to the horizontal slide and position it centrally using a top margin */
+.menu2 ul li:hover ul li a.horiz span img {
+border:1px solid #888;
+margin-top:21px;
+}
+/* add a border to the vertical slide and position it centrally using a top margin */
+.menu2 ul li:hover ul li a.vert span img {
+border:1px solid #888;
+margin-top:9px;
+}
+
+.menu2 ul li:hover ul li a:hover {
+background:#000;
+}
+
+
+/* make the active links zero size so the active dotted border does not show through the large image */
+.menu2 ul li:hover ul li a:active, .menu2 ul li:hover ul li a:focus {background:#aaa; height:0; width:0; border:0;}
+.menu2 ul li:hover ul li a:active em, .menu2 ul li:hover ul li a:focus em {background:#bbb; height:0; width:0; padding:0; margin:0; border:0;}
+
+
+/* make the large image visible and set the border, position them using position absolute centrally over the slides */
+/* horizontal large image styling */
+.menu2 ul li:hover ul li a.horiz:active em, .menu2 ul li:hover ul li a.horiz:focus em {display:block; background:#ddd; position:absolute; left:15px; top:100px; width:640px; height:480px; z-index:200; z-index:500; cursor:default; border:1px solid #fff;}
+.menu2 ul li:hover ul li a.horiz:active em img, .menu2 ul li:hover ul li a.horiz:focus em img {border:0;}
+/* vertical large image styling */
+.menu2 ul li:hover ul li a.vert:active em, .menu2 ul li:hover ul li a.vert:focus em {display:block; background:#ddd; position:absolute; left:95px; top:23px; width:480px; height:640px; z-index:200; z-index:500; cursor:default;  border:1px solid #fff;}
+.menu2 ul li:hover ul li a.vert:active em img, .menu2 ul li:hover ul li a.vert:focus em img {border:0;}

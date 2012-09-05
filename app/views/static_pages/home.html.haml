@@ -29,7 +29,7 @@
       -#= link_to "Zarejestruj się!", rejestracja_path, class: "btn btn-large btn-primary"
       = link_to "Skontaktuj się z nami!", contact_us_path, class: "btn btn-large btn-primary"
 
-    %p Drodzy Rodzice! Witamy Was serdecznie w naszym edukacyjnym żłobku „Kubusiowy Raj”, mieszczącym się w malowniczej okolicy, w Bobrowcu, 5 km od Piaseczna. U nas każda mała istotka (od 5 miesiąca do 3 roku życia), równie dociekliwa jak Puchatek, otrzyma czas na „powolne, uważne tropienie tego, co zadziwia, zastanawia, uczy, kształtuje, uwrażliwia, doskonali, stymuluje”. Inspiracji do codziennego towarzyszenia Państwa Pociechom dostarcza nam Pedagogika M. Montessorii, która podkreśla,że ważna prośbą dzieci skierowaną do dorosłych jest zdanie ,,Pomóż mi to zrobić samemu. Gorąco w to wierzymy i zamierzamy zaspokajać te dziecięce pragnienia”.
+    %p& Drodzy Rodzice! Witamy Was serdecznie w naszym edukacyjnym żłobku „Kubusiowy Raj”, mieszczącym się w malowniczej okolicy, w Bobrowcu, 5 km od Piaseczna. U nas każda mała istotka (od 5 miesiąca do 3 roku życia), równie dociekliwa jak Puchatek, otrzyma czas na „powolne, uważne tropienie tego, co zadziwia, zastanawia, uczy, kształtuje, uwrażliwia, doskonali, stymuluje”. Inspiracji do codziennego towarzyszenia Państwa Pociechom dostarcza nam Pedagogika M. Montessorii, która podkreśla,że ważna prośbą dzieci skierowaną do dorosłych jest zdanie ,,Pomóż mi to zrobić samemu. Gorąco w to wierzymy i zamierzamy zaspokajać te dziecięce pragnienia”.
 
     %blockquote.toright
       %p
@@ -51,6 +51,16 @@
     %p Będzie nam bardzo miło, jeżeli po zapoznaniu się z działalnością naszego Żłobka, zechcecie Państwo przekazać swoje pociechy pod fachową opiekę naszego personelu.
     %p Ufamy, że prowadzona przez nas działalność w pełni sprosta Państwa oczekiwaniom.
     %p Mamy nadzieje, że wirtualne spotkanie z nami odpowie na pytania i odwiedzicie Państwo nasz żłobek osobiście. Szczerze Państwa i Państwa pociechy zapraszamy!
-    %p W razie pytań, prosimy o kontakt telefoniczny lub poprzez formularz kontaktowy.
+    %p
+      W razie jakichwkolwiek pytań, prosimy o kontakt
+      %span.inline(title="kom. 881 589 599") telefoniczny
+      , mailowy
+      %a.inline(href="biuro@zlobekkubusiowyraj.pl"
+        title="biuro@zlobekkubuisowyraj.pl") biuro@zlobekkubusiowyraj.pl
+      lub poprzez
+      = succeed "." do
+        = link_to "formularz kontaktowy",
+          contact_us_path
+
 
     -# = link_to image_tag("rails.png", alt: "Rails"), 'http://rubyonrails.org/'
