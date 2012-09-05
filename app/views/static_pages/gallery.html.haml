@@ -5,9 +5,32 @@
 
   %h1= title 'Galeria Zdjęć'
 
+  -#%section(id="article21")
+    %ul
+      - images = (1..7).each do |i|
+        %li
+          %a(href="##{i}")
+          = image_tag "gallery/t#{i}.jpg",
+            class: "bigImg",
+
+  -#
+    \<section id="article21" class="crayon article-css-21 demoTime">
+    \<ul>
+    \<li><a href="#"><img class="bigImg" src="local/cache-vignettes/L200xH200/firefox200-59631.jpg" alt="Firefox" width="200" height="200" style="height:200px;width:200px;"><strong>Firefox</strong></a></li>
+    \<li><a href="#"><img class="bigImg" src="local/cache-vignettes/L200xH200/opera200-b78ff.jpg" alt="Opéra" width="200" height="200" style="height:200px;width:200px;"><strong>Opéra</strong></a></li>
+    \<li><a href="#"><img class="bigImg" src="local/cache-vignettes/L200xH200/midori200-73c09.jpg" alt="Midori" width="200" height="200" style="height:200px;width:200px;"><strong>Midori</strong></a></li>
+    \<li><a href="#"><img class="bigImg" src="local/cache-vignettes/L200xH200/safari200-2d0f8.jpg" alt="Safari" width="200" height="200" style="height:200px;width:200px;"><strong>Safari</strong></a></li>
+    \<li><a href="#"><img class="bigImg" src="local/cache-vignettes/L200xH200/chrome200-eb250.jpg" alt="Chrome" width="200" height="200" style="height:200px;width:200px;"><strong>Chrome</strong></a></li>
+    \<li><a href="#"><img class="bigImg" src="local/cache-vignettes/L200xH200/ie200-4f8ae.jpg" alt="Internet Explorer" width="200" height="200" style="height:200px;width:200px;"><strong>Internet Explorer</strong></a></li>
+    \</ul>
+    \</section>
+
+
+
   - images = (1..7).each do |i|
     -# "gallery/t#{i}.jpg"
-    %a(href="##{i}")
+    -# %a(href="##{i}")
+    %a(href="assets/gallery/#{i}.jpg")
       = image_tag "gallery/t#{i}.jpg",
         class: "image"
     -# images.each do |i|
