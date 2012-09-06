@@ -781,14 +781,16 @@ $submenu_bg: #7A94FF;
     width: 188px; // 205
     text-align: center;
     &:hover {
-      color: black;
-      background-color: lighten(fade-out(#fff,.8),.4) !important;
+      background-color: lighten(fade-out(#fff,.6),.4) !important;
       @include border-radius(4px);
       text-decoration: none;
     }
   }
   li:first-child a {
     width: 270px;
+  }
+  li a.selected {
+    background-color: lighten(fade-out(#fff,.2),.4) !important;
   }
 //   // height: 0px;
   // @include add_gradient_sat($submenu_bg);
