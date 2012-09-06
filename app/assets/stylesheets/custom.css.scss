@@ -426,10 +426,10 @@ table {
   margin: 0;
 }
 
-.gray {
-  color: $grayLight;
-  display:inline;
-}
+// .gray {
+//   color: darken($grayLight,20%);
+//   display:inline;
+// }
 
 .logo {
   text-align: center;
