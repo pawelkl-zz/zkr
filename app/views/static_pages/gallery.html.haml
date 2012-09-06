@@ -5,6 +5,15 @@
 
   %h1= title 'Galeria Zdjęć'
 
+  - images = (1..6).each do |i|
+    -# "gallery/t#{i}.jpg"
+    -# %a(href="##{i}")
+    %a(href="assets/gallery/#{i}.jpg")
+      = image_tag "gallery/t#{i}.jpg",
+        class: "image"
+    -# images.each do |i|
+      = image_tag i
+
   -#%section(id="article21")
     %ul
       - images = (1..7).each do |i|
@@ -26,15 +35,6 @@
     \</section>
 
 
-
-  - images = (1..6).each do |i|
-    -# "gallery/t#{i}.jpg"
-    -# %a(href="##{i}")
-    %a(href="assets/gallery/#{i}.jpg")
-      = image_tag "gallery/t#{i}.jpg",
-        class: "image"
-    -# images.each do |i|
-      = image_tag i
 
   -# images.each_slice(3) do |images|
     .row
