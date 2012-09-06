@@ -315,6 +315,9 @@ blockquote {
     text-decoration: inherit;
   }
 }
+#border-price {
+  @include block(230px,"!","10em","1.05");
+}
 /* tables */
 
 table {
@@ -559,12 +562,12 @@ address, .border {
 }
 
 span[title].inline:after,
-a.inline {
+.inline {
   color: black;
   content: attr(title);
   border-radius: 4px;
-  background-color: lighten(fade-out(#ff0,.8),.4);
-  padding: 4px 2px 2px 2px;
+  background-color: lighten(fade-out(#fff,.8),.4);
+  padding: 6px 4px 4px 3px;
   font-size: .9em;
   margin: 3px;
   // position: absolute;
