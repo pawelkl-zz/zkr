@@ -67,7 +67,7 @@ describe "Static pages" do
 
     describe "Pedagogika" do
       before { visit pedagogika_path }
-      let(:title) { "Pedagogika M. Montessori" }
+      let(:title) { "Pedagogika Montessori" }
       it_should_behave_like "all static pages"
     end
 
@@ -137,8 +137,8 @@ describe "Static pages" do
     page.should have_selector 'title', text: 'O nas'
       click_link "Nasz Autorski Program Edukacyjny"
       page.should have_selector 'title', text: 'Nasz Autorski Program Edukacyjny'
-      click_link "Pedagogika M. Montessorii"
-      page.should have_selector 'title', text: 'Pedagogika M. Montessori'
+      click_link "Pedagogika Montessorii"
+      page.should have_selector 'title', text: 'Pedagogika Montessori'
       click_link "Kadra"
       page.should have_selector 'title', text: 'Kadra'
       click_link "Adaptacja"
