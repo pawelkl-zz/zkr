@@ -483,13 +483,14 @@ table {
     }
   }
   &.program {
+    margin-bottom: 2em;
     td:first-child {
       width: 150px;
     }
-    thead td{
-      border-bottom: 1px black !important;
+    thead tr{
+      border: 1px black !important;
       @include box-shadow(1px 0 1px 1px black);
-      background: red !important;
+      // background: red !important;
     }
     th, td {
       min-width: 200px;
@@ -766,7 +767,8 @@ nav .main { // nv => margin: 0 auto;
       @include transition(
         // 300ms padding ease-in,
         // 500ms margin ease-out,
-        700ms background,
+        3000ms background,
+        3000ms background-image,
         200ms color
         );
       // // @include add_gradient();
@@ -781,6 +783,7 @@ nav .main { // nv => margin: 0 auto;
           // 300ms padding ease-in,
           // 500ms margin ease-out,
           700ms background,
+          700ms background-image,
           200ms color
           );
         // padding-top: 80px !important;
