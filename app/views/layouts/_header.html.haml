@@ -3,12 +3,7 @@
     -# .logo
     = link_to image_tag("top.jpg", alt: "Rails"), 'http://rubyonrails.org/'
   .container
-    = menu_link_to 'static_pages', 'home',
-      'Żłobek Kubusiowy Raj <i class="icon-home icon-large"></i>'.html_safe,
-      root_path,
-      id: "logo",
-      title: "Strona Główna"
-    .pull-right
+    .pull-left
       <div class="addthis_toolbox addthis_32x32_style addthis_floating_style">
       <a class="addthis_button_facebook_follow" addthis:userid="ZlobekKubusiowyRaj"></a>
       <a class="addthis_button_google_follow" addthis:userid="113138759715163009592"></a>
@@ -16,6 +11,11 @@
       -# <a class="addthis_button_facebook_like" fb:like:layout="button_count"></a>
       </div>
       <script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid=ra-5048def73aa43188"></script>
+    = menu_link_to 'static_pages', 'home',
+      'Żłobek Kubusiowy Raj <i class="icon-home icon-large"></i>'.html_safe,
+      root_path,
+      id: "logo",
+      title: "Strona Główna"
 
     -#
       -# <a class="addthis_button_facebook_like" fb:like:layout="button_count" fb:like:action="recommend"></a>
