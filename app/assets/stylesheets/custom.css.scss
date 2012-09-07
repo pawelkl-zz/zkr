@@ -1181,3 +1181,14 @@ q {
     @include transition(.5s opacity);
   }
 }
+
+
+#page-parent {
+  ul {
+    list-style: none !important;
+  }
+  .downloadlink {
+    font-size: 2em !important;
+    line-height: 1em ;
+  }
+}
