@@ -13,7 +13,7 @@
     %li
       %a(href="#{@folder}/#{f[0]}"
         class="downloadlink"
-        data-prefix="#{File.extname(f[0])}"
+        data-prefix="#{File.extname(f[0]).gsub(/[.]/,'')}"
         )#{f[1]}
 
 - description 'Wszystkie najważniejsze informacje dla rodziców którzy planują wybrać żłobek dla swoich dzieci.'

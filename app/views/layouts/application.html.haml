@@ -1,18 +1,10 @@
 !!!
 %html
   %head
-    = display_meta_tags site: 'Żlobek Kubusiowy Raj'
-    -# = render 'layouts/google'
-    -# = render 'layouts/facebook_like'
+    = display_meta_tags site: 'Niepubliczny Żlobek Kubusiowy Raj'
     = stylesheet_link_tag    "application", media: "all"
     = javascript_include_tag "application"
-    -# Bootstrap Gallery
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
-    <script src="http://blueimp.github.com/cdn/js/bootstrap.min.js"></script>
-    <script src="http://blueimp.github.com/JavaScript-Load-Image/load-image.min.js"></script>
-    <script src="js/bootstrap-image-gallery.min.js"></script>
-    -# Google+ Badge
-    -# <script type="text/javascript" src="https://apis.google.com/js/plusone.js"></script>
+    -#= render 'layouts/bootstrap_gallery'
     = csrf_meta_tags
     = render 'layouts/shim'
     <link href="https://plus.google.com/113138759715163009592" rel="publisher" />

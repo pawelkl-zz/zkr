@@ -74,18 +74,18 @@ $grayMediumLight: #eaeaea;
   }
 }
 // $ifdark: dark;
-@mixin insetshadow($color,$strenght,$ifdark: dark) {
+@mixin insetshadow($color,$strenght,$ifdark: dark,$fill: 30px) {
   // @include box-shadow(inset 0 0 30px 1px $color);
 
   @if $ifdark == dark {
-    @include box-shadow(inset 0 0 30px
+    @include box-shadow(inset 0 0 $fill
       fade-out(
         darken($color,20%)
       ,$strenght)
     );
   }
   @else{
-    @include box-shadow(inset 0 0 30px
+    @include box-shadow(inset 0 0 $fill
       fade-out(
         lighten($color,20%)
       ,$strenght)
@@ -664,13 +664,13 @@ address, .border {
   }
 }
 
-@mixin background-round(){
+@mixin background-round($radius: 6px){
   color: black;
   background-color: lighten(fade-out(#fff,.8),.4);
   padding: 6px 4px 4px 3px;
   font-size: .9em;
   margin: 3px;
-  @include border-radius(10px);
+  @include border-radius($radius);
   text-decoration: none;
 }
 
@@ -1185,16 +1185,31 @@ q {
 
 #page-parent,
 #page-about {
-  ul {
+  li {
     list-style: none !important;
+    list-style-type: none !important;
+    padding: 2px 4px;
+    margin: 0;
   }
   .downloadlink {
     font-size: 2em !important;
     line-height: 1em ;
   }
+  a[data-prefix] {
+    margin-left: 30px;
+  }
   a[data-prefix]:before {
-    content: "[" attr(data-prefix) "]";
+    @include background-round();
+    content: attr(data-prefix);
     font-size: .5em;
+    width: 2em;
+    color: #555;
+    @include insetshadow(#fff,.5,light,10px);
+    font-variant: small-caps;
+    // position: absolute;
+    // left: -30px;
+    top: 100%;
+    left: 90%;
   }
 }
 

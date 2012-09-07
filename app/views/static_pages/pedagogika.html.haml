@@ -52,5 +52,5 @@
     %li
       %a(href="#{@folder}/#{f[0]}"
         class="downloadlink"
-        data-prefix="#{File.extname(f[0])}"
+        data-prefix="#{File.extname(f[0]).gsub(/[.]/,'')}"
         )#{f[1]}
