@@ -1192,6 +1192,10 @@ q {
     font-size: 2em !important;
     line-height: 1em ;
   }
+  a[data-prefix]:before {
+    content: "[" attr(data-prefix) "]";
+    font-size: .5em;
+  }
 }
 
 hr {

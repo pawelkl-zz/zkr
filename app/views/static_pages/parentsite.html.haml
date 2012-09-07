@@ -4,14 +4,17 @@
 
   %h2 Wszystkie potrzebne dokumenty
 
-  -# %hr
+  %hr
 
   %h3 Pliki do pobrania
 
   %ul.download
   - @files.each do |f|
     %li
-      %a(href="#{@folder}/#{f[0]}" class="downloadlink")#{f[1]}
+      %a(href="#{@folder}/#{f[0]}"
+        class="downloadlink"
+        data-prefix="#{File.extname(f[0])}"
+        )#{f[1]}
 
 - description 'Wszystkie najważniejsze informacje dla rodziców którzy planują wybrać żłobek dla swoich dzieci.'
 - keywords    'strefa, rodzic, dokumenty, umowa, procedura, regulamin, upoważnienie, odbieranie, przyjęcie, odbiór'
