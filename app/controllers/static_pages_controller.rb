@@ -26,6 +26,7 @@ class StaticPagesController < ApplicationController
   def parentsite
     @folder = "docs"
     @files = Array.new
+    @files << [ "Statut Żłobka Kubusiowy Raj w Bobrowcu.doc", "Statut Żłobka" ]
     @files << [ "Procedura-przyprowadzania-i-odbierania-dzieci.docx", "Procedura przyprowadzania i odbierania dzieci"]
     @files << [ "Umowa-o-przyjęcie-dziecka.docx", "Umowa o przyjęcie dziecka" ]
     @files << ["Upoważnienie-do-odbioru-dziecka.rtf", "Upoważnienie do odbioru dziecka"]
