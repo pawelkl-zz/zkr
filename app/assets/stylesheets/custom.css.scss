@@ -563,7 +563,7 @@ table {
 
 .hero-unit {
   @include border-radius(10px);
-  *:not(h1):not(h2):not(input):not(.btn) {
+  *:not(h1):not(h2):not(input):not(.btn):not(li):not(ul):not(td):not(tr):not(tbody):not(table) {
     text-shadow: 0 0 2px fade-out(#fff,.5),1px 1px 1px fade-out(#fff,.7);
   }
   // @include insetshadow();
@@ -788,14 +788,21 @@ nav .main { // nv => margin: 0 auto;
       @include transition(
         // 300ms padding ease-in,
         // 500ms margin ease-out,
-        3000ms background,
+        // 3000ms background,
         3000ms background-image,
-        200ms color
+        200ms color,
+        200ms -webkit-transform,
+        100ms border-radius
         );
+      position: relative;
+      z-index: 1;
       // // @include add_gradient();
-
+      @include transform(translate(0,0));
       &:hover {
+        z-index: 1000;
+        @include transform(translate(0,0px) scale(1.2));
         color: #fff !important;
+        @include border-radius(10px);
         // background-opacity: .5;
         // margin-top: 10px;
         // padding-bottom: 50px;
@@ -803,9 +810,11 @@ nav .main { // nv => margin: 0 auto;
         @include transition(
           // 300ms padding ease-in,
           // 500ms margin ease-out,
-          700ms background,
+          // 700ms background,
           700ms background-image,
-          200ms color
+          200ms color,
+          1200ms -webkit-transform,
+          100ms border-radius
           );
         // padding-top: 80px !important;
       }
