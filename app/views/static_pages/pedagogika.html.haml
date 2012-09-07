@@ -44,3 +44,10 @@
   %blockquote
     %p Znikła dawna nauczycielka, która z wielkim trudem utrzymywała porządek, polegający na unieruchomieniu dzieci, i zrywała sobie płuca przez rozmowy bez końca. Została ona zastąpiona przez przyrządy do nauczania, dzięki którym uczeń może naprawiać swe błędy i sam się kształcić. Cierpliwa i milcząca nauczycielka kieruje jedynie samodzielną pracą dzieci.
     %small Maria Montessori
+
+  %hr
+  %p Pliki do pobrania
+  %ul.download
+  - @files.each do |f|
+    %li
+      %a(href="#{@folder}/#{f[0]}" class="downloadlink")#{f[1]}

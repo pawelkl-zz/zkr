@@ -15,6 +15,18 @@ class StaticPagesController < ApplicationController
   end
 
   def pedagogika
+    @folder = "docs-monte"
+    @files = Array.new
+    @files << [ "Chlonny_umysl_2010_2011.pdf", "Chłonny umysł" ]
+    @files << [ "Faza_wrazliwa_dla_porzadku.pdf", "Faza wrazliwa dla porządku" ]
+    @files << [ "f_sensytywn_na_ruch.pdf", "Faza sensytywna na ruch" ]
+    @files << [ "Normalizacja.pdf", "Normalizacja" ]
+    @files << [ "obserwacja_w_przygotowanym_otoczeniu_Krakow.pdf", "Obserwacja w przygotowanym otoczeniu" ]
+    @files << [ "PIM-Fazy_senytywne_Warszawa_2010.pdf", "Fazy sensytywne" ]
+    @files << [ "Przygotowane_otoczenie.pdf", "Przygotowane otoczenie" ]
+    @files << [ "Rola_nauczyciela_montessorianskiego.pdf", "Rola nauczyciela montessorianskiego" ]
+    @files << [ "Trzygodzinna_praca_wlasna_DW.pdf", "Trzygodzinna praca własna" ]
+    @files << [ "CASA_DEI_BAMBINI.pdf", "Casa dei Bambini" ]
   end
 
   def kadra

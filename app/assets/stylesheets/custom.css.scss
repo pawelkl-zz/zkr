@@ -1183,7 +1183,8 @@ q {
 }
 
 
-#page-parent {
+#page-parent,
+#page-about {
   ul {
     list-style: none !important;
   }
@@ -1191,4 +1192,9 @@ q {
     font-size: 2em !important;
     line-height: 1em ;
   }
+}
+
+hr {
+  color: fade-out(#fff,.8);
+  border-color: fade-out(#fff,.8);
 }
