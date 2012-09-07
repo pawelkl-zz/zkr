@@ -667,12 +667,12 @@ address, .border {
   }
 }
 
-@mixin background-round($radius: 6px){
+@mixin background-round($padding: 6px 4px 4px 3px, $margin: 3px,$radius: 6px){
   color: black;
   background-color: lighten(fade-out(#fff,.8),.4);
-  padding: 6px 4px 4px 3px;
+  padding: $padding;
   font-size: .9em;
-  margin: 3px;
+  margin: $margin;
   @include border-radius($radius);
   text-decoration: none;
 }
@@ -682,9 +682,12 @@ span[title].inline:after {
   @include background-round();
 }
 
+.round {
+  @include background-round(6px,0);
+}
+
 a.inline,
 :target {
-  // @include background-round();
   padding-top: $mainmenuheight;
   display:inline;
 }
