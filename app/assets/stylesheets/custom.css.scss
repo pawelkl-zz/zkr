@@ -113,7 +113,7 @@ html {
 body {
   padding-top: $mainmenuheight !important; // 40
   // background: url("bg.png");
-
+  color: #111;
 
   // @include background-image(linear-gradient(top, #7a94ff 20%, #CED099 99%));
   @include background-image(linear-gradient(bottom, rgb(69,132,180) 28%, rgb(31,71,120) 64%));
@@ -563,8 +563,8 @@ table {
 
 .hero-unit {
   @include border-radius(10px);
-  * {
-    text-shadow: 0 0 2px fade-out(#fff,.5);
+  *:not(h1):not(h2):not(input):not(.btn) {
+    text-shadow: 0 0 2px fade-out(#fff,.5),1px 1px 1px fade-out(#fff,.7);
   }
   // @include insetshadow();
   // @include transition-duration(2.5s);
@@ -1206,19 +1206,23 @@ q {
 
 #page-parent,
 #page-about {
+  .download {
+    margin-left: 120px !important;
+    padding-left: 120px !important;
+  }
   li {
     list-style: none !important;
     list-style-type: none !important;
     padding: 2px 4px;
-    margin: 0;
+    // margin: 0;
   }
   .downloadlink {
     font-size: 2em !important;
     line-height: 1em ;
   }
-  a[data-prefix] {
-    margin-left: 30px;
-  }
+  // a[data-prefix] {
+  //   margin-left: 120px;
+  // }
   a[data-prefix]:before {
     @include background-round();
     content: attr(data-prefix);
