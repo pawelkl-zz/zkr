@@ -563,6 +563,9 @@ table {
 
 .hero-unit {
   @include border-radius(10px);
+  * {
+    text-shadow: 0 0 2px fade-out(#fff,.5);
+  }
   // @include insetshadow();
   // @include transition-duration(2.5s);
   // @include transition-timing-function(ease-out);
@@ -724,6 +727,21 @@ $color_price:   rgb(237, 164, 74);
 $color_gallery: rgb(237, 244, 104);
 $color_contact: rgb(104, 237, 104);
 
+$menu-about-bg: "menu_klapouchy.png";
+$menu-parent-bg: "menu_hefalump.png";
+$menu-plan-bg: "menu_kangurzyca.png";
+$menu-price-bg: "menu_tygrysek.png";
+$menu-photos-bg: "menu_krolik.png";
+$menu-contact-bg: "menu_kubus.png";
+
+$bg_main: "bg_main.png";
+$bg_about: "bg_klapouchy.png";
+$bg_parent: "bg_hefalump.png";
+$bg_plan: "bg_kangurzyca.png";
+$bg_price: "bg_tygrysek.png";
+$bg_photos: "bg_krolik.png";
+$bg_contact: "bg_kubus.png";
+
 nav .main { // nv => margin: 0 auto;
   // margin: 10px 0px !important;
   // height: 250px;
@@ -789,22 +807,22 @@ nav .main { // nv => margin: 0 auto;
         // padding-top: 80px !important;
       }
       &#menu-about {
-        @include menu("menu_klapouchy.png",$color_about);
+        @include menu($menu-about-bg,$color_about);
       }
       &#menu-parent {
-        @include menu("menu_hefalump.png",$color_parent);
+        @include menu($menu-parent-bg,$color_parent);
       }
       &#menu-plan {
-        @include menu("menu_kangurzyca.png",$color_dayplan);
+        @include menu($menu-plan-bg,$color_dayplan);
       }
       &#menu-price {
-        @include menu("menu_tygrysek.png",$color_price);
+        @include menu($menu-price-bg,$color_price);
       }
       &#menu-photos {
-        @include menu("menu_krolik.png",$color_gallery);
+        @include menu($menu-photos-bg,$color_gallery);
       }
       &#menu-contact {
-        @include menu("menu_kubus.png",$color_contact);
+        @include menu($menu-contact-bg,$color_contact);
 
       }
     }
@@ -878,8 +896,8 @@ $submenu_bg: #7A94FF;
 //   }
 }
 
-@mixin herobg($color){
-  background-color:
+@mixin herobg($color, $bgimg){
+  background:
     saturate(
       fade-out(
         lighten(
@@ -887,20 +905,23 @@ $submenu_bg: #7A94FF;
         ,25%)
       ,0.5)
     ,20%)
-    ;
+    url($bgimg)
+    1% 97% no-repeat;
+  background-size: auto 200px;
+  // opacity: .3;
   @include insetshadow($color,.6);
   h1 {
     color: lighten(desaturate($color,20%),20%);
   }
 }
 $color_home: lighten(#ff0,10%);
-#page-home {@include herobg($color_home);}
-#page-about {@include herobg($color_about);}
-#page-parent {@include herobg($color_parent);}
-#page-dayplan {@include herobg($color_dayplan);}
-#page-price {@include herobg($color_price);}
-#page-gallery {@include herobg($color_gallery);}
-#page-contact {@include herobg($color_contact);}
+#page-home {@include herobg($color_home,$bg_main );}
+#page-about {@include herobg($color_about,$bg_about);}
+#page-parent {@include herobg($color_parent,$bg_parent);}
+#page-dayplan {@include herobg($color_dayplan,$bg_plan);}
+#page-price {@include herobg($color_price,$bg_price);}
+#page-gallery {@include herobg($color_gallery,$bg_photos);}
+#page-contact {@include herobg($color_contact,$bg_contact);}
 
 // a[title] {
 //   &:after {
@@ -1217,3 +1238,4 @@ hr {
   color: fade-out(#fff,.8);
   border-color: fade-out(#fff,.8);
 }
+
