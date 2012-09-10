@@ -6,7 +6,8 @@ describe "Static pages" do
   subject { page }
 
   let(:main_title) { "Żlobek Kubusiowy Raj"}
-  let(:homepage_h1) { "Zapraszamy na nasz dzień otwarty!" }
+  let(:homepage_h1) { "Zapraszamy na adaptacyjny dzień otwarty!" }
+  # let(:homepage_h1) { "Zapraszamy na nasz dzień otwarty!" }
 
   shared_examples_for "all static pages" do
     it { should have_selector('h1', text: title) }
