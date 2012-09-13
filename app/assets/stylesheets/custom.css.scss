@@ -175,11 +175,13 @@ h1 {
   }
 }
 
-h2 {
-  text-shadow:
-    0px 0px 1px rgba(0,0,0,.7),
-    2px 2px 2px rgba(0,0,0,.2)
-  ;
+h2{
+  &, sup {
+    text-shadow:
+      0px 0px 1px rgba(0,0,0,.7),
+      2px 2px 2px rgba(0,0,0,.2)
+    ;
+  }
   font-size: 2.0em; //  1.7em
   letter-spacing: -1px;
   margin-bottom: 30px;
@@ -563,7 +565,7 @@ table {
 
 .hero-unit {
   @include border-radius(10px);
-  *:not(h1):not(h2):not(input):not(.btn):not(li):not(ul):not(td):not(tr):not(tbody):not(table) {
+  *:not(h1):not(h2):not(input):not(.btn):not(li):not(ul):not(td):not(tr):not(tbody):not(table):not(sup) {
     text-shadow: 0 0 2px fade-out(#fff,.5),1px 1px 1px fade-out(#fff,.7);
   }
   // @include insetshadow();
