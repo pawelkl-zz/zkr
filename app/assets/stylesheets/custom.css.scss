@@ -1224,12 +1224,21 @@ q {
   //   margin-left: 120px !important;
   //   padding-left: 120px !important;
   // }
-  li {
+  ul {
+    font-size: 2em !important;
+    padding: 2px 4px;
     list-style: none !important;
     list-style-type: none !important;
-    padding: 2px 4px;
-    // margin: 0;
   }
+  li {
+    line-height: 1em ;
+    list-style: none !important;
+  }
+  // li {
+  //   list-style-type: none !important;
+  //   padding: 2px 4px;
+  //   // margin: 0;
+  // }
   .downloadlink {
     font-size: 2em !important;
     line-height: 1em ;
@@ -1238,6 +1247,7 @@ q {
     margin-left: 170px;
   }
   a[data-prefix]:before {
+    text-decoration: none;
     @include background-round();
     content: attr(data-prefix);
     font-size: .5em;
@@ -1250,6 +1260,7 @@ q {
     top: 100%;
     left: 90%;
   }
+
 }
 
 hr {
