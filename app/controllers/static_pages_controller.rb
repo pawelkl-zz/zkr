@@ -15,7 +15,7 @@ class StaticPagesController < ApplicationController
   end
 
   def pedagogika
-    @folder = "docs-monte"
+    @folder = "../docs-monte"
     @files = Array.new
     @files << [ "Chlonny_umysl_2010_2011.pdf", "Chłonny umysł" ]
     @files << [ "Faza_wrazliwa_dla_porzadku.pdf", "Faza wrazliwa dla porządku" ]
@@ -25,7 +25,7 @@ class StaticPagesController < ApplicationController
     @files << [ "PIM-Fazy_senytywne_Warszawa_2010.pdf", "Fazy sensytywne" ]
     @files << [ "Przygotowane_otoczenie.pdf", "Przygotowane otoczenie" ]
     @files << [ "Rola_nauczyciela_montessorianskiego.pdf", "Rola nauczyciela montessorianskiego" ]
-    @files << [ "Trzygodzinna_praca_wlasna_DW.pdf", "Trzygodzinna praca własna" ]
+    # @files << [ "Trzygodzinna_praca_wlasna_DW.pdf", "Trzygodzinna praca własna" ]
     @files << [ "CASA_DEI_BAMBINI.pdf", "Casa dei Bambini" ]
   end
 
@@ -42,7 +42,7 @@ class StaticPagesController < ApplicationController
     @files << [ "Procedura-przyprowadzania-i-odbierania-dzieci.docx", "Procedura przyprowadzania i odbierania dzieci"]
     @files << [ "Umowa-o-przyjęcie-dziecka.docx", "Umowa o przyjęcie dziecka" ]
     @files << ["Upoważnienie-do-odbioru-dziecka.rtf", "Upoważnienie do odbioru dziecka"]
-    @files << ["regulamin.doc", "Regulamin" ]
+    @files << ["Regulamin.pdf", "Regulamin" ]
   end
 
   def dayplan
