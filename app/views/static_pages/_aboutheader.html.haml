@@ -1,15 +1,21 @@
 %header.navbar.up
   %nav
     %ul.nav
-      %li= menu_link_to 'static_pages', 'authorprogram',
+      -# %li= menu_link_to 'static_pages', 'authorprogram',
         "Nasz Autorski Program Edukacyjny",
         autorski_path
+      %li= menu_link_to 'static_pages', 'about',
+        "Nasze podejście",
+        about_path
+        -# "Informacje o Nas",
       %li= menu_link_to 'static_pages', 'pedagogika',
-        "Pedagogika Montessorii",
+        "Więcej o Pedagodzice Montessori",
         pedagogika_path
-      %li= menu_link_to 'static_pages', 'kadra',
+        -# Pedagogika Montessorii",
+
+      -# %li= menu_link_to 'static_pages', 'kadra',
         "Kadra",
         kadra_path
-      %li= menu_link_to 'static_pages', 'adaptacja',
+      -# %li= menu_link_to 'static_pages', 'adaptacja',
         "Adaptacja",
         adaptacja_path
