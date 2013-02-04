@@ -362,6 +362,31 @@ blockquote {
   }
 }
 
+.border-custom{
+  text-align: center;
+  width: 480px;
+  // border-left: $quoteColorBorder solid 40px !important;
+  background: $quoteColorFill;
+  // margin: 0.5em 0px 0.5em 20px;
+  margin: auto;
+  padding: .2em .1em;
+  text-align: left;
+  @include border-radius(10px);
+  // min-height: 1em;
+  // margin: auto !important;
+  font-size: 28px !important;
+  padding: 1em;
+  &:before {
+    font-size:40px !important;
+    color: #303030;
+    margin-left: -$quoteAlign*1.35 ;
+    // margin-top: -2em !important;
+    // padding-bottom: 3em !important;
+    // margin-bottom: 2em;
+  }
+
+}
+
 .border {
   @include block(250px,"!","10em","1.05");
   adress p {
