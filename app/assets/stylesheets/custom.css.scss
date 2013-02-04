@@ -362,7 +362,8 @@ blockquote {
   }
 }
 
-.border-custom{
+.notification{
+  @include insetshadow(darken($quoteColorFill,.3),.3,dark,30px);
   text-align: center;
   width: 480px;
   // border-left: $quoteColorBorder solid 40px !important;
@@ -384,7 +385,10 @@ blockquote {
     // padding-bottom: 3em !important;
     // margin-bottom: 2em;
   }
-
+  color: #fff;
+  text-shadow:
+    0 0 2px lighten(#00f,.5),
+    1px 1px 1px fade-out(#00f,.2) !important;
 }
 
 .border {
@@ -570,6 +574,13 @@ table {
 
 .big {
   margin-bottom: 2em;
+}
+
+.target {
+  font-size: 1.8em;
+  margin-left: 0px;
+  text-align: center;
+  padding-bottom: 1em;
 }
 
 // .justify {
