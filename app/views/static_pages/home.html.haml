@@ -21,12 +21,17 @@
     -# %h1 Wkrótce otwarcie!
     -#%h2 Pierwsza trójka zapisanych dzieci bez wpisowego!
 
-    %h1 Zapraszamy na adaptacyjny dzień otwarty!
-    %h2
-      Następny już w sobotę 16 lutego od 10<sup>00</sup> do 16<sup>00</sup>
-      %br
-      Zapraszamy dzieci wraz z rodzicami.
+    - if @dzienotwarty then
+      %h1 Zapraszamy na adaptacyjny dzień otwarty!
+      %h2
+        Następny już w sobotę 16 lutego od 10<sup>00</sup> do 16<sup>00</sup>
+        %br
+        Zapraszamy dzieci wraz z rodzicami.
 
+    - else
+      %h1 Witamy na stronie naszego żłobka!
+      %h2
+        Prowadzimy zajęcia według autorskiego programu wychowania opartego na doświadczeniach Marii Montessorii.
 
     .center
       = link_to "Sprawdź jak dojechać".html_safe, contact_path, class: "btn btn-large btn-primary"
@@ -34,8 +39,9 @@
       -#= link_to "Zarejestruj się!", rejestracja_path, class: "btn btn-large btn-primary"
       = link_to "Skontaktuj się z nami!", contact_us_path, class: "btn btn-large btn-primary"
 
-    .center
-      .notification Tylko do 31 kwietnia brak wpisowego!
+    - if @wpisowe
+      .center
+        .notification Tylko do 31 kwietnia brak wpisowego!
 
     .target Drodzy Rodzice!
     %p

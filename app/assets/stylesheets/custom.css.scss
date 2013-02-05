@@ -890,8 +890,9 @@ nav .main { // nv => margin: 0 auto;
 
 $submenu_bg: #7A94FF;
 .up {
-  width: 100%;
-  margin: 0 0 62px 0;
+  // width: 100%;
+  // margin: 0 0 62px 0;
+  margin: 0 0 72px 0;
   padding: 0;
   nav, ul {
     width: 100%;
@@ -905,12 +906,14 @@ $submenu_bg: #7A94FF;
     background-color: lighten(fade-out(#fff,.9),.4);
     @include insetshadow($color_about,.5);
     padding: 1em .6em  !important;
-    font-size: 1.3em;
+    // font-size: 1.3em;
+    font-size: 1.7em;
     color: white;
     @include border-radius(10px);
     text-decoration: none;
     color: white;
-    width: 188px; // 205
+    // width: 188px; // 205
+    width: 430px !important;
     text-align: center;
     @include transition(.5s background);
     &:hover {

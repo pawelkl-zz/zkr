@@ -1,4 +1,10 @@
 # -*- encoding : utf-8 -*-
+class Time
+  def before? input_time
+    (self <=> input_time) == -1
+  end
+end
+
 class StaticPagesController < ApplicationController
 
   def home
@@ -6,6 +12,8 @@ class StaticPagesController < ApplicationController
       @micropost = current_user.microposts.build
       @feed_items = current_user.feed.paginate(page: params[:page])
     end
+    @wpisowe = Time.now.before? Date.new(Time.now.year,4,30)
+    @dzienotwarty = Time.now.before? Date.new(Time.now.year,2,16)
   end
 
   def about

@@ -21,6 +21,7 @@ gem 'sitemap', '~> 0.3.2'
 gem 'rails-i18n'
 gem 'rails-gallery'
 gem 'dalli'
+gem 'units'
 
 group :development do
   gem 'heroku', '~> 2.31.2'
