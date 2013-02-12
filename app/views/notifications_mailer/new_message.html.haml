@@ -1,0 +1,24 @@
+!!!
+%html
+  %head
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+  %body>
+    %h1
+      Witaj
+      =@message.name
+      !
+    %p
+      Wysłałeś/łaś zapytanie poprzez formularz kontaktowy na stronie żłobka kubusiowy raj (zlobekkubusiowyraj.pl)
+    %p
+      Na zadane nam pytanie jak najszybciej odpowiedmy, a w tej wiadomości przytaczamy treść zapytania dla ułatwienia dalszej korespondencji.
+    %p
+      Temat:<br>
+      = @message.subject
+    %p
+      Treść zapytania:<br>
+      = @message.body
+
+    %p
+      Trzymajcie się ciepło,<br>
+      Dyrektor Żłobka Kubusiowy Raj<br>
+      Katarzyna Spychalska

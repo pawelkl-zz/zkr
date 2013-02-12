@@ -67,9 +67,9 @@ module SampleApp
       :address              => "smtp.gmail.com",
       :port                 => 587,
       :domain               => "zlobekkubusiowyraj.pl",
-      :user_name            => "strona@zlobekkubusiowyraj.pl",
-      :password             => "&*^%$^(&%)",
-      :authentication       => :plain,
+      :user_name            => "formularz@zlobekkubusiowyraj.pl",
+      :password             => "wyslijzestrony",
+      :authentication       => "plain",
       :enable_starttls_auto => true
     }
 
