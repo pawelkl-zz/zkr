@@ -51,6 +51,7 @@ class StaticPagesController < ApplicationController
     @files << [ "Umowa-o-przyjęcie-dziecka.docx", "Umowa o przyjęcie dziecka" ]
     @files << ["Upoważnienie-do-odbioru-dziecka.rtf", "Upoważnienie do odbioru dziecka"]
     @files << ["Regulamin.pdf", "Regulamin" ]
+    @files << ["karta informacyjna dziecka.docx", "Karta informacyjna dziecka" ]
   end
 
   def dayplan
