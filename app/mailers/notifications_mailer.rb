@@ -12,7 +12,7 @@ class NotificationsMailer < ActionMailer::Base
 
     headers["Reply-to"] = "#{message.name} <#{message.email}>"
     mail(from: "#{message.name} <#{message.email}>",
-         subject: "[Formularz Kontaktowy] #{message.subject}",
+         subject: "#{message.subject}",
          return_path: "#{message.name} <#{message.email}>")
   end
 end
