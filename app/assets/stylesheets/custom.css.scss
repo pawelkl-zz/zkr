@@ -440,7 +440,7 @@ table {
       padding-left: 15px;
       text-align:right;
     }
-    td:not(:first-child),
+    td:not(:first-child):not(:nth-child(3)),
       a[href] {
       font-size: $baseLineHeight * 1.5;
     }

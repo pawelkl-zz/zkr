@@ -5,8 +5,6 @@
 
   %h1= title 'Opłaty'
 
-  %h2 Abonament
-
   #border-price.toright.border
     %p.small Opłaty należy dokonywać do 4-ego dnia każdego miesiąca na niżej podany adres i nr konta:
 
@@ -18,56 +16,58 @@
         Nr konta: <br>
         13 19500 00120 06027 90756 0002 <br>
         Bank: IDEA BANK S.A.
+
+  %h2 Wpisowe
   %table.price
     %tr
-      %td Opłata wpisowa
+      %td Jednorazowa opłata wpisowa
       %td 350zł
 
+  %h2 Abonament
   %table.price
     -# %th
     %th
     %th{colspan: 1} Opłata miesięczna
-    %th.span2 Nadgodzina
+    %th.span2 Ilość godzin
     %tr
       %td pełny abonament
       %td 950zł
-      %td <a href="#ad1">20zł<sup>1</sup></a>
+      %td 10h dziennie
+      -# %td <a href="#ad1">20zł<sup>1</sup></a>
     %tr
       %td 1/2 abonamentu
       %td 650zł
-      %td <a href="#ad2">15zł<sup>2</sup></a>
+      %td 6h dziennie
+      -# %td <a href="#ad2">15zł<sup>2</sup></a>
     %tr
       %td 1/4 abonamentu
       %td 450zł
-      %td <a href="#ad2">15zł<sup>2</sup></a>
+      %td 3h dziennie
+      -# %td <a href="#ad2">15zł<sup>2</sup></a>
 
-  %h3 Ubezpieczenie
+  %h2 Wyżywienie
+  %p Dzienna stawka żywieniowa wynosi – 12zł
+  %p Opłata za niewykorzystany posiłek z powodu nieobecności dziecka podlega odliczeniu tylko w przypadku, gdy najpóźniej do godziny 8:00 danego dnia zostaną o tym fakcie poinformowani opiekunowie, dyrektor lub właściciel żłobka. Brak powiadomienia powoduje naliczenie pełnej opłaty za posiłek.
+
+
+  %h2 Ubezpieczenie
   %p
-    Całoroczne – 0zł
-    (w ramach wpisowego)
+    Całoroczne – 0zł.
+    -# (w ramach wpisowego)
     ! - Polisa ubezpieczeniowa PZU
 
-  %hr
+  -#%hr
 
-  %p#ad1
-    %sup 1
-    Opłata za każdą rozpoczętą godzinę opieki nad dzieckiem przed otwarciem oraz po zamknięciu – 20zł
-
-  %p#ad2
-    %sup 2
-    W przypadku abonamentu ½ i ¼ każda nadgodzina kosztuje 15zł.
+  %h2 Godziny nadliczbowe
+  %p Opłata za każdą rozpoczętą godzinę opieki nad dzieckiem przed otwarciem oraz po zamknięciu&nbsp;–&nbsp;20zł.
+  %p W przypadku abonamentu ½ i ¼ każda nadgodzina kosztuje 15zł.
 
   %h2 Jednodniowa opieka
   .big
-    %p Jednorazowa usługa oddania dziecka pod opiekę (bez wpisowego, możliwa jeżeli są wolne miejsca):
+    %p Jednorazowa opieka nad dzieckiem (bez wpisowego), możliwa jest po wcześniejszym uzgodnieniu terminu oraz od wolnych miejsc w danym dniu.
 
-    %p.padleft Cały dzień od 6.45 - 18.00 - 100zł
-    %p.padleft Plus dzienna stawka żywieniowa: 12zł
-
-  %p.big Opłata za niewykorzystany posiłek z powodu nieobecności dziecka podlega odliczeniu tylko w przypadku, gdy najpóźniej do godziny 8:00 danego dnia zostaną o tym fakcie poinformowane opiekunki, dyrektor lub właściciel żłobka. Brak powiadomienia powoduje naliczenie pełnej opłaty za posiłek.
-
-  %h3 Oferta weekendowa
-  %p.big
+  -#%h3 Oferta weekendowa
+  -#%p.big
     Koszt pobytu w żłobku 25zł/godz.
     %br
     Żłobek w weekend czynny w godzinach 8:00 - 18:00,
