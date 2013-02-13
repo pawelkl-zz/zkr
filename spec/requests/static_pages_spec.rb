@@ -31,22 +31,22 @@ describe "Static pages" do
         visit root_path
       end
 
-      it "should render the user's feed" do
-        user.feed.each do |item|
-          page.should have_selector("li##{item.id}", text: item.content)
-        end
-      end
+      # it "should render the user's feed" do
+      #   user.feed.each do |item|
+      #     page.should have_selector("li##{item.id}", text: item.content)
+      #   end
+      # end
 
-      describe "follower/following counts" do
-        let(:other_user) { FactoryGirl.create(:user) }
-        before do
-          other_user.follow!(user)
-          visit root_path
-        end
+      # describe "follower/following counts" do
+      #   let(:other_user) { FactoryGirl.create(:user) }
+      #   before do
+      #     other_user.follow!(user)
+      #     visit root_path
+      #   end
 
-        it { should have_link("0 following", href: following_user_path(user)) }
-        it { should have_link("1 followers", href: followers_user_path(user)) }
-      end
+      #   it { should have_link("0 following", href: following_user_path(user)) }
+      #   it { should have_link("1 followers", href: followers_user_path(user)) }
+      # end
     end
   end
 
@@ -68,7 +68,7 @@ describe "Static pages" do
 
     describe "Pedagogika" do
       before { visit pedagogika_path }
-      let(:title) { "Pedagogika Montessori" }
+      let(:title) { "Więcej o pedagogice Montessori" }
       it_should_behave_like "all static pages"
     end
 
@@ -136,14 +136,20 @@ describe "Static pages" do
     page.should have_selector 'title', text: 'Logowanie'
     click_link "O nas"
     page.should have_selector 'title', text: 'O nas'
-      click_link "Nasz Autorski Program Edukacyjny"
-      page.should have_selector 'title', text: 'Nasz Autorski Program Edukacyjny'
-      click_link "Pedagogika Montessorii"
-      page.should have_selector 'title', text: 'Pedagogika Montessori'
-      click_link "Kadra"
-      page.should have_selector 'title', text: 'Kadra'
-      click_link "Adaptacja"
-      page.should have_selector 'title', text: 'Adaptacja'
+
+    # click_link "Nasz Autorski Program Edukacyjny"
+    # page.should have_selector 'title', text: 'Nasz Autorski Program Edukacyjny'
+
+    click_link "Nasze podejście"
+    page.should have_selector 'title', text: 'O nas'
+
+    click_link "Więcej o pedagogice Montessori"
+    page.should have_selector 'title', text: 'Więcej o pedagogice Montessori'
+
+    # click_link "Kadra"
+    # page.should have_selector 'title', text: 'Kadra'
+    # click_link "Adaptacja"
+    # page.should have_selector 'title', text: 'Adaptacja'
 
     click_link "Pomoc"
     page.should have_selector 'title', text: 'Pomoc'
