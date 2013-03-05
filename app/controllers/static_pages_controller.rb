@@ -1,3 +1,5 @@
+# encoding: utf-8
+
 # -*- encoding : utf-8 -*-
 class Time
   def before? input_time
@@ -13,7 +15,7 @@ class StaticPagesController < ApplicationController
       @feed_items = current_user.feed.paginate(page: params[:page])
     end
     @wpisowe = Time.now.before? Date.new(Time.now.year,4,30)
-    @dzienotwarty = Time.now.before? Date.new(Time.now.year,2,16)
+    @dzienotwarty = Time.now.before? Date.new(Time.now.year,3,23)
   end
 
   def about
