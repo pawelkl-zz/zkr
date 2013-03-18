@@ -15,7 +15,7 @@ class StaticPagesController < ApplicationController
       @feed_items = current_user.feed.paginate(page: params[:page])
     end
     @wpisowe = Time.now.before? Date.new(Time.now.year,4,30)
-    @dzienotwarty = Time.now.before? Date.new(Time.now.year,3,23)
+    @dzienotwarty = Time.now.before? Date.new(Time.now.year,4,6)
   end
 
   def about
